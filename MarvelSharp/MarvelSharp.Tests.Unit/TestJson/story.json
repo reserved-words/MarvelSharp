@@ -1,0 +1,64 @@
+﻿{
+  "id": 26,
+  "title": "Haunted by her own father's death, Elektra finds that killing her latest target's daughter Ñ the only witness to the murder Ñ is",
+  "description": "Test description",
+  "resourceURI": "http://gateway.marvel.com/v1/public/stories/26",
+  "type": "story",
+  "modified": "1969-12-31T19:00:00-0500",
+  "thumbnail": null,
+  "creators": {
+    "available": 2,
+    "collectionURI": "http://gateway.marvel.com/v1/public/stories/26/creators",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/creators/29",
+        "name": "Yoshitaka Amano",
+        "role": "penciller"
+      },
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/creators/28",
+        "name": "Greg Rucka",
+        "role": "writer"
+      }
+    ],
+    "returned": 2
+  },
+  "characters": {
+    "available": 0,
+    "collectionURI": "http://gateway.marvel.com/v1/public/stories/26/characters",
+    "items": [],
+    "returned": 0
+  },
+  "series": {
+    "available": 1,
+    "collectionURI": "http://gateway.marvel.com/v1/public/stories/26/series",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/series/25",
+        "name": "Elektra & Wolverine: The Redeemer (1999)"
+      }
+    ],
+    "returned": 1
+  },
+  "comics": {
+    "available": 1,
+    "collectionURI": "http://gateway.marvel.com/v1/public/stories/26/comics",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/960",
+        "name": "Elektra & Wolverine: The Redeemer (Hardcover)"
+      }
+    ],
+    "returned": 1
+  },
+  "events": {
+    "available": 0,
+    "collectionURI": "http://gateway.marvel.com/v1/public/stories/26/events",
+    "items": [],
+    "returned": 0
+  },
+  "originalIssue": {
+    "resourceURI": "http://gateway.marvel.com/v1/public/comics/960",
+    "name": "Elektra & Wolverine: The Redeemer (Hardcover)"
+  }
+}
