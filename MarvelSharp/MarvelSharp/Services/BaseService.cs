@@ -15,7 +15,7 @@ namespace MarvelSharp.Services
         private readonly IUrlBuilder _urlBuilder;
         private readonly IParser<T> _parser;
 
-        public BaseService(IHttpService apiService, IParser<T> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        internal BaseService(IHttpService apiService, IParser<T> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
         {
             _apiPublicKey = apiPublicKey;
             _apiPrivateKey = apiPrivateKey;

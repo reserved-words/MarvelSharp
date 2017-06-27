@@ -12,7 +12,7 @@ namespace MarvelSharp.Services
 {
     public class CreatorService : BaseService<Creator>
     {
-        public CreatorService(IHttpService httpService, IParser<Creator> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        internal CreatorService(IHttpService httpService, IParser<Creator> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

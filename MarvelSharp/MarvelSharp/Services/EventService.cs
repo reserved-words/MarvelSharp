@@ -12,7 +12,12 @@ namespace MarvelSharp.Services
 {
     public class EventService : BaseService<Event>
     {
-        public EventService(IHttpService httpService, IParser<Event> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public EventService(string apiPublicKey, string apiPrivateKey)
+            :base(ServiceLocator.HttpService, ServiceLocator.EventParser, ServiceLocator.UrlBuilder, apiPublicKey, apiPrivateKey)
+        {
+        }
+
+        internal EventService(IHttpService httpService, IParser<Event> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

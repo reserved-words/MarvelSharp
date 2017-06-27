@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace MarvelSharp.Extensions
 {
-    public static class DictionaryExtensionMethods
+    internal static class DictionaryExtensionMethods
     {
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, bool? value)
         {

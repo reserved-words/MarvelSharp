@@ -1,18 +1,19 @@
 ﻿using MarvelSharp.Interfaces;
 using MarvelSharp.Model;
 using MarvelSharp.Parameters;
-using MarvelSharp.Parsers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MarvelSharp.Services
 {
     public class SeriesService : BaseService<Series>
     {
-        public SeriesService(IHttpService httpService, IParser<Series> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public SeriesService(string apiPublicKey, string apiPrivateKey)
+            :base(ServiceLocator.HttpService, ServiceLocator.SeriesParser, ServiceLocator.UrlBuilder, apiPublicKey, apiPrivateKey)
+        {
+        }
+
+        internal SeriesService(IHttpService httpService, IParser<Series> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

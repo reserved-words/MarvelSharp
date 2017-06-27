@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
-    public class CreatorParser : BaseParser<Creator>
+    internal class CreatorParser : BaseParser<Creator>
     {
         public override Creator Parse(dynamic result)
         {

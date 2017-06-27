@@ -12,7 +12,12 @@ namespace MarvelSharp.Services
 {
     public class ComicService : BaseService<Comic>
     {
-        public ComicService(IHttpService httpService, IParser<Comic> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public ComicService(string apiPublicKey, string apiPrivateKey)
+            :base(ServiceLocator.HttpService, ServiceLocator.ComicParser, ServiceLocator.UrlBuilder, apiPublicKey, apiPrivateKey)
+        {
+        }
+
+        internal ComicService(IHttpService httpService, IParser<Comic> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

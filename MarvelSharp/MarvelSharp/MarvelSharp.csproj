@@ -59,7 +59,7 @@
     <Compile Include="Interfaces\IHasher.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IUrlBuilder.cs" />
-    <Compile Include="MarvelSharp.cs" />
+    <Compile Include="ServiceLocator.cs" />
     <Compile Include="Parameters\StoryParameters.cs" />
     <Compile Include="Parsers\CreatorParser.cs" />
     <Compile Include="Parsers\SeriesParser.cs" />

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
-    public class EventParser : BaseParser<Event>
+    internal class EventParser : BaseParser<Event>
     {
         public override Event Parse(dynamic result)
         {

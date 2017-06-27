@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
-    public class StoryParser : BaseParser<Story>
+    internal class StoryParser : BaseParser<Story>
     {
         public override Story Parse(dynamic result)
         {

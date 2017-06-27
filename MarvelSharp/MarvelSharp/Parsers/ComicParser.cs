@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
-    public class ComicParser : BaseParser<Comic>
+    internal class ComicParser : BaseParser<Comic>
     {
         public override Comic Parse(dynamic result)
         {

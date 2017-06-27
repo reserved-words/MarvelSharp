@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace MarvelSharp.Extensions
 {
-    public static class EnumExtensionMethods
+    internal static class EnumExtensionMethods
     {
         public static T GetAttribute<T>(this Enum value) where T : Attribute
         {

@@ -2,7 +2,7 @@
 
 namespace MarvelSharp.Parsers
 {
-    public class CharacterParser : BaseParser<Character>
+    internal class CharacterParser : BaseParser<Character>
     {
         public override Character Parse(dynamic result)
         {

@@ -26,10 +26,10 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine();
             }
 
-            var characterService = MarvelSharp.GetCharacterService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            var comicService = MarvelSharp.GetComicService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            var eventService = MarvelSharp.GetEventService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            var seriesService = MarvelSharp.GetSeriesService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
+            var characterService = new CharacterService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
+            var comicService = new ComicService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
+            var eventService = new EventService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
+            var seriesService = new SeriesService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
 
             TestGetComicsByCharacter(comicService);
             TestGetAll(characterService);

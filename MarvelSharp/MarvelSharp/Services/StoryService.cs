@@ -1,18 +1,19 @@
 ﻿using MarvelSharp.Interfaces;
 using MarvelSharp.Model;
 using MarvelSharp.Parameters;
-using MarvelSharp.Parsers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MarvelSharp.Services
 {
     public class StoryService : BaseService<Story>
     {
-        public StoryService(IHttpService httpService, IParser<Story> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public StoryService(string apiPublicKey, string apiPrivateKey)
+            :base(ServiceLocator.HttpService, ServiceLocator.StoryParser, ServiceLocator.UrlBuilder, apiPublicKey, apiPrivateKey)
+        {
+        }
+
+        internal StoryService(IHttpService httpService, IParser<Story> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

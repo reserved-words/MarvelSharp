@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MarvelSharp.Utilities
 {
-    public class UrlBuilder : IUrlBuilder
+    internal class UrlBuilder : IUrlBuilder
     {
         private readonly IHasher _hasher;
 

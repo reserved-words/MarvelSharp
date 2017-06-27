@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MarvelSharp.Parsers
 {
-    public abstract class BaseParser<T> : IParser<T>
+    internal abstract class BaseParser<T> : IParser<T>
     {
         public Response<T1> GetResponse<T1>(dynamic parsed)
         {

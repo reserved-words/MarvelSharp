@@ -8,7 +8,12 @@ namespace MarvelSharp.Services
 {
     public class CharacterService : BaseService<Character>
     {
-        public CharacterService(IHttpService httpService, IParser<Character> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public CharacterService(string apiPublicKey, string apiPrivateKey)
+            :base(ServiceLocator.HttpService, ServiceLocator.CharacterParser, ServiceLocator.UrlBuilder, apiPublicKey, apiPrivateKey)
+        {
+        }
+
+        internal CharacterService(IHttpService httpService, IParser<Character> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
             :base(httpService, parser, urlBuilder, apiPublicKey, apiPrivateKey)
         {
         }

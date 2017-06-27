@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MarvelSharp.Parsers
 {
-    public class SeriesParser : BaseParser<Series>
+    internal class SeriesParser : BaseParser<Series>
     {
         public override Series Parse(dynamic result)
         {

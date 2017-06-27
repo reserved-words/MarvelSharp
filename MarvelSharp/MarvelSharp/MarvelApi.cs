@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp
 {
-    public static class MarvelApi
+    internal static class MarvelApi
     {
         public static string Base = "https://gateway.marvel.com";
 

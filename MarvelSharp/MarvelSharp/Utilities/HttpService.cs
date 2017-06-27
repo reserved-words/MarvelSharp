@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Utilities
 {
-    public class HttpService : IHttpService
+    internal class HttpService : IHttpService
     {
         public async Task<string> GetAsync(string url)
         {
