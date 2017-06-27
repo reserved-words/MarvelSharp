@@ -35,6 +35,7 @@ namespace MarvelSharp
         public static string GetEvent = "/v1/public/events/{0}";
         public static string GetEventCharacters = "/v1/public/events/{0}/characters";
         public static string GetEventCreators = "/v1/public/events/{0}/creators";
+        public static string GetEventComics = "/v1/public/events/{0}/comics";
         public static string GetEventSeries = "/v1/public/events/{0}/series";
         public static string GetEventStories = "/v1/public/events/{0}/stories";
 

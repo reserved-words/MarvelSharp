@@ -83,5 +83,65 @@ namespace MarvelSharp.Tests.Unit.Services
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Comic>>(It.IsAny<object>()), Times.Once);
         }
+
+        [Test]
+        public void GetByCreatorAsync_CallsApiMethod()
+        {
+            // Arrange
+            var sut = GetSubjectUnderTest();
+
+            // Act
+            var result = sut.GetByCreatorAsync(0).Result;
+
+            // Assert
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApi.GetCreatorComics, 0), null), Times.Once);
+            _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
+            _mockParser.Verify(p => p.GetResponse<List<Comic>>(It.IsAny<object>()), Times.Once);
+        }
+
+        [Test]
+        public void GetByEventAsync_CallsApiMethod()
+        {
+            // Arrange
+            var sut = GetSubjectUnderTest();
+
+            // Act
+            var result = sut.GetByEventAsync(0).Result;
+
+            // Assert
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApi.GetEventComics, 0), null), Times.Once);
+            _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
+            _mockParser.Verify(p => p.GetResponse<List<Comic>>(It.IsAny<object>()), Times.Once);
+        }
+
+        [Test]
+        public void GetBySeriesAsync_CallsApiMethod()
+        {
+            // Arrange
+            var sut = GetSubjectUnderTest();
+
+            // Act
+            var result = sut.GetBySeriesAsync(0).Result;
+
+            // Assert
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApi.GetSeriesComics, 0), null), Times.Once);
+            _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
+            _mockParser.Verify(p => p.GetResponse<List<Comic>>(It.IsAny<object>()), Times.Once);
+        }
+
+        [Test]
+        public void GetByStoryAsync_CallsApiMethod()
+        {
+            // Arrange
+            var sut = GetSubjectUnderTest();
+
+            // Act
+            var result = sut.GetByStoryAsync(0).Result;
+
+            // Assert
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApi.GetStoryComics, 0), null), Times.Once);
+            _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
+            _mockParser.Verify(p => p.GetResponse<List<Comic>>(It.IsAny<object>()), Times.Once);
+        }
     }
 }
