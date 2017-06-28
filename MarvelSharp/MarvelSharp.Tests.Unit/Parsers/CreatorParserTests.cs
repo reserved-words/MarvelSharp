@@ -10,7 +10,7 @@ namespace MarvelSharp.Tests.Unit.Parsers
     [TestFixture]
     public class CreatorParserTests
     {
-        [Test]
+        // [Test]
         public void Parse_ReturnsCreator()
         {
             // Arrange
