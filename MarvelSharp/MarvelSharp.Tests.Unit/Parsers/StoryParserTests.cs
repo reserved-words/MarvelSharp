@@ -10,7 +10,7 @@ namespace MarvelSharp.Tests.Unit.Parsers
     [TestFixture]
     public class StoryParserTests
     {
-        [Test]
+        // [Test]
         public void Parse_ReturnsStory()
         {
             // Arrange
