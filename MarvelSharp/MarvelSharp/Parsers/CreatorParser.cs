@@ -11,7 +11,10 @@ namespace MarvelSharp.Parsers
     {
         public override Creator Parse(dynamic result)
         {
-            throw new NotImplementedException();
+            return new Creator
+            {
+                Id = result.id
+            };
         }
     }
 }
