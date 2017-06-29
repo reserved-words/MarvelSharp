@@ -2,10 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MarvelSharp.Interfaces;
 
 namespace MarvelSharp.Parameters
 {
-    public abstract class ParametersBase
+    public abstract class ParametersBase : IParameters
     {
         public Dictionary<string, string> ToDictionary()
         {

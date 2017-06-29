@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MarvelSharp.Tests
+namespace MarvelSharp.Tests.Unit.Helpers
 {
     public static class TestJson
     {

@@ -1,6 +1,4 @@
 ﻿using MarvelSharp.Interfaces;
-using MarvelSharp.Parameters;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,25 +8,27 @@ namespace MarvelSharp.Utilities
     internal class UrlBuilder : IUrlBuilder
     {
         private readonly IHasher _hasher;
+        private readonly IDateProvider _dateProvider;
 
-        public UrlBuilder(IHasher hasher)
+        public UrlBuilder(IHasher hasher, IDateProvider dateProvider)
         {
+            _dateProvider = dateProvider;
             _hasher = hasher;
         }
 
-        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, ParametersBase parameters = null)
+        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, IParameters parameters = null)
         {
             var url = $"{MarvelApi.Base}{urlSuffix}";
 
             var dictionary = parameters?.ToDictionary() ?? new Dictionary<string, string>();
 
-            var timestamp = DateTime.Now.ToString("HHMMddmmss");
+            var timestamp = _dateProvider.GetCurrentTime().ToString(MarvelApi.ParameterTimeStampFormat);
 
-            dictionary.Add("apikey", apiPublicKey);
-            dictionary.Add("ts", timestamp);
-            dictionary.Add("hash", _hasher.Hash(timestamp + apiPrivateKey + apiPublicKey));
+            dictionary.Add(MarvelApi.ParameterApiKey, apiPublicKey);
+            dictionary.Add(MarvelApi.ParameterTimeStamp, timestamp);
+            dictionary.Add(MarvelApi.ParameterHash, _hasher.Hash(timestamp + apiPrivateKey + apiPublicKey));
 
-            return url + "?" + string.Join("&", dictionary.Select(p => string.Format("{0}={1}", p.Key, HttpUtility.UrlPathEncode(p.Value))));
+            return url + "?" + string.Join("&", dictionary.Select(p => $"{p.Key}={HttpUtility.UrlPathEncode(p.Value)}"));
         }
     }
 }

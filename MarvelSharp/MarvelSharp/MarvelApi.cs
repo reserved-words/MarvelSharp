@@ -56,5 +56,10 @@ namespace MarvelSharp
         public static string GetStorySeries = "/v1/public/stories/{0}/series";
 
         public static int SuccessCode = 200;
+
+        public static string ParameterTimeStampFormat = "yyMMddHHmmss";
+        public static string ParameterApiKey = "apikey";
+        public static string ParameterTimeStamp = "ts";
+        public static string ParameterHash = "hash";
     }
 }

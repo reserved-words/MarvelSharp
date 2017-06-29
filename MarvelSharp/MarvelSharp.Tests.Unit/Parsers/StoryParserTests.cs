@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
 using System.Linq;
+using MarvelSharp.Tests.Unit.Helpers;
 
 namespace MarvelSharp.Tests.Unit.Parsers
 {

@@ -1,12 +1,10 @@
 ﻿using MarvelSharp.Model;
 using MarvelSharp.Parsers;
+using MarvelSharp.Tests.Unit.Helpers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarvelSharp.Tests.Unit.Parsers
 {

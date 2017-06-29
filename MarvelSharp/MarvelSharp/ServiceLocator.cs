@@ -1,13 +1,13 @@
 ﻿using MarvelSharp.Interfaces;
 using MarvelSharp.Model;
 using MarvelSharp.Parsers;
-using MarvelSharp.Services;
 using MarvelSharp.Utilities;
 
 namespace MarvelSharp
 {
     internal static class ServiceLocator
     {
+        internal static IDateProvider DateProvider => new DateProvider();
         internal static IHasher Hasher => new MD5Hasher();
         internal static IHttpService HttpService => new HttpService();
         internal static IParser<Character> CharacterParser => new CharacterParser();
@@ -16,6 +16,6 @@ namespace MarvelSharp
         internal static IParser<Series> SeriesParser => new SeriesParser();
         internal static IParser<Story> StoryParser => new StoryParser();
         internal static IParser<Event> EventParser => new EventParser();
-        internal static IUrlBuilder UrlBuilder => new UrlBuilder(Hasher);
+        internal static IUrlBuilder UrlBuilder => new UrlBuilder(Hasher, DateProvider);
     }
 }

@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\StringExtensionMethods.cs" />
     <Compile Include="Parsers\CreatorParserTests.cs" />
     <Compile Include="Parsers\ComicParserTests.cs" />
     <Compile Include="Parsers\SeriesParserTest.cs" />
@@ -69,7 +70,8 @@
     <Compile Include="Services\ComicServiceTests.cs" />
     <Compile Include="Services\CreatorServiceTests.cs" />
     <Compile Include="Services\SeriesServiceTests.cs" />
-    <Compile Include="TestJson.cs" />
+    <Compile Include="Helpers\TestJson.cs" />
+    <Compile Include="Parameters\CharacterParametersTests.cs" />
     <Compile Include="Utilities\UrlBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>

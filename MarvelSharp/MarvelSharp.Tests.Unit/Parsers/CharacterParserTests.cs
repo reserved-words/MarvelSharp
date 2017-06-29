@@ -3,10 +3,8 @@ using MarvelSharp.Parsers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MarvelSharp.Tests.Unit.Helpers;
 
 namespace MarvelSharp.Tests.Unit.Parsers
 {
