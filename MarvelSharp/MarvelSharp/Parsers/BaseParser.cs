@@ -66,7 +66,9 @@ namespace MarvelSharp.Parsers
 
         protected Image ParseImage(dynamic result)
         {
-            return new Image { Path = result.path, Extension = result.extension };
+            return result == null
+                ? null
+                : new Image { Path = result.path, Extension = result.extension };
         }
 
         protected List<Image> ParseImages(dynamic images)
@@ -192,16 +194,15 @@ namespace MarvelSharp.Parsers
 
         protected Item ParseItem(dynamic item, bool includeType = false, bool includeRole = false)
         {
-            if (item == null)
-                return null;
-
-            return new Item
-            {
-                Name = item.name,
-                ResourceUri = item.resourceURI,
-                Type = includeType ? item.type : null,
-                Role = includeRole ? item.role : null
-            };
+            return item == null
+                ? null
+                : new Item
+                {
+                    Name = item.name,
+                    ResourceUri = item.resourceURI,
+                    Type = includeType ? item.type : null,
+                    Role = includeRole ? item.role : null
+                };
         }
     }
 }

@@ -1,9 +1,4 @@
 ﻿using MarvelSharp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
@@ -13,7 +8,19 @@ namespace MarvelSharp.Parsers
         {
             return new Story
             {
-                Id = result.id
+                Id = result.id,
+                Title = result.title,
+                Description = result.description,
+                ResourceUri = result.resourceURI,
+                Type = result.type,
+                Modified = result.modified,
+                Thumbnail = ParseImage(result.thumbnail),
+                Comics = ParseItemCollection(result.comics),
+                Series = ParseItemCollection(result.series),
+                Events = ParseItemCollection(result.events),
+                Characters = ParseItemCollection(result.characters),
+                Creators = ParseItemCollection(result.creators, false, true),
+                OriginalIssue = ParseItem(result.originalIssue)
             };
         }
     }

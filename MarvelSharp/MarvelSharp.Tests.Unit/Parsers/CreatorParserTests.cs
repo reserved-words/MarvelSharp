@@ -10,7 +10,7 @@ namespace MarvelSharp.Tests.Unit.Parsers
     [TestFixture]
     public class CreatorParserTests
     {
-        // [Test]
+        [Test]
         public void Parse_ReturnsCreator()
         {
             // Arrange
@@ -24,7 +24,7 @@ namespace MarvelSharp.Tests.Unit.Parsers
             // Assert
             Assert.AreEqual(12844, result.Id);
             Assert.AreEqual("Aco", result.FirstName);
-            Assert.AreEqual("MiddleName", result.MiddleName);
+            Assert.AreEqual("Middle Name", result.MiddleName);
             Assert.AreEqual("Last Name", result.LastName);
             Assert.AreEqual("Suffix", result.Suffix);
             Assert.AreEqual("Aco", result.FullName);
@@ -39,11 +39,9 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("http://gateway.marvel.com/v1/public/comics/55740", result.Comics.Items.First().ResourceUri);
             Assert.AreEqual("Squadron Supreme Vol. 2: Civil War II (Trade Paperback)", result.Comics.Items.First().Name);
             Assert.AreEqual(null, result.Comics.Items.First().Type);
-            Assert.AreEqual(null, result.Comics.Items.First().Name);
             Assert.AreEqual("http://gateway.marvel.com/v1/public/comics/60051", result.Comics.Items.Last().ResourceUri);
             Assert.AreEqual("Uncanny X-Men Annual (2016) #1", result.Comics.Items.Last().Name);
             Assert.AreEqual(null, result.Comics.Items.Last().Type);
-            Assert.AreEqual(null, result.Comics.Items.Last().Name);
             Assert.AreEqual(2, result.Comics.Returned);
 
             Assert.AreEqual(2, result.Series.Available);
@@ -52,11 +50,9 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("http://gateway.marvel.com/v1/public/series/20519", result.Series.Items.First().ResourceUri);
             Assert.AreEqual("Squadron Supreme Vol. 2: Civil War II (2016)", result.Series.Items.First().Name);
             Assert.AreEqual(null, result.Series.Items.First().Type);
-            Assert.AreEqual(null, result.Series.Items.First().Name);
             Assert.AreEqual("http://gateway.marvel.com/v1/public/series/22014", result.Series.Items.Last().ResourceUri);
             Assert.AreEqual("Uncanny X-Men Annual (2016)", result.Series.Items.Last().Name);
             Assert.AreEqual(null, result.Series.Items.Last().Type);
-            Assert.AreEqual(null, result.Series.Items.Last().Name);
             Assert.AreEqual(2, result.Series.Returned);
 
             Assert.AreEqual(2, result.Stories.Available);
@@ -65,11 +61,11 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("http://gateway.marvel.com/v1/public/stories/122524", result.Stories.Items.First().ResourceUri);
             Assert.AreEqual("story from Squadron Supreme (2016)", result.Stories.Items.First().Name);
             Assert.AreEqual("interiorStory", result.Stories.Items.First().Type);
-            Assert.AreEqual(null, result.Stories.Items.First().Name);
+            Assert.AreEqual(null, result.Stories.Items.First().Role);
             Assert.AreEqual("http://gateway.marvel.com/v1/public/stories/130633", result.Stories.Items.Last().ResourceUri);
             Assert.AreEqual("cover from Uncanny X-Men Annual (2020) #1", result.Stories.Items.Last().Name);
             Assert.AreEqual("cover", result.Stories.Items.Last().Type);
-            Assert.AreEqual(null, result.Stories.Items.Last().Name);
+            Assert.AreEqual(null, result.Stories.Items.Last().Role);
             Assert.AreEqual(2, result.Stories.Returned);
 
             Assert.AreEqual(0, result.Events.Available);
