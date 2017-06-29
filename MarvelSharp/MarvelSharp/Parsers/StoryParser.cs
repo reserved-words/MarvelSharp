@@ -11,7 +11,10 @@ namespace MarvelSharp.Parsers
     {
         public override Story Parse(dynamic result)
         {
-            throw new NotImplementedException();
+            return new Story
+            {
+                Id = result.id
+            };
         }
     }
 }
