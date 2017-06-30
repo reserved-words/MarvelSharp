@@ -31,9 +31,9 @@ namespace MarvelSharp.Services
         /// </summary>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetAllAsync(ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetAllAsync(int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(MarvelApi.GetAllComics, parameters);
+            return await GetList(MarvelApi.GetAllComics, limit, offset, parameters);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace MarvelSharp.Services
         /// <returns></returns>
         public async Task<Response<Comic>> GetByIdAsync(int comicId)
         {
-            return await GetSingle(string.Format(MarvelApi.GetComic, comicId), null);
+            return await GetSingle(string.Format(MarvelApi.GetComic, comicId));
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace MarvelSharp.Services
         /// <param name="characterId"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetByCharacterAsync(int characterId, ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetByCharacterAsync(int characterId, int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(string.Format(MarvelApi.GetCharacterComics, characterId), parameters);
+            return await GetList(string.Format(MarvelApi.GetCharacterComics, characterId), limit, offset, parameters);
         }
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace MarvelSharp.Services
         /// <param name="creatorId"></param>
         /// <param name="paramters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetByCreatorAsync(int creatorId, ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetByCreatorAsync(int creatorId, int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(string.Format(MarvelApi.GetCreatorComics, creatorId), parameters);
+            return await GetList(string.Format(MarvelApi.GetCreatorComics, creatorId), limit, offset, parameters);
         }
 
         /// <summary>
@@ -74,9 +74,9 @@ namespace MarvelSharp.Services
         /// <param name="eventId"></param>
         /// <param name="paramters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetByEventAsync(int eventId, ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(string.Format(MarvelApi.GetEventComics, eventId), parameters);
+            return await GetList(string.Format(MarvelApi.GetEventComics, eventId), limit, offset, parameters);
         }
 
         /// <summary>
@@ -85,9 +85,9 @@ namespace MarvelSharp.Services
         /// <param name="seriesId"></param>
         /// <param name="paramters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetBySeriesAsync(int seriesId, ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(string.Format(MarvelApi.GetSeriesComics, seriesId), parameters);
+            return await GetList(string.Format(MarvelApi.GetSeriesComics, seriesId), limit, offset, parameters);
         }
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace MarvelSharp.Services
         /// <param name="storyId"></param>
         /// <param name="paramters"></param>
         /// <returns></returns>
-        public async Task<Response<List<Comic>>> GetByStoryAsync(int storyId, ComicParameters parameters = null)
+        public async Task<Response<List<Comic>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, ComicParameters parameters = null)
         {
-            return await GetList(string.Format(MarvelApi.GetStoryComics, storyId), parameters);
+            return await GetList(string.Format(MarvelApi.GetStoryComics, storyId), limit, offset, parameters);
         }
     }
 }

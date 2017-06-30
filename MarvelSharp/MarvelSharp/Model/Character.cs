@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Model
 {
-    public class Character
+    public class Character : ItemBase
     {
         public Character()
         {
             Urls = new List<Url>();
         }
 
-        public int? Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public DateTimeOffset? Modified { get; set; }
@@ -24,5 +23,7 @@ namespace MarvelSharp.Model
         public ItemCollection Series { get; set; }
         public ItemCollection Stories { get; set; }
         public ItemCollection Events { get; set; }
+
+        public override string ToString() => Name;
     }
 }

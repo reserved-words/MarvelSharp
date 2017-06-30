@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Model
 {
-    public class Event
+    public class Event : ItemBase
     {
-        public int? Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string ResourceUri { get; set; }
@@ -24,5 +23,7 @@ namespace MarvelSharp.Model
         public ItemCollection Creators { get; set; }
         public Item Next { get; set; }
         public Item Previous { get; set; }
+
+        public override string ToString() => Title;
     }
 }

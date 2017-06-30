@@ -21,9 +21,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
                 Series = new List<int> { 12 },
                 Events = new List<int>(),
                 Stories = new List<int> { 0 },
-                OrderBy = CharacterOrder.NameAscending,
-                Limit = 5,
-                Offset = 10
+                OrderBy = CharacterOrder.NameAscending
             };
 
             // Act

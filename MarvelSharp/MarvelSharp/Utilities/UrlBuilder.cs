@@ -16,7 +16,7 @@ namespace MarvelSharp.Utilities
             _hasher = hasher;
         }
 
-        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, IParameters parameters = null)
+        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, int? limit = null, int? offset = null, IParameters parameters = null)
         {
             var url = $"{MarvelApi.Base}{urlSuffix}";
 
@@ -27,6 +27,16 @@ namespace MarvelSharp.Utilities
             dictionary.Add(MarvelApi.ParameterApiKey, apiPublicKey);
             dictionary.Add(MarvelApi.ParameterTimeStamp, timestamp);
             dictionary.Add(MarvelApi.ParameterHash, _hasher.Hash(timestamp + apiPrivateKey + apiPublicKey));
+
+            if (limit.HasValue)
+            {
+                dictionary.Add(MarvelApi.ParameterLimit, limit.Value.ToString());
+            }
+
+            if (offset.HasValue)
+            {
+                dictionary.Add(MarvelApi.ParameterOffset, offset.Value.ToString());
+            }
 
             return url + "?" + string.Join("&", dictionary.Select(p => $"{p.Key}={HttpUtility.UrlPathEncode(p.Value)}"));
         }

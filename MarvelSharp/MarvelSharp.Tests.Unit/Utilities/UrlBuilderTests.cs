@@ -58,14 +58,16 @@ namespace MarvelSharp.Tests.Unit.Utilities
             var sut = new UrlBuilder(mockHasher.Object, mockDateProvider.Object);
             
             // Act
-            var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix, mockParameters.Object);
+            var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix, 10, 20, mockParameters.Object);
 
             // Assert
             Assert.That(result.StartsWith($"{MarvelApi.Base}{TestUrlSuffix}?"));
             Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterApiKey, PublicApiKey));
             Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterTimeStamp, CurrentTimeString));
             Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterHash, TestHashedValue));
-            
+            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterLimit, "10"));
+            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterOffset, "20"));
+
             foreach (var entry in mockDictionary)
             {
                 Assert.That(result.ContainsKeyValuePair(entry.Key, entry.Value), $"String does not contain the an expression for {entry.Key}={entry.Value}");

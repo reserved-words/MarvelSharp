@@ -32,7 +32,6 @@ namespace MarvelSharp.Parameters
         public string Ean { get; set; }
         public string Issn { get; set; }
         public bool? HasDigitalIssue { get; set; }
-        public DateTime? ModifiedSince { get; set; }
         public List<int> Creators { get; set; }
         public List<int> Series { get; set; }
         public List<int> Events { get; set; }
@@ -40,7 +39,5 @@ namespace MarvelSharp.Parameters
         public int? SharedAppearances { get; set; }
         public List<int> Collaborators { get; set; }
         public ComicOrder? OrderBy { get; set; }
-        public int? Limit { get; set; }
-        public int? Offset { get; set; }
     }
 }

@@ -61,5 +61,7 @@ namespace MarvelSharp
         public static string ParameterApiKey = "apikey";
         public static string ParameterTimeStamp = "ts";
         public static string ParameterHash = "hash";
+        public static string ParameterOffset = "offset";
+        public static string ParameterLimit = "limit";
     }
 }

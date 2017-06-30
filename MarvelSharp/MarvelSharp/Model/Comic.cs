@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Model
 {
-    public class Comic
+    public class Comic : ItemBase
     {
         public Comic()
         {
@@ -16,7 +16,6 @@ namespace MarvelSharp.Model
             Prices = new List<PriceItem>();
         }
 
-        public int? Id { get; set; }
         public int? DigitalId { get; set; }
         public string Title { get; set; }
         public double? IssueNumber { get; set; }
@@ -46,5 +45,6 @@ namespace MarvelSharp.Model
         public ItemCollection Stories { get; set; }
         public ItemCollection Events { get; set; }
 
+        public override string ToString() => Title;
     }
 }

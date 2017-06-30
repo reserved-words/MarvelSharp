@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace MarvelSharp.Model
 {
-    public class Creator
+    public class Creator : ItemBase
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -22,5 +21,7 @@ namespace MarvelSharp.Model
         public ItemCollection Stories { get; set; }
         public ItemCollection Events { get; set; }
         public List<Url> Urls { get; set; }
+
+        public override string ToString() => FullName;
     }
 }

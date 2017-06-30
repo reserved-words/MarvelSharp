@@ -8,6 +8,8 @@ namespace MarvelSharp.Parameters
 {
     public abstract class ParametersBase : IParameters
     {
+        public DateTime? ModifiedSince { get; set; }
+        
         public Dictionary<string, string> ToDictionary()
         {
             var dictionary = new Dictionary<string, string>();

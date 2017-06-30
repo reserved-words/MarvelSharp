@@ -24,19 +24,19 @@ namespace MarvelSharp.Services
             _urlBuilder = urlBuilder;
         }
 
-        protected async Task<Response<List<T>>> GetList(string urlSuffix, ParametersBase parameters)
+        protected async Task<Response<List<T>>> GetList(string urlSuffix, int? limit, int? offset, ParametersBase parameters)
         {
-            return await GetResponse<List<T>>(urlSuffix, parameters);
+            return await GetResponse<List<T>>(urlSuffix, limit, offset, parameters);
         }
 
-        protected async Task<Response<T>> GetSingle(string urlSuffix, ParametersBase parameters)
+        protected async Task<Response<T>> GetSingle(string urlSuffix)
         {
-            return await GetResponse<T>(urlSuffix, parameters);
+            return await GetResponse<T>(urlSuffix, 1, 0, null);
         }
 
-        private async Task<Response<T1>> GetResponse<T1>(string urlSuffix, ParametersBase parameters)
+        private async Task<Response<T1>> GetResponse<T1>(string urlSuffix, int? limit, int? offset, ParametersBase parameters)
         {
-            var url = _urlBuilder.BuildUrl(_apiPublicKey, _apiPrivateKey, urlSuffix, parameters);
+            var url = _urlBuilder.BuildUrl(_apiPublicKey, _apiPrivateKey, urlSuffix, limit, offset, parameters);
 
             var httpResponse = await _httpService.GetAsync(url);
 
