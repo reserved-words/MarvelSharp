@@ -2,13 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MarvelSharp.Model;
+using MarvelSharp.Parameters;
 
 namespace MarvelSharp.Tests.ConsoleApp
 {
     public class Program
     {
         private const int ReturnItems = 25;
+        private const string PreviousPageCode = "<";
+        private const string NextPageCode = ">";
+        private const int PreviousPageValue = -1;
+        private const int NextPageValue = -2;
         private static CharacterService _characterService;
         private static ComicService _comicService;
         private static EventService _eventService;
@@ -28,52 +34,52 @@ namespace MarvelSharp.Tests.ConsoleApp
 
         private static readonly Dictionary<string, Func<RequestDetails,List<ItemBase>>> MethodDictionary  = new Dictionary<string, Func<RequestDetails, List<ItemBase>>>
         {
-            { "10", listDetails => _characterService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "20", listDetails => _comicService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "30", listDetails => _creatorService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "40", listDetails => _eventService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "50", listDetails => _seriesService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "60", listDetails => _storyService.GetAllAsync(ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "10", rd => GetList<Character, CharacterParameters>(_characterService.GetAllAsync, rd) },
+            { "20", rd => GetList<Comic, ComicParameters>(_comicService.GetAllAsync, rd) },
+            { "30", rd => GetList<Creator, CreatorParameters>(_creatorService.GetAllAsync, rd) },
+            { "40", rd => GetList<Event, EventParameters>(_eventService.GetAllAsync, rd) },
+            { "50", rd => GetList<Series, SeriesParameters>(_seriesService.GetAllAsync, rd) },
+            { "60", rd => GetList<Story, StoryParameters>(_storyService.GetAllAsync, rd) },
 
-            { "11", listDetails => new List<ItemBase> { _characterService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
-            { "22", listDetails => new List<ItemBase> { _comicService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
-            { "33", listDetails => new List<ItemBase> { _creatorService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
-            { "44", listDetails => new List<ItemBase> { _eventService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
-            { "55", listDetails => new List<ItemBase> { _seriesService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
-            { "66", listDetails => new List<ItemBase> { _storyService.GetByIdAsync(listDetails.ItemId).Result.Data.Result } },
+            { "11", rd => new List<ItemBase> { _characterService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "22", rd => new List<ItemBase> { _comicService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "33", rd => new List<ItemBase> { _creatorService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "44", rd => new List<ItemBase> { _eventService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "55", rd => new List<ItemBase> { _seriesService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "66", rd => new List<ItemBase> { _storyService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            
+            { "21", rd => GetList<Comic, ComicParameters>(_comicService.GetByCharacterAsync, rd) },
+            { "41", rd => GetList<Event, EventParameters>(_eventService.GetByCharacterAsync, rd) },
+            { "51", rd => GetList<Series, SeriesParameters>(_seriesService.GetByCharacterAsync, rd) },
+            { "61", rd => GetList<Story, StoryParameters>(_storyService.GetByCharacterAsync, rd) },
 
-            { "21", listDetails => _comicService.GetByCharacterAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "41", listDetails => _eventService.GetByCharacterAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "51", listDetails => _seriesService.GetByCharacterAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "61", listDetails => _storyService.GetByCharacterAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "12", rd => GetList<Character, CharacterParameters>(_characterService.GetByComicAsync, rd) },
+            { "32", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByComicAsync, rd) },
+            { "42", rd => GetList<Event, EventParameters>(_eventService.GetByComicAsync, rd) },
+            { "62", rd => GetList<Story, StoryParameters>(_storyService.GetByComicAsync, rd) },
 
-            { "12", listDetails => _characterService.GetByComicAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "32", listDetails => _creatorService.GetByComicAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "42", listDetails => _eventService.GetByComicAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "62", listDetails => _storyService.GetByComicAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "23", rd => GetList<Comic, ComicParameters>(_comicService.GetByCreatorAsync, rd) },
+            { "43", rd => GetList<Event, EventParameters>(_eventService.GetByCreatorAsync, rd) },
+            { "53", rd => GetList<Series, SeriesParameters>(_seriesService.GetByCreatorAsync, rd) },
+            { "63", rd => GetList<Story, StoryParameters>(_storyService.GetByCreatorAsync, rd) },
 
-            { "23", listDetails => _comicService.GetByCreatorAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "43", listDetails => _eventService.GetByCreatorAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "53", listDetails => _seriesService.GetByCreatorAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "63", listDetails => _storyService.GetByCreatorAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "14", rd => GetList<Character, CharacterParameters>(_characterService.GetByEventAsync, rd) },
+            { "24", rd => GetList<Comic, ComicParameters>(_comicService.GetByEventAsync, rd) },
+            { "34", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByEventAsync, rd) },
+            { "54", rd => GetList<Series, SeriesParameters>(_seriesService.GetByEventAsync, rd) },
+            { "64", rd => GetList<Story, StoryParameters>(_storyService.GetByEventAsync, rd) },
 
-            { "14", listDetails => _characterService.GetByEventAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "24", listDetails => _comicService.GetByEventAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "34", listDetails => _creatorService.GetByEventAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "54", listDetails => _seriesService.GetByEventAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "64", listDetails => _storyService.GetByEventAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "15", rd => GetList<Character, CharacterParameters>(_characterService.GetBySeriesAsync, rd) },
+            { "25", rd => GetList<Comic, ComicParameters>(_comicService.GetBySeriesAsync, rd) },
+            { "35", rd => GetList<Creator, CreatorParameters>(_creatorService.GetBySeriesAsync, rd) },
+            { "45", rd => GetList<Event, EventParameters>(_eventService.GetBySeriesAsync, rd) },
+            { "65", rd => GetList<Story, StoryParameters>(_storyService.GetBySeriesAsync, rd) },
 
-            { "15", listDetails => _characterService.GetBySeriesAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "25", listDetails => _comicService.GetBySeriesAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "35", listDetails => _creatorService.GetBySeriesAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "45", listDetails => _eventService.GetBySeriesAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "65", listDetails => _storyService.GetBySeriesAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-
-            { "16", listDetails => _characterService.GetByStoryAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "26", listDetails => _comicService.GetByStoryAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "36", listDetails => _creatorService.GetByStoryAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "46", listDetails => _eventService.GetByStoryAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
-            { "56", listDetails => _seriesService.GetByStoryAsync(listDetails.ItemId, ReturnItems, (listDetails.Page - 1) * ReturnItems).Result.Data.Result.OfType<ItemBase>().ToList() },
+            { "16", rd => GetList<Character, CharacterParameters>(_characterService.GetByStoryAsync, rd) },
+            { "26", rd => GetList<Comic, ComicParameters>(_comicService.GetByStoryAsync, rd) },
+            { "36", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByStoryAsync, rd) },
+            { "46", rd => GetList<Event, EventParameters>(_eventService.GetByStoryAsync, rd) },
+            { "56", rd => GetList<Series, SeriesParameters>(_seriesService.GetByStoryAsync, rd) }
         };
 
         public static void Main(string[] args)
@@ -101,41 +107,45 @@ namespace MarvelSharp.Tests.ConsoleApp
             _storyService = new StoryService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
             _creatorService = new CreatorService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
 
-            ShowMainMenu();
+            MainMenu();
         }
 
-        private static void ShowMainMenu()
+        private static void MainMenu()
         {
             PrintHeader("Main Menu");
 
+            DisplayMainMenuOptions();
+
+            var input = ParseInput(false);
+
+            if (input == null || !ItemTypesPlural.Keys.Contains(input.Value))
+                return;
+
+            DisplayRequestedList(new RequestDetails(input.Value, 1, null));
+        }
+
+        private static void DisplayMainMenuOptions()
+        {
             foreach (var kvp in ItemTypesPlural)
             {
                 Console.WriteLine($"{kvp.Key}\tFetch {kvp.Value}");
             }
 
-            var input = GetInput();
-
-            if (input == null)
-                return;
-
-            if (!ItemTypesPlural.Keys.Contains(input.Value))
-                return;
-
-            DisplayList(new RequestDetails(input.Value, 1, null));
+            Console.WriteLine();
         }
 
-        private static void DisplayList(RequestDetails requestDetails)
+        private static void DisplayRequestedList(RequestDetails rd)
         {
-            if (requestDetails.FetchType == requestDetails.ItemType)
+            if (rd.FetchType == rd.ItemType)
             {
-                DisplayItem(requestDetails);
+                DisplayRequestedItem(rd);
             }
 
-            var list = FetchItems(requestDetails);
+            var list = FetchItems(rd);
 
-            PrintHeader((requestDetails.ItemId == 0
-                ? "ALL " + ItemTypesPlural[requestDetails.FetchType]
-                : ItemTypesPlural[requestDetails.FetchType] + " for " + requestDetails.ItemName) + " (PAGE " + requestDetails.Page + ")");
+            PrintHeader((rd.ItemId == 0
+                ? "ALL " + ItemTypesPlural[rd.FetchType]
+                : ItemTypesPlural[rd.FetchType] + " for " + rd.ItemName) + " (PAGE " + rd.Page + ")");
 
             foreach (var item in list)
             {
@@ -144,80 +154,62 @@ namespace MarvelSharp.Tests.ConsoleApp
 
             Console.WriteLine();
 
-            if (requestDetails.PreviousRequest != null)
-            {
-                Console.WriteLine("9\tPrevious page");
-            }
-
-            Console.WriteLine("999\tNext Page");
-
-            var selectedId = GetInput();
-
-            if (!selectedId.HasValue)
-                return;
-
-            if (selectedId == 9)
-            {
-                DisplayList(requestDetails.PreviousRequest);
-                return;
-            }
-
-            if (selectedId == 999)
-            {
-                DisplayList(new RequestDetails(requestDetails.FetchType, requestDetails.Page + 1, requestDetails.ItemType, requestDetails.ItemId, requestDetails.ItemName, requestDetails));
-                return;
-            }
-
-            var selectedItem = list.Single(i => i.Id == selectedId);
-
-            var newListDetails = new RequestDetails(requestDetails.FetchType, 1, requestDetails.FetchType, selectedItem.Id.Value, selectedItem.ToString(), requestDetails);
-
-            DisplayItem(newListDetails);
+            DisplayItemListOptions(rd, list);
         }
 
-        private static List<ItemBase> FetchItems(RequestDetails requestDetails)
+        private static void DisplayRequestedItem(RequestDetails rd)
         {
-            var combinedTypes = requestDetails.FetchType.ToString() + requestDetails.ItemType.ToString();
-            
-            return MethodDictionary[combinedTypes](requestDetails);
-        }
-
-        private static int? GetInput()
-        {
-            Console.WriteLine(0 + "\t" + "Back to Main Menu");
-
-            Console.WriteLine();
-
-            var input = Console.ReadLine();
-
-            if (input == "0")
-            {
-                ShowMainMenu();
-                return null;
-            }
-
-            int inputInt;
-            if (!int.TryParse(input, out inputInt))
-                return null;
-
-            return inputInt;
-        }
-
-        private static void DisplayItem(RequestDetails requestDetails)
-        {
-            var item = GetItem(requestDetails);
+            var item = FetchItems(rd).Single();
 
             PrintHeader(item.ToString());
 
-            DisplayHelper.DisplayItem(item);
-            Console.WriteLine();
+            DisplayHelper.DisplayItemDetails(item);
 
+            DisplayItemOptions(item, rd);
+        }
+
+        private static List<ItemBase> FetchItems(RequestDetails rd)
+        {
+            var combinedTypes = rd.FetchType.ToString() + rd.ItemType.ToString();
+            
+            return MethodDictionary[combinedTypes](rd);
+        }
+
+        private static int? ParseInput(bool includeMainMenuOption = true)
+        {
+            if (includeMainMenuOption)
+            {
+                Console.WriteLine(0 + "\t" + "Back to Main Menu");
+                Console.WriteLine(); 
+            }
+
+            var input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "0":
+                    MainMenu();
+                    return null;
+                case NextPageCode:
+                    return NextPageValue;
+                case PreviousPageCode:
+                    return PreviousPageValue;
+            }
+
+            int inputInt;
+            return int.TryParse(input, out inputInt)
+                ? inputInt
+                : (int?)null;
+        }
+
+        private static void DisplayItemOptions(ItemBase item, RequestDetails rd)
+        {
             foreach (var kvp in ItemTypesPlural)
             {
-                if (kvp.Key == requestDetails.ItemType)
+                if (kvp.Key == rd.ItemType)
                     continue;
 
-                if (!MethodDictionary.Keys.Contains(kvp.Key.ToString() + requestDetails.ItemType.ToString()))
+                if (!MethodDictionary.Keys.Contains(kvp.Key.ToString() + rd.ItemType.ToString()))
                     continue;
 
                 Console.WriteLine($"{kvp.Key}\tFetch {kvp.Value}");
@@ -225,29 +217,63 @@ namespace MarvelSharp.Tests.ConsoleApp
 
             Console.WriteLine();
 
-            if (requestDetails.PreviousRequest != null)
+            if (rd.PreviousRequest != null)
             {
-                Console.WriteLine("9\tPrevious page");
+                Console.WriteLine($"{PreviousPageCode}\tPrevious page");
             }
 
-            var fetchType = GetInput();
+            var input = ParseInput();
 
-            if (!fetchType.HasValue)
-                return;
-
-            if (fetchType == 9)
+            switch (input)
             {
-                DisplayList(requestDetails.PreviousRequest);
-                return;
-            }
-
-            DisplayList(new RequestDetails(fetchType.Value, 1, requestDetails.ItemType, requestDetails.ItemId, item.ToString(), requestDetails));
+                case null:
+                    return;
+                case PreviousPageValue:
+                    DisplayRequestedList(rd.PreviousRequest);
+                    return;
+                default:
+                    DisplayRequestedList(new RequestDetails(
+                        input ?? 0, 
+                        1, 
+                        rd.ItemType, 
+                        rd.ItemId, 
+                        item.ToString(), 
+                        rd));
+                    break;
+            }            
         }
 
-        private static ItemBase GetItem(RequestDetails requestDetails)
+        private static void DisplayItemListOptions(RequestDetails rd, IEnumerable<ItemBase> list)
         {
-            var list = FetchItems(requestDetails);
-            return list.Single();
+            Console.WriteLine("Type ID to view further details");
+            Console.WriteLine();
+
+            if (rd.PreviousRequest != null)
+            {
+                Console.WriteLine($"{PreviousPageCode}\tPrevious page");
+            }
+
+            Console.WriteLine($"{NextPageCode}\tNext Page");
+
+            var input = ParseInput();
+
+            switch (input)
+            {
+                case null:
+                    return;
+                case PreviousPageValue:
+                    DisplayRequestedList(rd.PreviousRequest);
+                    return;
+                case NextPageValue:
+                    DisplayRequestedList(new RequestDetails(rd.FetchType, rd.Page + 1, rd.ItemType, rd.ItemId, rd.ItemName, rd));
+                    return;
+            }
+
+            var selectedItem = list.Single(i => i.Id == input);
+
+            var newListDetails = new RequestDetails(rd.FetchType, 1, rd.FetchType, selectedItem.Id ?? 0, selectedItem.ToString(), rd);
+
+            DisplayRequestedItem(newListDetails);
         }
 
         private static void PrintHeader(string header)
@@ -255,6 +281,16 @@ namespace MarvelSharp.Tests.ConsoleApp
             Console.WriteLine("------------------------------------------------------");
             Console.WriteLine(header.ToUpper());
             Console.WriteLine("------------------------------------------------------");
+        }
+
+        private static List<ItemBase> GetList<T1, T2>(Func<int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
+        {
+            return method(ReturnItems, (rd.Page - 0) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
+        }
+
+        private static List<ItemBase> GetList<T1, T2>(Func<int, int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
+        {
+            return method(rd.ItemId, ReturnItems, (rd.Page - 0) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
         }
     }
 }

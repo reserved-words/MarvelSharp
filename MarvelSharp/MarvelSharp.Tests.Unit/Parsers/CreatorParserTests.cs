@@ -78,5 +78,20 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("detail", result.Urls.Single().Type);
             Assert.AreEqual("http://marvel.com/comics/creators/12844/aco?utm_campaign=apiRef&utm_source=20f18f98d97b8d7b9733fa6bdcfaea77", result.Urls.Single().Value);
         }
+
+        [Test]
+        public void Parse_GivenNegativeModifiedValue_ReturnsCreator()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("creator2"));
+
+            var sut = new CreatorParser();
+
+            // Act
+            Creator result = sut.Parse(json);
+
+            // Assert
+            Assert.AreEqual(null, result.Modified);
+        }
     }
 }

@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestJson\creator2.json" />
     <None Include="TestJson\creator.json" />
     <None Include="TestJson\story.json" />
     <None Include="TestJson\series.json" />

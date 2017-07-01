@@ -1,0 +1,73 @@
+﻿{
+  "id": 12844,
+  "firstName": "Aco",
+  "middleName": "Middle Name",
+  "lastName": "Last Name",
+  "suffix": "Suffix",
+  "fullName": "Aco",
+  "modified": "-0001-11-30T00:00:00-0500",
+  "thumbnail": {
+    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+    "extension": "jpg"
+  },
+  "resourceURI": "http://gateway.marvel.com/v1/public/creators/12844",
+  "comics": {
+    "available": 2,
+    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12844/comics",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/55740",
+        "name": "Squadron Supreme Vol. 2: Civil War II (Trade Paperback)"
+      },
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/60051",
+        "name": "Uncanny X-Men Annual (2016) #1"
+      }
+    ],
+    "returned": 2
+  },
+  "series": {
+    "available": 2,
+    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12844/series",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/series/20519",
+        "name": "Squadron Supreme Vol. 2: Civil War II (2016)"
+      },
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/series/22014",
+        "name": "Uncanny X-Men Annual (2016)"
+      }
+    ],
+    "returned": 2
+  },
+  "stories": {
+    "available": 2,
+    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12844/stories",
+    "items": [
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/stories/122524",
+        "name": "story from Squadron Supreme (2016)",
+        "type": "interiorStory"
+      },
+      {
+        "resourceURI": "http://gateway.marvel.com/v1/public/stories/130633",
+        "name": "cover from Uncanny X-Men Annual (2020) #1",
+        "type": "cover"
+      }
+    ],
+    "returned": 2
+  },
+  "events": {
+    "available": 0,
+    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12844/events",
+    "items": [],
+    "returned": 0
+  },
+  "urls": [
+    {
+      "type": "detail",
+      "url": "http://marvel.com/comics/creators/12844/aco?utm_campaign=apiRef&utm_source=20f18f98d97b8d7b9733fa6bdcfaea77"
+    }
+  ]
+}

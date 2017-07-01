@@ -137,7 +137,7 @@ namespace MarvelSharp.Parsers
                 list.Add(new DateItem
                 {
                     Type = item.type,
-                    Date = ParseDate(item.date)
+                    Date = ParseDateOffset(item.date)
                 });
             }
 
@@ -158,6 +158,25 @@ namespace MarvelSharp.Parsers
             {
                 DateTime dateValue;
                 return DateTime.TryParse((string)date, out dateValue) ? dateValue : (DateTime?)null;
+            }
+
+            return null;
+        }
+
+        protected DateTimeOffset? ParseDateOffset(dynamic date)
+        {
+            if (date == null)
+                return null;
+
+            var dateType = date.Type;
+
+            if (dateType == JTokenType.Date)
+                return date;
+
+            if (dateType == JTokenType.String)
+            {
+                DateTimeOffset dateValue;
+                return DateTimeOffset.TryParse((string)date, out dateValue) ? dateValue : (DateTimeOffset?)null;
             }
 
             return null;

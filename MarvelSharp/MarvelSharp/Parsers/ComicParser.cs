@@ -1,9 +1,4 @@
 ﻿using MarvelSharp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
@@ -19,7 +14,7 @@ namespace MarvelSharp.Parsers
                 IssueNumber = result.issueNumber,
                 VariantDescription = result.variantDescription,
                 Description = result.description,
-                Modified = ParseDate(result.modified),
+                Modified = ParseDateOffset(result.modified),
                 Isbn = result.isbn,
                 Upc = result.upc,
                 DiamondCode = result.diamondCode,

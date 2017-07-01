@@ -14,7 +14,7 @@ namespace MarvelSharp.Parsers
                 LastName = result.lastName,
                 Suffix = result.suffix,
                 FullName = result.fullName,
-                Modified = result.modified,
+                Modified = ParseDateOffset(result.modified),
                 ResourceUri = result.resourceURI,
                 Urls = ParseUrls(result.urls),
                 Thumbnail = ParseImage(result.thumbnail),

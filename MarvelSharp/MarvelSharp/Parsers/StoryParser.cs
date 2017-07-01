@@ -13,7 +13,7 @@ namespace MarvelSharp.Parsers
                 Description = result.description,
                 ResourceUri = result.resourceURI,
                 Type = result.type,
-                Modified = result.modified,
+                Modified = ParseDateOffset(result.modified),
                 Thumbnail = ParseImage(result.thumbnail),
                 Comics = ParseItemCollection(result.comics),
                 Series = ParseItemCollection(result.series),

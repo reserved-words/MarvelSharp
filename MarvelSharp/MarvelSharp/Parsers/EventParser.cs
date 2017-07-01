@@ -1,9 +1,4 @@
 ﻿using MarvelSharp.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarvelSharp.Parsers
 {
@@ -18,7 +13,7 @@ namespace MarvelSharp.Parsers
                 Description = result.description,
                 ResourceUri = result.resourceUri,
                 Urls = ParseUrls(result.urls),
-                Modified = ParseDate(result.modified),
+                Modified = ParseDateOffset(result.modified),
                 Start = ParseDate(result.start),
                 End = ParseDate(result.end),
                 Thumbnail = ParseImage(result.thumbnail),

@@ -1,5 +1,4 @@
 ﻿using MarvelSharp.Model;
-using System.Collections.Generic;
 
 namespace MarvelSharp.Parsers
 {
@@ -18,7 +17,7 @@ namespace MarvelSharp.Parsers
                 EndYear = result.endYear,
                 Rating = result.rating,
                 Type = result.type,
-                Modified = ParseDate(result.modified),
+                Modified = ParseDateOffset(result.modified),
                 Thumbnail = ParseImage(result.thumbnail),
                 Comics = ParseItemCollection(result.comics),
                 Stories = ParseItemCollection(result.stories, true),

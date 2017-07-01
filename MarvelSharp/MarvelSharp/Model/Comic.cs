@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MarvelSharp.Model
 {
@@ -21,7 +17,6 @@ namespace MarvelSharp.Model
         public double? IssueNumber { get; set; }
         public string VariantDescription { get; set; }
         public string Description { get; set; }
-        public DateTimeOffset? Modified { get; set; }
         public string Isbn { get; set; }
         public string Upc { get; set; }
         public string DiamondCode { get; set; }
@@ -30,7 +25,6 @@ namespace MarvelSharp.Model
         public string Format { get; set; }
         public int? PageCount { get; set; }
         public List<ComicTextObject> TextObjects { get; set; }
-        public string ResourceUri { get; set; }
         public List<Url> Urls { get; set; }
         public Item Series { get; set; }
         public List<Item> Variants { get; set; }
@@ -38,7 +32,6 @@ namespace MarvelSharp.Model
         public List<Item> CollectedIssues { get; set; }
         public List<DateItem> Dates { get; set; }
         public List<PriceItem> Prices { get; set; }
-        public Image Thumbnail { get; set; }
         public List<Image> Images { get; set; }
         public ItemCollection Creators { get; set; }
         public ItemCollection Characters { get; set; }
