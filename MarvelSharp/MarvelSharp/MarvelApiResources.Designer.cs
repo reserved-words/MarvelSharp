@@ -142,7 +142,7 @@ namespace MarvelSharp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to YYYY-MM-dd.
+        ///   Looks up a localized string similar to yyyy-MM-dd.
         /// </summary>
         public static string ParameterDateTimeFormat {
             get {

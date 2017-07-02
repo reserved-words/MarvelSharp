@@ -116,12 +116,12 @@ namespace MarvelSharp.Tests.ConsoleApp
 
             DisplayMainMenuOptions();
 
-            var input = ParseInput(false);
+            var input = ParseMainMenuInput();
 
-            if (input == null || !ItemTypesPlural.Keys.Contains(input.Value))
+            if (input == null || !ItemTypesPlural.Keys.Contains(input.Item1))
                 return;
 
-            DisplayRequestedList(new RequestDetails(input.Value, 1, null));
+            DisplayRequestedList(new RequestDetails(input.Item1, input.Item2, input.Item3, 1, null));
         }
 
         private static void DisplayMainMenuOptions()
@@ -131,6 +131,10 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine($"{kvp.Key}\tFetch {kvp.Value}");
             }
 
+            Console.WriteLine();
+            Console.WriteLine("Type an option number, optionally followed by a character (to return only results starting with that character)");
+            Console.WriteLine("and a date (format YYYY-MM-DD, to return only results modified since that date).");
+            Console.WriteLine("Arguments should be separated by one space.");
             Console.WriteLine();
         }
 
@@ -175,13 +179,41 @@ namespace MarvelSharp.Tests.ConsoleApp
             return MethodDictionary[combinedTypes](rd);
         }
 
-        private static int? ParseInput(bool includeMainMenuOption = true)
+        private static Tuple<int,string,DateTime?> ParseMainMenuInput()
         {
-            if (includeMainMenuOption)
+            var input = Console.ReadLine()?.Split(' ');
+
+            if (input == null)
+                return null;
+
+            var option = int.Parse(input[0]);
+
+            string startsWith = null;
+            DateTime modifiedSince = DateTime.MinValue;
+
+            for (var i = 1; i < 3; i++)
             {
-                Console.WriteLine(0 + "\t" + "Back to Main Menu");
-                Console.WriteLine(); 
+                if (input.Length > i)
+                {
+                    if (modifiedSince == DateTime.MinValue && DateTime.TryParse(input[i], out modifiedSince))
+                    {
+                        continue;
+                    }
+
+                    if (startsWith == null)
+                    {
+                        startsWith = input[i];
+                    }
+                }
             }
+
+            return new Tuple<int, string, DateTime?>(option, startsWith, modifiedSince == DateTime.MinValue ? (DateTime?)null : modifiedSince);
+        }
+
+        private static int? ParseInput()
+        {
+            Console.WriteLine(0 + "\t" + "Back to Main Menu");
+            Console.WriteLine();
 
             var input = Console.ReadLine();
 
@@ -234,6 +266,8 @@ namespace MarvelSharp.Tests.ConsoleApp
                 default:
                     DisplayRequestedList(new RequestDetails(
                         input ?? 0, 
+                        "",
+                        null,
                         1, 
                         rd.ItemType, 
                         rd.ItemId, 
@@ -265,13 +299,13 @@ namespace MarvelSharp.Tests.ConsoleApp
                     DisplayRequestedList(rd.PreviousRequest);
                     return;
                 case NextPageValue:
-                    DisplayRequestedList(new RequestDetails(rd.FetchType, rd.Page + 1, rd.ItemType, rd.ItemId, rd.ItemName, rd));
+                    DisplayRequestedList(new RequestDetails(rd.FetchType, rd.FetchStartingWith, rd.FetchModifiedSince, rd.Page + 1, rd.ItemType, rd.ItemId, rd.ItemName, rd));
                     return;
             }
 
             var selectedItem = list.Single(i => i.Id == input);
 
-            var newListDetails = new RequestDetails(rd.FetchType, 1, rd.FetchType, selectedItem.Id ?? 0, selectedItem.ToString(), rd);
+            var newListDetails = new RequestDetails(rd.FetchType, rd.FetchStartingWith, rd.FetchModifiedSince, 1, rd.FetchType, selectedItem.Id ?? 0, selectedItem.ToString(), rd);
 
             DisplayRequestedItem(newListDetails);
         }
@@ -285,7 +319,30 @@ namespace MarvelSharp.Tests.ConsoleApp
 
         private static List<ItemBase> GetList<T1, T2>(Func<int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
         {
-            return method(ReturnItems, (rd.Page - 1) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
+            ParametersBase parameters = null;
+
+            var parameterType = typeof(T2).Name;
+
+            switch (parameterType)
+            {
+                case nameof(CharacterParameters):
+                    parameters = new CharacterParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                    break;
+                case nameof(ComicParameters):
+                    parameters = new ComicParameters { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                    break;
+                case nameof(CreatorParameters):
+                    parameters = new CreatorParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                    break;
+                case nameof(EventParameters):
+                    parameters = new EventParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                    break;
+                case nameof(SeriesParameters):
+                    parameters = new SeriesParameters { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                    break;
+            }
+
+            return method(ReturnItems, (rd.Page - 1) * ReturnItems, (T2)parameters).Result.Data.Result.OfType<ItemBase>().ToList();
         }
 
         private static List<ItemBase> GetList<T1, T2>(Func<int, int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase

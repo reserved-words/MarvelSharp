@@ -127,7 +127,7 @@
     <value>comics</value>
   </data>
   <data name="ParameterDateTimeFormat" xml:space="preserve">
-    <value>YYYY-MM-dd</value>
+    <value>yyyy-MM-dd</value>
   </data>
   <data name="ParameterEvents" xml:space="preserve">
     <value>events</value>
