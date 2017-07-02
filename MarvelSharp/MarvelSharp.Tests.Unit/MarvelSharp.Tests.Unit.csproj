@@ -57,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\StringExtensionMethods.cs" />
+    <Compile Include="Parameters\EventParametersTests.cs" />
+    <Compile Include="Parameters\ComicParametersTests.cs" />
+    <Compile Include="Parameters\CreatorParameterTests.cs" />
+    <Compile Include="Parameters\StoryParametersTests.cs" />
+    <Compile Include="Parameters\SeriesParametersTests.cs" />
     <Compile Include="Parsers\CreatorParserTests.cs" />
     <Compile Include="Parsers\ComicParserTests.cs" />
     <Compile Include="Parsers\SeriesParserTest.cs" />

@@ -45,9 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\CreatorOrder.cs" />
+    <Compile Include="Enums\SeriesType.cs" />
+    <Compile Include="Enums\SeriesOrder.cs" />
+    <Compile Include="Enums\StoryOrder.cs" />
     <Compile Include="Interfaces\IDateProvider.cs" />
     <Compile Include="Interfaces\IParameters.cs" />
-    <Compile Include="MarvelApi.cs" />
     <Compile Include="Enums\ComicOrder.cs" />
     <Compile Include="Enums\DateDescriptor.cs" />
     <Compile Include="Enums\EventOrder.cs" />
@@ -61,6 +64,11 @@
     <Compile Include="Interfaces\IHasher.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IUrlBuilder.cs" />
+    <Compile Include="MarvelApiResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarvelApiResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Model\ItemBase.cs" />
     <Compile Include="ServiceLocator.cs" />
     <Compile Include="Parameters\StoryParameters.cs" />
@@ -111,6 +119,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Parameters\CreatorParameters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MarvelApiResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MarvelApiResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

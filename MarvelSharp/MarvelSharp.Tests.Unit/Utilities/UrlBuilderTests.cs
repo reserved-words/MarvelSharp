@@ -5,6 +5,7 @@ using MarvelSharp.Tests.Unit.Helpers;
 using MarvelSharp.Utilities;
 using Moq;
 using NUnit.Framework;
+using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Tests.Unit.Utilities
 {
@@ -32,10 +33,10 @@ namespace MarvelSharp.Tests.Unit.Utilities
             var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix);
 
             // Assert
-            Assert.That(result.StartsWith($"{MarvelApi.Base}{TestUrlSuffix}?"));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterApiKey, PublicApiKey));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterTimeStamp, CurrentTimeString));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterHash, TestHashedValue));
+            Assert.That(result.StartsWith($"{UrlBase}{TestUrlSuffix}?"));
+            Assert.That(result.ContainsKeyValuePair(ParameterApiKey, PublicApiKey));
+            Assert.That(result.ContainsKeyValuePair(ParameterTimeStamp, CurrentTimeString));
+            Assert.That(result.ContainsKeyValuePair(ParameterHash, TestHashedValue));
         }
 
         [Test]
@@ -61,12 +62,12 @@ namespace MarvelSharp.Tests.Unit.Utilities
             var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix, 10, 20, mockParameters.Object);
 
             // Assert
-            Assert.That(result.StartsWith($"{MarvelApi.Base}{TestUrlSuffix}?"));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterApiKey, PublicApiKey));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterTimeStamp, CurrentTimeString));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterHash, TestHashedValue));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterLimit, "10"));
-            Assert.That(result.ContainsKeyValuePair(MarvelApi.ParameterOffset, "20"));
+            Assert.That(result.StartsWith($"{UrlBase}{TestUrlSuffix}?"));
+            Assert.That(result.ContainsKeyValuePair(ParameterApiKey, PublicApiKey));
+            Assert.That(result.ContainsKeyValuePair(ParameterTimeStamp, CurrentTimeString));
+            Assert.That(result.ContainsKeyValuePair(ParameterHash, TestHashedValue));
+            Assert.That(result.ContainsKeyValuePair(ParameterLimit, "10"));
+            Assert.That(result.ContainsKeyValuePair(ParameterOffset, "20"));
 
             foreach (var entry in mockDictionary)
             {

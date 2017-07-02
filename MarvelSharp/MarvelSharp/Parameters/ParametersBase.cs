@@ -2,7 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using MarvelSharp.Enums;
 using MarvelSharp.Interfaces;
+using MarvelSharp.Model;
 
 namespace MarvelSharp.Parameters
 {
@@ -43,9 +46,17 @@ namespace MarvelSharp.Parameters
                 {
                     dictionary.AddParameter(propertyName, (DateTime?)propertyValue);
                 }
-                else if (typeof(ICollection).IsAssignableFrom(propertyType))
+                else if (typeof(ICollection<int>).IsAssignableFrom(propertyType))
                 {
-                    dictionary.AddParameter(propertyName, (ICollection)propertyValue);
+                    dictionary.AddParameter(propertyName, (ICollection<int>)propertyValue);
+                }
+                else if (typeof(ICollection<Format>).IsAssignableFrom(propertyType))
+                {
+                    dictionary.AddParameter(propertyName, (ICollection<Format>)propertyValue);
+                }
+                else if (propertyType == typeof(DateRange?))
+                {
+                    dictionary.AddParameter(propertyName, (DateRange?)propertyValue);
                 }
                 else
                 {

@@ -191,7 +191,7 @@ namespace MarvelSharp.Tests.ConsoleApp
         {
             Display("Title", item.Title);
             Display("Description", item.Description);
-            Display("OriginalIssue", item.OriginalIssue);
+            Display("OriginalIssue", item.OriginalIssue?.Name);
             Display("Type", item.Type);
 
             DisplayList("Comics", item.Comics.Items.Select(i => i.Name));

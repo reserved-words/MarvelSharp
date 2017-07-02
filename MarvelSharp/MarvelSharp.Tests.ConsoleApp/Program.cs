@@ -285,12 +285,12 @@ namespace MarvelSharp.Tests.ConsoleApp
 
         private static List<ItemBase> GetList<T1, T2>(Func<int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
         {
-            return method(ReturnItems, (rd.Page - 0) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
+            return method(ReturnItems, (rd.Page - 1) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
         }
 
         private static List<ItemBase> GetList<T1, T2>(Func<int, int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
         {
-            return method(rd.ItemId, ReturnItems, (rd.Page - 0) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
+            return method(rd.ItemId, ReturnItems, (rd.Page - 1) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
         }
     }
 }

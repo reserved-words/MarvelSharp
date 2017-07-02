@@ -15,6 +15,7 @@ namespace MarvelSharp.Parameters
         public string Name { get; set; }
         public string NameStartsWith { get; set; }
         public List<int> Creators { get; set; }
+        public List<int> Characters { get; set; }
         public List<int> Series { get; set; }
         public List<int> Comics { get; set; }
         public List<int> Stories { get; set; }

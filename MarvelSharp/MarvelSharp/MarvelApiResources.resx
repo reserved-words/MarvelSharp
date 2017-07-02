@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HttpSuccessCode" xml:space="preserve">
+    <value>200</value>
+  </data>
+  <data name="ParameterApiKey" xml:space="preserve">
+    <value>apikey</value>
+  </data>
+  <data name="ParameterComics" xml:space="preserve">
+    <value>comics</value>
+  </data>
+  <data name="ParameterDateTimeFormat" xml:space="preserve">
+    <value>YYYY-MM-dd</value>
+  </data>
+  <data name="ParameterEvents" xml:space="preserve">
+    <value>events</value>
+  </data>
+  <data name="ParameterHash" xml:space="preserve">
+    <value>hash</value>
+  </data>
+  <data name="ParameterLimit" xml:space="preserve">
+    <value>limit</value>
+  </data>
+  <data name="ParameterListSeparator" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="ParameterModifiedSince" xml:space="preserve">
+    <value>modifiedSince</value>
+  </data>
+  <data name="ParameterName" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="ParameterNameStartsWith" xml:space="preserve">
+    <value>nameStartsWith</value>
+  </data>
+  <data name="ParameterOffset" xml:space="preserve">
+    <value>offset</value>
+  </data>
+  <data name="ParameterOrderBy" xml:space="preserve">
+    <value>orderBy</value>
+  </data>
+  <data name="ParameterSeries" xml:space="preserve">
+    <value>series</value>
+  </data>
+  <data name="ParameterStories" xml:space="preserve">
+    <value>stories</value>
+  </data>
+  <data name="ParameterTimeStamp" xml:space="preserve">
+    <value>ts</value>
+  </data>
+  <data name="ParameterTimeStampFormat" xml:space="preserve">
+    <value>yyMMddHHmmss</value>
+  </data>
+  <data name="ParameterValueFalse" xml:space="preserve">
+    <value>false</value>
+  </data>
+  <data name="ParameterValueTrue" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="UrlBase" xml:space="preserve">
+    <value>https://gateway.marvel.com/v1/public/</value>
+  </data>
+  <data name="UrlSuffixAllCharacters" xml:space="preserve">
+    <value>characters</value>
+  </data>
+  <data name="UrlSuffixAllComics" xml:space="preserve">
+    <value>comics</value>
+  </data>
+  <data name="UrlSuffixAllCreators" xml:space="preserve">
+    <value>creators</value>
+  </data>
+  <data name="UrlSuffixEventById" xml:space="preserve">
+    <value>events/{0}</value>
+  </data>
+  <data name="UrlSuffixEventCharacters" xml:space="preserve">
+    <value>events/{0}/characters</value>
+  </data>
+  <data name="UrlSuffixEventComics" xml:space="preserve">
+    <value>events/{0}/comics</value>
+  </data>
+  <data name="UrlSuffixEventCreators" xml:space="preserve">
+    <value>events/{0}/creators</value>
+  </data>
+  <data name="UrlSuffixAllEvents" xml:space="preserve">
+    <value>events</value>
+  </data>
+  <data name="UrlSuffixEventSeries" xml:space="preserve">
+    <value>events/{0}/series</value>
+  </data>
+  <data name="UrlSuffixEventStories" xml:space="preserve">
+    <value>events/{0}/stories</value>
+  </data>
+  <data name="UrlSuffixCharacterById" xml:space="preserve">
+    <value>characters/{0}</value>
+  </data>
+  <data name="UrlSuffixCharacterComics" xml:space="preserve">
+    <value>characters/{0}/comics</value>
+  </data>
+  <data name="UrlSuffixCharacterEvents" xml:space="preserve">
+    <value>characters/{0}/events</value>
+  </data>
+  <data name="UrlSuffixCharacterSeries" xml:space="preserve">
+    <value>characters/{0}/series</value>
+  </data>
+  <data name="UrlSuffixCharacterStories" xml:space="preserve">
+    <value>characters/{0}/stories</value>
+  </data>
+  <data name="UrlSuffixComicById" xml:space="preserve">
+    <value>comics/{0}</value>
+  </data>
+  <data name="UrlSuffixComicCharacters" xml:space="preserve">
+    <value>comics/{0}/characters</value>
+  </data>
+  <data name="UrlSuffixComicCreators" xml:space="preserve">
+    <value>comics/{0}/creators</value>
+  </data>
+  <data name="UrlSuffixComicEvents" xml:space="preserve">
+    <value>comics/{0}/events</value>
+  </data>
+  <data name="UrlSuffixComicStories" xml:space="preserve">
+    <value>comics/{0}/stories</value>
+  </data>
+  <data name="UrlSuffixCreatorById" xml:space="preserve">
+    <value>creators/{0}</value>
+  </data>
+  <data name="UrlSuffixCreatorComics" xml:space="preserve">
+    <value>creators/{0}/comics</value>
+  </data>
+  <data name="UrlSuffixCreatorEvents" xml:space="preserve">
+    <value>creators/{0}/events</value>
+  </data>
+  <data name="UrlSuffixCreatorSeries" xml:space="preserve">
+    <value>creators/{0}/series</value>
+  </data>
+  <data name="UrlSuffixCreatorStories" xml:space="preserve">
+    <value>creators/{0}/stories</value>
+  </data>
+  <data name="UrlSuffixAllSeries" xml:space="preserve">
+    <value>series</value>
+  </data>
+  <data name="UrlSuffixAllStories" xml:space="preserve">
+    <value>series</value>
+  </data>
+  <data name="UrlSuffixSeriesById" xml:space="preserve">
+    <value>series/{0}</value>
+  </data>
+  <data name="UrlSuffixSeriesCharacters" xml:space="preserve">
+    <value>series/{0}/characters</value>
+  </data>
+  <data name="UrlSuffixSeriesComics" xml:space="preserve">
+    <value>series/{0}/comics</value>
+  </data>
+  <data name="UrlSuffixSeriesCreators" xml:space="preserve">
+    <value>series/{0}/creators</value>
+  </data>
+  <data name="UrlSuffixSeriesEvents" xml:space="preserve">
+    <value>series/{0}/events</value>
+  </data>
+  <data name="UrlSuffixSeriesStories" xml:space="preserve">
+    <value>series/{0}/stories</value>
+  </data>
+  <data name="UrlSuffixStoryById" xml:space="preserve">
+    <value>stories/{0}</value>
+  </data>
+  <data name="UrlSuffixStoryCharacters" xml:space="preserve">
+    <value>stories/{0}/characters</value>
+  </data>
+  <data name="UrlSuffixStoryComics" xml:space="preserve">
+    <value>stories/{0}/comics</value>
+  </data>
+  <data name="UrlSuffixStoryCreators" xml:space="preserve">
+    <value>stories/{0}/creators</value>
+  </data>
+  <data name="UrlSuffixStoryEvents" xml:space="preserve">
+    <value>stories/{0}/events</value>
+  </data>
+  <data name="UrlSuffixStorySeries" xml:space="preserve">
+    <value>stories/{0}/series</value>
+  </data>
+  <data name="ParameterCollaborators" xml:space="preserve">
+    <value>collaborators</value>
+  </data>
+  <data name="ParameterCreators" xml:space="preserve">
+    <value>creators</value>
+  </data>
+  <data name="ParameterDateDescriptor" xml:space="preserve">
+    <value>dateDescriptor</value>
+  </data>
+  <data name="ParameterDateRange" xml:space="preserve">
+    <value>dateRange</value>
+  </data>
+  <data name="ParameterDiamondCode" xml:space="preserve">
+    <value>diamondCode</value>
+  </data>
+  <data name="ParameterDigitalId" xml:space="preserve">
+    <value>digitalId</value>
+  </data>
+  <data name="ParameterEan" xml:space="preserve">
+    <value>ean</value>
+  </data>
+  <data name="ParameterFormat" xml:space="preserve">
+    <value>format</value>
+  </data>
+  <data name="ParameterFormatType" xml:space="preserve">
+    <value>formatType</value>
+  </data>
+  <data name="ParameterHasDigitalIssue" xml:space="preserve">
+    <value>hasDigitalIssue</value>
+  </data>
+  <data name="ParameterIsbn" xml:space="preserve">
+    <value>isbn</value>
+  </data>
+  <data name="ParameterIssn" xml:space="preserve">
+    <value>issn</value>
+  </data>
+  <data name="ParameterIssueNumber" xml:space="preserve">
+    <value>issueNumber</value>
+  </data>
+  <data name="ParameterNoVariants" xml:space="preserve">
+    <value>noVariants</value>
+  </data>
+  <data name="ParameterSharedAppearances" xml:space="preserve">
+    <value>sharedAppearances</value>
+  </data>
+  <data name="ParameterStartYear" xml:space="preserve">
+    <value>startYear</value>
+  </data>
+  <data name="ParameterTitle" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="ParameterTitleStartsWith" xml:space="preserve">
+    <value>titleStartsWith</value>
+  </data>
+  <data name="ParameterUpc" xml:space="preserve">
+    <value>upc</value>
+  </data>
+  <data name="ParameterFirstName" xml:space="preserve">
+    <value>firstName</value>
+  </data>
+  <data name="ParameterFirstNameStartsWith" xml:space="preserve">
+    <value>firstNameStartsWith</value>
+  </data>
+  <data name="ParameterLastName" xml:space="preserve">
+    <value>lastName</value>
+  </data>
+  <data name="ParameterLastNameStartsWith" xml:space="preserve">
+    <value>lastNameStartsWith</value>
+  </data>
+  <data name="ParameterMiddleName" xml:space="preserve">
+    <value>middleName</value>
+  </data>
+  <data name="ParameterMiddleNameStartsWith" xml:space="preserve">
+    <value>middleNameStartsWith</value>
+  </data>
+  <data name="ParameterSuffix" xml:space="preserve">
+    <value>suffix</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ParameterCharacters" xml:space="preserve">
+    <value>characters</value>
+  </data>
+  <data name="ParameterContains" xml:space="preserve">
+    <value>contains</value>
+  </data>
+  <data name="ParameterSeriesType" xml:space="preserve">
+    <value>seriesType</value>
+  </data>
+</root>

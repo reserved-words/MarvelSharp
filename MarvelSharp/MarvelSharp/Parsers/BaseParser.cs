@@ -4,6 +4,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Parsers
 {
@@ -11,7 +12,7 @@ namespace MarvelSharp.Parsers
     {
         public Response<T1> GetResponse<T1>(dynamic parsed)
         {
-            if (parsed.code != MarvelApi.SuccessCode)
+            if (parsed.code != HttpSuccessCode)
             {
                 return new Response<T1>
                 {

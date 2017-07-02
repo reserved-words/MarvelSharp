@@ -1,7 +1,9 @@
-﻿using MarvelSharp.Attributes;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using MarvelSharp.Enums;
+using MarvelSharp.Model;
+using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Extensions
 {
@@ -12,12 +14,12 @@ namespace MarvelSharp.Extensions
             if (!value.HasValue)
                 return;
 
-            dictionary.Add(key, value.Value ? "true" : "false");
+            dictionary.Add(key, value.Value ? ParameterValueTrue : ParameterValueFalse);
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, Enum value)
         {
-            dictionary.Add(key, value.GetAttribute<StringValueAttribute>()?.Value ?? value.ToString());
+            dictionary.Add(key, value.GetStringValue());
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, DateTime? value)
@@ -25,15 +27,23 @@ namespace MarvelSharp.Extensions
             if (!value.HasValue)
                 return;
 
-            dictionary.Add(key, value.Value.ToString("YYYY-MM-dd"));
+            dictionary.Add(key, value.Value.ToString(ParameterDateTimeFormat));
         }
 
-        public static void AddParameter(this Dictionary<string,string> dictionary, string key, ICollection value)
+        public static void AddParameter(this Dictionary<string,string> dictionary, string key, ICollection<int> value)
         {
-            if (value.Count == 0)
+            if (!value.Any())
                 return;
 
-            dictionary.Add(key, string.Join(",", value));
+            dictionary.Add(key, string.Join(ParameterListSeparator, value));
+        }
+
+        public static void AddParameter(this Dictionary<string, string> dictionary, string key, ICollection<Format> value)
+        {
+            if (!value.Any())
+                return;
+
+            dictionary.Add(key, string.Join(ParameterListSeparator, value.Select(e => e.GetStringValue())));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, string value)
@@ -42,6 +52,14 @@ namespace MarvelSharp.Extensions
                 return;
 
             dictionary.Add(key, value);
+        }
+
+        public static void AddParameter(this Dictionary<string, string> dictionary, string key, DateRange? value)
+        {
+            if (!value.HasValue)
+                return;
+
+            dictionary.Add(key, string.Join(ParameterListSeparator, value.Value.StartDate, value.Value.EndDate));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, object value)
