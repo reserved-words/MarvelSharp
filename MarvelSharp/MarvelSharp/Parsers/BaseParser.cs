@@ -93,13 +93,13 @@ namespace MarvelSharp.Parsers
             return list;
         }
 
-        protected List<ComicTextObject> ParseComicTextObjects(dynamic items)
+        protected List<TextObject> ParseComicTextObjects(dynamic items)
         {
-            var list = new List<ComicTextObject>();
+            var list = new List<TextObject>();
 
             foreach (var item in items)
             {
-                list.Add(new ComicTextObject
+                list.Add(new TextObject
                 {
                     Type = item.type,
                     Language = item.language,
@@ -194,9 +194,9 @@ namespace MarvelSharp.Parsers
             };
         }
 
-        protected List<Item> ParseItems(dynamic items, bool includeType = false, bool includeRole = false)
+        protected List<ItemSummary> ParseItems(dynamic items, bool includeType = false, bool includeRole = false)
         {
-            var list = new List<Item>();
+            var list = new List<ItemSummary>();
 
             foreach (var item in items)
             {
@@ -209,11 +209,11 @@ namespace MarvelSharp.Parsers
             return list;
         }
 
-        protected Item ParseItem(dynamic item, bool includeType = false, bool includeRole = false)
+        protected ItemSummary ParseItem(dynamic item, bool includeType = false, bool includeRole = false)
         {
             return item == null
                 ? null
-                : new Item
+                : new ItemSummary
                 {
                     Name = item.name,
                     ResourceUri = item.resourceURI,

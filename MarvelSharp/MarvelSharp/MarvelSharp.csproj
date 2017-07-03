@@ -79,9 +79,9 @@
     <Compile Include="Parsers\ComicParser.cs" />
     <Compile Include="Parsers\BaseParser.cs" />
     <Compile Include="Model\Character.cs" />
-    <Compile Include="Model\ComicTextObject.cs" />
+    <Compile Include="Model\TextObject.cs" />
     <Compile Include="Model\DateItem.cs" />
-    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemSummary.cs" />
     <Compile Include="Model\ItemCollection.cs" />
     <Compile Include="Model\PriceItem.cs" />
     <Compile Include="Parameters\SeriesCriteria.cs" />
