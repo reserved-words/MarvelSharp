@@ -17,11 +17,11 @@ namespace MarvelSharp.Utilities
             _hasher = hasher;
         }
 
-        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, int? limit = null, int? offset = null, IParameters parameters = null)
+        public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, int? limit = null, int? offset = null, ICriteria criteria = null)
         {
             var url = $"{UrlBase}{urlSuffix}";
 
-            var dictionary = parameters?.ToDictionary() ?? new Dictionary<string, string>();
+            var dictionary = criteria?.ToDictionary() ?? new Dictionary<string, string>();
 
             var timestamp = _dateProvider.GetCurrentTime().ToString(ParameterTimeStampFormat);
 

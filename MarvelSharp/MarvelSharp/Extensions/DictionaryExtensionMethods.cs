@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Enums;
-using MarvelSharp.Model;
 using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Extensions

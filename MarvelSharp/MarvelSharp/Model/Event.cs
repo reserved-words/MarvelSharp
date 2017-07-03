@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MarvelSharp.Model
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     public class Event : ItemBase
     {

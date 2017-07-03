@@ -1,5 +1,4 @@
-﻿using MarvelSharp.Model;
-using MarvelSharp.Parsers;
+﻿using MarvelSharp.Parsers;
 using MarvelSharp.Tests.Unit.Helpers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;

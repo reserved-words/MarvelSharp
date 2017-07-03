@@ -1,5 +1,4 @@
 ﻿using MarvelSharp.Interfaces;
-using MarvelSharp.Model;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -21,27 +20,25 @@ namespace MarvelSharp.Parsers
                     Status = parsed.status
                 };
             }
-            else
+
+            return new Response<T1>
             {
-                return new Response<T1>
+                Success = true,
+                Code = parsed.code,
+                Status = parsed.status,
+                Copyright = parsed.copyright,
+                AttributionText = parsed.attributionText,
+                AttributionHtml = parsed.attributionHtml,
+                Data = new Data<T1>
                 {
-                    Success = true,
-                    Code = parsed.code,
-                    Status = parsed.status,
-                    Copyright = parsed.copyright,
-                    AttributionText = parsed.attributionText,
-                    AttributionHtml = parsed.attributionHtml,
-                    Data = new Data<T1>
-                    {
-                        Offset = parsed.data.offset,
-                        Limit = parsed.data.limit,
-                        Total = parsed.data.total,
-                        Count = parsed.data.count,
-                        Result = typeof(T1).IsGenericType ? ParseList(parsed.data.results) : ParseSingle(parsed.data.results)
-                    },
-                    ETag = parsed.eTag
-                };
-            }
+                    Offset = parsed.data.offset,
+                    Limit = parsed.data.limit,
+                    Total = parsed.data.total,
+                    Count = parsed.data.count,
+                    Result = typeof(T1).IsGenericType ? ParseList(parsed.data.results) : ParseSingle(parsed.data.results)
+                },
+                ETag = parsed.eTag
+            };
         }
 
         public abstract T Parse(dynamic result);

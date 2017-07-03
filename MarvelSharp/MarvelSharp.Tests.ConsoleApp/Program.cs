@@ -1,10 +1,7 @@
-﻿using MarvelSharp.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MarvelSharp.Model;
-using MarvelSharp.Parameters;
 
 namespace MarvelSharp.Tests.ConsoleApp
 {
@@ -34,12 +31,12 @@ namespace MarvelSharp.Tests.ConsoleApp
 
         private static readonly Dictionary<string, Func<RequestDetails,List<ItemBase>>> MethodDictionary  = new Dictionary<string, Func<RequestDetails, List<ItemBase>>>
         {
-            { "10", rd => GetList<Character, CharacterParameters>(_characterService.GetAllAsync, rd) },
-            { "20", rd => GetList<Comic, ComicParameters>(_comicService.GetAllAsync, rd) },
-            { "30", rd => GetList<Creator, CreatorParameters>(_creatorService.GetAllAsync, rd) },
-            { "40", rd => GetList<Event, EventParameters>(_eventService.GetAllAsync, rd) },
-            { "50", rd => GetList<Series, SeriesParameters>(_seriesService.GetAllAsync, rd) },
-            { "60", rd => GetList<Story, StoryParameters>(_storyService.GetAllAsync, rd) },
+            { "10", rd => GetList<Character, CharacterCriteria>(_characterService.GetAllAsync, rd) },
+            { "20", rd => GetList<Comic, ComicCriteria>(_comicService.GetAllAsync, rd) },
+            { "30", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetAllAsync, rd) },
+            { "40", rd => GetList<Event, EventCriteria>(_eventService.GetAllAsync, rd) },
+            { "50", rd => GetList<Series, SeriesCriteria>(_seriesService.GetAllAsync, rd) },
+            { "60", rd => GetList<Story, StoryCriteria>(_storyService.GetAllAsync, rd) },
 
             { "11", rd => new List<ItemBase> { _characterService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
             { "22", rd => new List<ItemBase> { _comicService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
@@ -48,38 +45,38 @@ namespace MarvelSharp.Tests.ConsoleApp
             { "55", rd => new List<ItemBase> { _seriesService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
             { "66", rd => new List<ItemBase> { _storyService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
             
-            { "21", rd => GetList<Comic, ComicParameters>(_comicService.GetByCharacterAsync, rd) },
-            { "41", rd => GetList<Event, EventParameters>(_eventService.GetByCharacterAsync, rd) },
-            { "51", rd => GetList<Series, SeriesParameters>(_seriesService.GetByCharacterAsync, rd) },
-            { "61", rd => GetList<Story, StoryParameters>(_storyService.GetByCharacterAsync, rd) },
+            { "21", rd => GetList<Comic, ComicCriteria>(_comicService.GetByCharacterAsync, rd) },
+            { "41", rd => GetList<Event, EventCriteria>(_eventService.GetByCharacterAsync, rd) },
+            { "51", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByCharacterAsync, rd) },
+            { "61", rd => GetList<Story, StoryCriteria>(_storyService.GetByCharacterAsync, rd) },
 
-            { "12", rd => GetList<Character, CharacterParameters>(_characterService.GetByComicAsync, rd) },
-            { "32", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByComicAsync, rd) },
-            { "42", rd => GetList<Event, EventParameters>(_eventService.GetByComicAsync, rd) },
-            { "62", rd => GetList<Story, StoryParameters>(_storyService.GetByComicAsync, rd) },
+            { "12", rd => GetList<Character, CharacterCriteria>(_characterService.GetByComicAsync, rd) },
+            { "32", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByComicAsync, rd) },
+            { "42", rd => GetList<Event, EventCriteria>(_eventService.GetByComicAsync, rd) },
+            { "62", rd => GetList<Story, StoryCriteria>(_storyService.GetByComicAsync, rd) },
 
-            { "23", rd => GetList<Comic, ComicParameters>(_comicService.GetByCreatorAsync, rd) },
-            { "43", rd => GetList<Event, EventParameters>(_eventService.GetByCreatorAsync, rd) },
-            { "53", rd => GetList<Series, SeriesParameters>(_seriesService.GetByCreatorAsync, rd) },
-            { "63", rd => GetList<Story, StoryParameters>(_storyService.GetByCreatorAsync, rd) },
+            { "23", rd => GetList<Comic, ComicCriteria>(_comicService.GetByCreatorAsync, rd) },
+            { "43", rd => GetList<Event, EventCriteria>(_eventService.GetByCreatorAsync, rd) },
+            { "53", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByCreatorAsync, rd) },
+            { "63", rd => GetList<Story, StoryCriteria>(_storyService.GetByCreatorAsync, rd) },
 
-            { "14", rd => GetList<Character, CharacterParameters>(_characterService.GetByEventAsync, rd) },
-            { "24", rd => GetList<Comic, ComicParameters>(_comicService.GetByEventAsync, rd) },
-            { "34", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByEventAsync, rd) },
-            { "54", rd => GetList<Series, SeriesParameters>(_seriesService.GetByEventAsync, rd) },
-            { "64", rd => GetList<Story, StoryParameters>(_storyService.GetByEventAsync, rd) },
+            { "14", rd => GetList<Character, CharacterCriteria>(_characterService.GetByEventAsync, rd) },
+            { "24", rd => GetList<Comic, ComicCriteria>(_comicService.GetByEventAsync, rd) },
+            { "34", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByEventAsync, rd) },
+            { "54", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByEventAsync, rd) },
+            { "64", rd => GetList<Story, StoryCriteria>(_storyService.GetByEventAsync, rd) },
 
-            { "15", rd => GetList<Character, CharacterParameters>(_characterService.GetBySeriesAsync, rd) },
-            { "25", rd => GetList<Comic, ComicParameters>(_comicService.GetBySeriesAsync, rd) },
-            { "35", rd => GetList<Creator, CreatorParameters>(_creatorService.GetBySeriesAsync, rd) },
-            { "45", rd => GetList<Event, EventParameters>(_eventService.GetBySeriesAsync, rd) },
-            { "65", rd => GetList<Story, StoryParameters>(_storyService.GetBySeriesAsync, rd) },
+            { "15", rd => GetList<Character, CharacterCriteria>(_characterService.GetBySeriesAsync, rd) },
+            { "25", rd => GetList<Comic, ComicCriteria>(_comicService.GetBySeriesAsync, rd) },
+            { "35", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetBySeriesAsync, rd) },
+            { "45", rd => GetList<Event, EventCriteria>(_eventService.GetBySeriesAsync, rd) },
+            { "65", rd => GetList<Story, StoryCriteria>(_storyService.GetBySeriesAsync, rd) },
 
-            { "16", rd => GetList<Character, CharacterParameters>(_characterService.GetByStoryAsync, rd) },
-            { "26", rd => GetList<Comic, ComicParameters>(_comicService.GetByStoryAsync, rd) },
-            { "36", rd => GetList<Creator, CreatorParameters>(_creatorService.GetByStoryAsync, rd) },
-            { "46", rd => GetList<Event, EventParameters>(_eventService.GetByStoryAsync, rd) },
-            { "56", rd => GetList<Series, SeriesParameters>(_seriesService.GetByStoryAsync, rd) }
+            { "16", rd => GetList<Character, CharacterCriteria>(_characterService.GetByStoryAsync, rd) },
+            { "26", rd => GetList<Comic, ComicCriteria>(_comicService.GetByStoryAsync, rd) },
+            { "36", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByStoryAsync, rd) },
+            { "46", rd => GetList<Event, EventCriteria>(_eventService.GetByStoryAsync, rd) },
+            { "56", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByStoryAsync, rd) }
         };
 
         public static void Main(string[] args)
@@ -317,35 +314,35 @@ namespace MarvelSharp.Tests.ConsoleApp
             Console.WriteLine("------------------------------------------------------");
         }
 
-        private static List<ItemBase> GetList<T1, T2>(Func<int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
+        private static List<ItemBase> GetList<T1, T2>(Func<int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : BaseCriteria
         {
-            ParametersBase parameters = null;
+            BaseCriteria criteria = null;
 
             var parameterType = typeof(T2).Name;
 
             switch (parameterType)
             {
-                case nameof(CharacterParameters):
-                    parameters = new CharacterParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                case nameof(CharacterCriteria):
+                    criteria = new CharacterCriteria { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
                     break;
-                case nameof(ComicParameters):
-                    parameters = new ComicParameters { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                case nameof(ComicCriteria):
+                    criteria = new ComicCriteria { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
                     break;
-                case nameof(CreatorParameters):
-                    parameters = new CreatorParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                case nameof(CreatorCriteria):
+                    criteria = new CreatorCriteria { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
                     break;
-                case nameof(EventParameters):
-                    parameters = new EventParameters { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                case nameof(EventCriteria):
+                    criteria = new EventCriteria { NameStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
                     break;
-                case nameof(SeriesParameters):
-                    parameters = new SeriesParameters { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
+                case nameof(SeriesCriteria):
+                    criteria = new SeriesCriteria { TitleStartsWith = rd.FetchStartingWith, ModifiedSince = rd.FetchModifiedSince };
                     break;
             }
 
-            return method(ReturnItems, (rd.Page - 1) * ReturnItems, (T2)parameters).Result.Data.Result.OfType<ItemBase>().ToList();
+            return method(ReturnItems, (rd.Page - 1) * ReturnItems, (T2)criteria).Result.Data.Result.OfType<ItemBase>().ToList();
         }
 
-        private static List<ItemBase> GetList<T1, T2>(Func<int, int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : ParametersBase
+        private static List<ItemBase> GetList<T1, T2>(Func<int, int?, int?, T2, Task<Response<List<T1>>>> method, RequestDetails rd) where T1 : ItemBase where T2 : BaseCriteria
         {
             return method(rd.ItemId, ReturnItems, (rd.Page - 1) * ReturnItems, null).Result.Data.Result.OfType<ItemBase>().ToList();
         }

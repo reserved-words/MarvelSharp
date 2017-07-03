@@ -1,14 +1,13 @@
 ﻿using MarvelSharp.Interfaces;
-using MarvelSharp.Model;
-using MarvelSharp.Parameters;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static MarvelSharp.MarvelApiResources;
 
-namespace MarvelSharp.Services
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     /// <summary>
-    /// A service providing details of Marvel comic creators
+    /// A service for fetching details of Marvel comic creators
     /// </summary>
     public class CreatorService : BaseService<Creator>
     {
@@ -30,17 +29,19 @@ namespace MarvelSharp.Services
         /// <summary>
         /// Fetches a list of comic creators, with optional filters
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
         /// <returns></returns>
-        public async Task<Response<List<Creator>>> GetAllAsync(int? limit = null, int? offset = null, CreatorParameters parameters = null)
+        public async Task<Response<List<Creator>>> GetAllAsync(int? limit = null, int? offset = null, CreatorCriteria criteria = null)
         {
-            return await GetList(UrlSuffixAllCreators, limit, offset, parameters);
+            return await GetList(UrlSuffixAllCreators, limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches details for the specified comic creator
         /// </summary>
-        /// <param name="creatorId"></param>
+        /// <param name="creatorId">The creator ID.</param>
         /// <returns></returns>
         public async Task<Response<Creator>> GetByIdAsync(int creatorId)
         {
@@ -50,45 +51,53 @@ namespace MarvelSharp.Services
         /// <summary>
         /// Fetches a list of comic creators whose work appears in the specified comic, with optional filters
         /// </summary>
-        /// <param name="comicId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="comicId">The comic ID.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
         /// <returns></returns>
-        public async Task<Response<List<Creator>>> GetByComicAsync(int comicId, int? limit = null, int? offset = null, CreatorParameters parameters = null)
+        public async Task<Response<List<Creator>>> GetByComicAsync(int comicId, int? limit = null, int? offset = null, CreatorCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixComicCreators, comicId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixComicCreators, comicId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of comic creators whose work appears in the specified event, with optional filters
         /// </summary>
-        /// <param name="eventId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="eventId">The event ID.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
         /// <returns></returns>
-        public async Task<Response<List<Creator>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, CreatorParameters parameters = null)
+        public async Task<Response<List<Creator>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, CreatorCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixEventCreators, eventId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixEventCreators, eventId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of comic creators whose work appears in the specified series, with optional filters
         /// </summary>
-        /// <param name="seriesId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="seriesId">The series ID.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
         /// <returns></returns>
-        public async Task<Response<List<Creator>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, CreatorParameters parameters = null)
+        public async Task<Response<List<Creator>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, CreatorCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixSeriesCreators, seriesId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixSeriesCreators, seriesId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of comic creators whose work appears in the specified story, with optional filters
         /// </summary>
-        /// <param name="storyId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="storyId">The story ID.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
         /// <returns></returns>
-        public async Task<Response<List<Creator>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, CreatorParameters parameters = null)
+        public async Task<Response<List<Creator>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, CreatorCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixStoryCreators, storyId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixStoryCreators, storyId), limit, offset, criteria);
         }
     }
 }

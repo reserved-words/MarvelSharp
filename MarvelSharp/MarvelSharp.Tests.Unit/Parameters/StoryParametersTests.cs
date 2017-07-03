@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using MarvelSharp.Enums;
-using MarvelSharp.Parameters;
 using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;
 using MarvelSharp.Extensions;
@@ -15,7 +12,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
         public void ToDictionary_ReturnsCorrectDictionary()
         {
             // Arrange
-            var sut = new StoryParameters
+            var sut = new StoryCriteria
             {
                 ModifiedSince = new DateTime(2015, 1, 15, 8, 59, 21),
                 Characters = new List<int> { 1, 2, 3 },

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Attributes;
-using MarvelSharp.Enums;
-using MarvelSharp.Parameters;
 using NUnit.Framework;
 using MarvelSharp.Extensions;
 using static MarvelSharp.MarvelApiResources;
@@ -17,7 +14,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
         public void ToDictionary_ReturnsCorrectDictionary()
         {
             // Arrange
-            var sut = new EventParameters
+            var sut = new EventCriteria
             {
                 Name = "TestName999",
                 NameStartsWith = "TestStartName0",

@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Attributes;
-using MarvelSharp.Enums;
 using MarvelSharp.Extensions;
-using MarvelSharp.Model;
-using MarvelSharp.Parameters;
 using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;
 
@@ -18,7 +14,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
         public void ToDictionary_ReturnsCorrectDictionary()
         {
             // Arrange
-            var sut = new ComicParameters
+            var sut = new ComicCriteria
             {
                 Title = "TestTitle456",
                 TitleStartsWith = "TestStartTitle789",
@@ -46,7 +42,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
                 Ean = "TestEAN",
                 Issn = "TestISSN",
                 HasDigitalIssue = true,
-                SharedAppearances = 2,
+                SharedAppearances = new List<int> { 20, 15 },
                 Collaborators = new List<int> { 2, 3 }
             };
 
@@ -103,7 +99,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
             Assert.AreEqual(sut.Ean, result[ParameterEan]);
             Assert.AreEqual(sut.Issn, result[ParameterIssn]);
             Assert.AreEqual(ParameterValueTrue, result[ParameterHasDigitalIssue]);
-            Assert.AreEqual(sut.SharedAppearances.ToString(), result[ParameterSharedAppearances]);
+            Assert.AreEqual(string.Join(ParameterListSeparator, sut.SharedAppearances), result[ParameterSharedAppearances]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Collaborators), result[ParameterCollaborators]);
         }
     }

@@ -1,5 +1,4 @@
-﻿using MarvelSharp.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MarvelSharp.Interfaces
 {

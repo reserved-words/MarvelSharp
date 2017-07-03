@@ -1,11 +1,7 @@
 ﻿using MarvelSharp.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MarvelSharp.Enums
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     public enum ComicOrder
     {

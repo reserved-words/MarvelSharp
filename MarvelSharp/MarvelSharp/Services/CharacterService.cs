@@ -1,14 +1,13 @@
 ﻿using MarvelSharp.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MarvelSharp.Model;
-using MarvelSharp.Parameters;
 using static MarvelSharp.MarvelApiResources;
 
-namespace MarvelSharp.Services
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     /// <summary>
-    /// A service providing details of Marvel comic characters
+    /// A service for fetching details of Marvel comic characters
     /// </summary>
     public class CharacterService : BaseService<Character>
     {
@@ -30,17 +29,19 @@ namespace MarvelSharp.Services
         /// <summary>
         /// Fetches a list of comic characters, with optional filters
         /// </summary>
-        /// <param name="parameters"></param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
         /// <returns></returns>
-        public async Task<Response<List<Character>>> GetAllAsync(int? limit = null, int? offset = null, CharacterParameters parameters = null)
+        public async Task<Response<List<Character>>> GetAllAsync(int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(UrlSuffixAllCharacters, limit, offset, parameters);
+            return await GetList(UrlSuffixAllCharacters, limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches details for the specified character
         /// </summary>
-        /// <param name="characterId"></param>
+        /// <param name="characterId">The character ID.</param>
         /// <returns></returns>
         public async Task<Response<Character>> GetByIdAsync(int characterId)
         {
@@ -50,45 +51,53 @@ namespace MarvelSharp.Services
         /// <summary>
         /// Fetches a list of characters that appear in a specific comic, with optional filters
         /// </summary>
-        /// <param name="comicId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="comicId">The comic ID.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
         /// <returns></returns>
-        public async Task<Response<List<Character>>> GetByComicAsync(int comicId, int? limit = null, int? offset = null, CharacterParameters parameters = null)
+        public async Task<Response<List<Character>>> GetByComicAsync(int comicId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixComicCharacters, comicId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixComicCharacters, comicId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of characters that appear in a specific event, with optional filters
         /// </summary>
-        /// <param name="eventId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="eventId">The event ID.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
         /// <returns></returns>
-        public async Task<Response<List<Character>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, CharacterParameters parameters = null)
+        public async Task<Response<List<Character>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixEventCharacters, eventId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixEventCharacters, eventId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of characters that appear in the specified series, with optional filters
         /// </summary>
-        /// <param name="seriesId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="seriesId">The series ID.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
         /// <returns></returns>
-        public async Task<Response<List<Character>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, CharacterParameters parameters = null)
+        public async Task<Response<List<Character>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixSeriesCharacters, seriesId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixSeriesCharacters, seriesId), limit, offset, criteria);
         }
 
         /// <summary>
         /// Fetches a list of comic characters appearing in the specified story, with optional filters
         /// </summary>
-        /// <param name="storyId"></param>
-        /// <param name="parameters"></param>
+        /// <param name="storyId">The story ID.</param>
+        /// <param name="offset">Skip the specified number of resources in the result set.</param>
+        /// <param name="criteria">Filter the result set by the specified criteria.</param>
+        /// <param name="limit">Limit the result set to the specified number of resources.</param>
         /// <returns></returns>
-        public async Task<Response<List<Character>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, CharacterParameters parameters = null)
+        public async Task<Response<List<Character>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixStoryCharacters, storyId), limit, offset, parameters);
+            return await GetList(string.Format(UrlSuffixStoryCharacters, storyId), limit, offset, criteria);
         }
     }
 }

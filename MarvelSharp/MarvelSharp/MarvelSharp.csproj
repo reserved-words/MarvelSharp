@@ -50,7 +50,7 @@
     <Compile Include="Enums\SeriesOrder.cs" />
     <Compile Include="Enums\StoryOrder.cs" />
     <Compile Include="Interfaces\IDateProvider.cs" />
-    <Compile Include="Interfaces\IParameters.cs" />
+    <Compile Include="Interfaces\ICriteria.cs" />
     <Compile Include="Enums\ComicOrder.cs" />
     <Compile Include="Enums\DateDescriptor.cs" />
     <Compile Include="Enums\EventOrder.cs" />
@@ -71,7 +71,7 @@
     </Compile>
     <Compile Include="Model\ItemBase.cs" />
     <Compile Include="ServiceLocator.cs" />
-    <Compile Include="Parameters\StoryParameters.cs" />
+    <Compile Include="Parameters\StoryCriteria.cs" />
     <Compile Include="Parsers\CreatorParser.cs" />
     <Compile Include="Parsers\SeriesParser.cs" />
     <Compile Include="Parsers\CharacterParser.cs" />
@@ -84,10 +84,10 @@
     <Compile Include="Model\Item.cs" />
     <Compile Include="Model\ItemCollection.cs" />
     <Compile Include="Model\PriceItem.cs" />
-    <Compile Include="Parameters\SeriesParameters.cs" />
-    <Compile Include="Parameters\EventParameters.cs" />
-    <Compile Include="Parameters\ComicParameters.cs" />
-    <Compile Include="Parameters\CharacterParameters.cs" />
+    <Compile Include="Parameters\SeriesCriteria.cs" />
+    <Compile Include="Parameters\EventCriteria.cs" />
+    <Compile Include="Parameters\ComicCriteria.cs" />
+    <Compile Include="Parameters\CharacterCriteria.cs" />
     <Compile Include="Model\Comic.cs" />
     <Compile Include="Model\Creator.cs" />
     <Compile Include="Model\Data.cs" />
@@ -98,7 +98,7 @@
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\Url.cs" />
     <Compile Include="Model\DateRange.cs" />
-    <Compile Include="Parameters\ParametersBase.cs" />
+    <Compile Include="Parameters\BaseCriteria.cs" />
     <Compile Include="Parsers\StoryParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CharacterService.cs" />
@@ -118,7 +118,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parameters\CreatorParameters.cs" />
+    <Compile Include="Parameters\CreatorCriteria.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MarvelApiResources.resx">

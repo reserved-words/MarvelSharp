@@ -1,5 +1,6 @@
 ﻿
-namespace MarvelSharp.Model
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     public class Story : ItemBase
     {

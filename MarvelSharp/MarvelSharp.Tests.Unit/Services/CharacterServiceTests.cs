@@ -1,8 +1,6 @@
 ﻿using Moq;
 using MarvelSharp.Interfaces;
-using MarvelSharp.Services;
 using NUnit.Framework;
-using MarvelSharp.Model;
 using System.Collections.Generic;
 using static MarvelSharp.MarvelApiResources;
 

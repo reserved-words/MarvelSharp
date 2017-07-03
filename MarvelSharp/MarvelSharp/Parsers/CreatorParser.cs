@@ -1,5 +1,4 @@
-﻿using MarvelSharp.Model;
-
+﻿
 namespace MarvelSharp.Parsers
 {
     internal class CreatorParser : BaseParser<Creator>

@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MarvelSharp {
+namespace MarvelSharp
+{
     using System;
     
     

@@ -2,7 +2,7 @@
 
 namespace MarvelSharp.Interfaces
 {
-    public interface IParameters
+    public interface ICriteria
     {
         Dictionary<string, string> ToDictionary();
     }

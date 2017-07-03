@@ -45,7 +45,7 @@ namespace MarvelSharp.Tests.Unit.Utilities
             // Arrange
             var mockHasher = new Mock<IHasher>();
             var mockDateProvider = new Mock<IDateProvider>();
-            var mockParameters = new Mock<IParameters>();
+            var mockParameters = new Mock<ICriteria>();
             var mockDictionary = new Dictionary<string,string>
             {
                 { "TestKey1", "TestValue1" },

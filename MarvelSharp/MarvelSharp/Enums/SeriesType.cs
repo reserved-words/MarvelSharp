@@ -1,6 +1,7 @@
 ﻿using MarvelSharp.Attributes;
 
-namespace MarvelSharp.Enums
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     public enum SeriesType
     {

@@ -1,5 +1,4 @@
-﻿using MarvelSharp.Model;
-
+﻿
 namespace MarvelSharp.Parsers
 {
     internal class ComicParser : BaseParser<Comic>

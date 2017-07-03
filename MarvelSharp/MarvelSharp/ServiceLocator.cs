@@ -1,5 +1,4 @@
 ﻿using MarvelSharp.Interfaces;
-using MarvelSharp.Model;
 using MarvelSharp.Parsers;
 using MarvelSharp.Utilities;
 

@@ -1,5 +1,4 @@
-﻿using MarvelSharp.Model;
-using MarvelSharp.Parsers;
+﻿using MarvelSharp.Parsers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using System;

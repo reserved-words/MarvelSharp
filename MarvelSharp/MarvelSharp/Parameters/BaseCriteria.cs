@@ -1,16 +1,17 @@
 ﻿using MarvelSharp.Extensions;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using MarvelSharp.Enums;
 using MarvelSharp.Interfaces;
-using MarvelSharp.Model;
 
-namespace MarvelSharp.Parameters
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
-    public abstract class ParametersBase : IParameters
+    public abstract class BaseCriteria : ICriteria
     {
+
+        /// <summary>
+        /// Return only entities which have been modified since the specified date.
+        /// </summary>
         public DateTime? ModifiedSince { get; set; }
         
         public Dictionary<string, string> ToDictionary()

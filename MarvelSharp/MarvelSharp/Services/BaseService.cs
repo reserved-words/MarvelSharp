@@ -1,11 +1,10 @@
 ﻿using MarvelSharp.Interfaces;
-using MarvelSharp.Model;
-using MarvelSharp.Parameters;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MarvelSharp.Services
+// ReSharper disable once CheckNamespace
+namespace MarvelSharp
 {
     public class BaseService<T>
     {
@@ -24,9 +23,9 @@ namespace MarvelSharp.Services
             _urlBuilder = urlBuilder;
         }
 
-        protected async Task<Response<List<T>>> GetList(string urlSuffix, int? limit, int? offset, ParametersBase parameters)
+        protected async Task<Response<List<T>>> GetList(string urlSuffix, int? limit, int? offset, BaseCriteria criteria)
         {
-            return await GetResponse<List<T>>(urlSuffix, limit, offset, parameters);
+            return await GetResponse<List<T>>(urlSuffix, limit, offset, criteria);
         }
 
         protected async Task<Response<T>> GetSingle(string urlSuffix)
@@ -34,9 +33,9 @@ namespace MarvelSharp.Services
             return await GetResponse<T>(urlSuffix, 1, 0, null);
         }
 
-        private async Task<Response<T1>> GetResponse<T1>(string urlSuffix, int? limit, int? offset, ParametersBase parameters)
+        private async Task<Response<T1>> GetResponse<T1>(string urlSuffix, int? limit, int? offset, BaseCriteria criteria)
         {
-            var url = _urlBuilder.BuildUrl(_apiPublicKey, _apiPrivateKey, urlSuffix, limit, offset, parameters);
+            var url = _urlBuilder.BuildUrl(_apiPublicKey, _apiPrivateKey, urlSuffix, limit, offset, criteria);
 
             var httpResponse = await _httpService.GetAsync(url);
 

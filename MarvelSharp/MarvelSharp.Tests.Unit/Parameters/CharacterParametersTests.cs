@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Enums;
-using MarvelSharp.Parameters;
 using NUnit.Framework;
 using MarvelSharp.Extensions;
 using static MarvelSharp.MarvelApiResources;
@@ -16,7 +14,7 @@ namespace MarvelSharp.Tests.Unit.Parameters
         public void ToDictionary_ReturnsCorrectDictionary()
         {
             // Arrange
-            var sut = new CharacterParameters
+            var sut = new CharacterCriteria
             {
                 Name = "TestName456",
                 NameStartsWith = "TestStartName789",
