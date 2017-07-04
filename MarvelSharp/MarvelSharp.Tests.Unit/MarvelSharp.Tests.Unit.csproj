@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\StringExtensionMethods.cs" />
-    <Compile Include="Parameters\EventParametersTests.cs" />
-    <Compile Include="Parameters\ComicParametersTests.cs" />
-    <Compile Include="Parameters\CreatorParameterTests.cs" />
-    <Compile Include="Parameters\StoryParametersTests.cs" />
-    <Compile Include="Parameters\SeriesParametersTests.cs" />
+    <Compile Include="Criteria\EventCriteriaTests.cs" />
+    <Compile Include="Criteria\ComicCriteriaTests.cs" />
+    <Compile Include="Criteria\CreatorCriteriaTests.cs" />
+    <Compile Include="Criteria\StoryCriteriaTests.cs" />
+    <Compile Include="Criteria\SeriesCriteriaTests.cs" />
     <Compile Include="Parsers\CreatorParserTests.cs" />
     <Compile Include="Parsers\ComicParserTests.cs" />
     <Compile Include="Parsers\SeriesParserTest.cs" />
@@ -76,7 +76,7 @@
     <Compile Include="Services\CreatorServiceTests.cs" />
     <Compile Include="Services\SeriesServiceTests.cs" />
     <Compile Include="Helpers\TestJson.cs" />
-    <Compile Include="Parameters\CharacterParametersTests.cs" />
+    <Compile Include="Criteria\CharacterCriteriaTests.cs" />
     <Compile Include="Utilities\UrlBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>

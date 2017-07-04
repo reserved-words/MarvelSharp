@@ -8,8 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MarvelSharp
-{
+namespace MarvelSharp {
     using System;
     
     
@@ -23,7 +22,7 @@ namespace MarvelSharp
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class MarvelApiResources {
+    internal class MarvelApiResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -37,7 +36,7 @@ namespace MarvelSharp
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MarvelSharp.MarvelApiResources", typeof(MarvelApiResources).Assembly);
@@ -52,7 +51,7 @@ namespace MarvelSharp
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +63,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to 200.
         /// </summary>
-        public static string HttpSuccessCode {
+        internal static string HttpSuccessCode {
             get {
                 return ResourceManager.GetString("HttpSuccessCode", resourceCulture);
             }
@@ -73,7 +72,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to apikey.
         /// </summary>
-        public static string ParameterApiKey {
+        internal static string ParameterApiKey {
             get {
                 return ResourceManager.GetString("ParameterApiKey", resourceCulture);
             }
@@ -82,7 +81,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters.
         /// </summary>
-        public static string ParameterCharacters {
+        internal static string ParameterCharacters {
             get {
                 return ResourceManager.GetString("ParameterCharacters", resourceCulture);
             }
@@ -91,7 +90,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to collaborators.
         /// </summary>
-        public static string ParameterCollaborators {
+        internal static string ParameterCollaborators {
             get {
                 return ResourceManager.GetString("ParameterCollaborators", resourceCulture);
             }
@@ -100,7 +99,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics.
         /// </summary>
-        public static string ParameterComics {
+        internal static string ParameterComics {
             get {
                 return ResourceManager.GetString("ParameterComics", resourceCulture);
             }
@@ -109,7 +108,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to contains.
         /// </summary>
-        public static string ParameterContains {
+        internal static string ParameterContains {
             get {
                 return ResourceManager.GetString("ParameterContains", resourceCulture);
             }
@@ -118,7 +117,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators.
         /// </summary>
-        public static string ParameterCreators {
+        internal static string ParameterCreators {
             get {
                 return ResourceManager.GetString("ParameterCreators", resourceCulture);
             }
@@ -127,7 +126,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to dateDescriptor.
         /// </summary>
-        public static string ParameterDateDescriptor {
+        internal static string ParameterDateDescriptor {
             get {
                 return ResourceManager.GetString("ParameterDateDescriptor", resourceCulture);
             }
@@ -136,7 +135,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to dateRange.
         /// </summary>
-        public static string ParameterDateRange {
+        internal static string ParameterDateRange {
             get {
                 return ResourceManager.GetString("ParameterDateRange", resourceCulture);
             }
@@ -145,7 +144,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to yyyy-MM-dd.
         /// </summary>
-        public static string ParameterDateTimeFormat {
+        internal static string ParameterDateTimeFormat {
             get {
                 return ResourceManager.GetString("ParameterDateTimeFormat", resourceCulture);
             }
@@ -154,7 +153,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to diamondCode.
         /// </summary>
-        public static string ParameterDiamondCode {
+        internal static string ParameterDiamondCode {
             get {
                 return ResourceManager.GetString("ParameterDiamondCode", resourceCulture);
             }
@@ -163,7 +162,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to digitalId.
         /// </summary>
-        public static string ParameterDigitalId {
+        internal static string ParameterDigitalId {
             get {
                 return ResourceManager.GetString("ParameterDigitalId", resourceCulture);
             }
@@ -172,7 +171,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to ean.
         /// </summary>
-        public static string ParameterEan {
+        internal static string ParameterEan {
             get {
                 return ResourceManager.GetString("ParameterEan", resourceCulture);
             }
@@ -181,7 +180,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events.
         /// </summary>
-        public static string ParameterEvents {
+        internal static string ParameterEvents {
             get {
                 return ResourceManager.GetString("ParameterEvents", resourceCulture);
             }
@@ -190,7 +189,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to firstName.
         /// </summary>
-        public static string ParameterFirstName {
+        internal static string ParameterFirstName {
             get {
                 return ResourceManager.GetString("ParameterFirstName", resourceCulture);
             }
@@ -199,7 +198,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to firstNameStartsWith.
         /// </summary>
-        public static string ParameterFirstNameStartsWith {
+        internal static string ParameterFirstNameStartsWith {
             get {
                 return ResourceManager.GetString("ParameterFirstNameStartsWith", resourceCulture);
             }
@@ -208,7 +207,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to format.
         /// </summary>
-        public static string ParameterFormat {
+        internal static string ParameterFormat {
             get {
                 return ResourceManager.GetString("ParameterFormat", resourceCulture);
             }
@@ -217,7 +216,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to formatType.
         /// </summary>
-        public static string ParameterFormatType {
+        internal static string ParameterFormatType {
             get {
                 return ResourceManager.GetString("ParameterFormatType", resourceCulture);
             }
@@ -226,7 +225,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to hasDigitalIssue.
         /// </summary>
-        public static string ParameterHasDigitalIssue {
+        internal static string ParameterHasDigitalIssue {
             get {
                 return ResourceManager.GetString("ParameterHasDigitalIssue", resourceCulture);
             }
@@ -235,7 +234,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to hash.
         /// </summary>
-        public static string ParameterHash {
+        internal static string ParameterHash {
             get {
                 return ResourceManager.GetString("ParameterHash", resourceCulture);
             }
@@ -244,7 +243,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to isbn.
         /// </summary>
-        public static string ParameterIsbn {
+        internal static string ParameterIsbn {
             get {
                 return ResourceManager.GetString("ParameterIsbn", resourceCulture);
             }
@@ -253,7 +252,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to issn.
         /// </summary>
-        public static string ParameterIssn {
+        internal static string ParameterIssn {
             get {
                 return ResourceManager.GetString("ParameterIssn", resourceCulture);
             }
@@ -262,7 +261,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to issueNumber.
         /// </summary>
-        public static string ParameterIssueNumber {
+        internal static string ParameterIssueNumber {
             get {
                 return ResourceManager.GetString("ParameterIssueNumber", resourceCulture);
             }
@@ -271,7 +270,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to lastName.
         /// </summary>
-        public static string ParameterLastName {
+        internal static string ParameterLastName {
             get {
                 return ResourceManager.GetString("ParameterLastName", resourceCulture);
             }
@@ -280,7 +279,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to lastNameStartsWith.
         /// </summary>
-        public static string ParameterLastNameStartsWith {
+        internal static string ParameterLastNameStartsWith {
             get {
                 return ResourceManager.GetString("ParameterLastNameStartsWith", resourceCulture);
             }
@@ -289,7 +288,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to limit.
         /// </summary>
-        public static string ParameterLimit {
+        internal static string ParameterLimit {
             get {
                 return ResourceManager.GetString("ParameterLimit", resourceCulture);
             }
@@ -298,7 +297,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to ,.
         /// </summary>
-        public static string ParameterListSeparator {
+        internal static string ParameterListSeparator {
             get {
                 return ResourceManager.GetString("ParameterListSeparator", resourceCulture);
             }
@@ -307,7 +306,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to middleName.
         /// </summary>
-        public static string ParameterMiddleName {
+        internal static string ParameterMiddleName {
             get {
                 return ResourceManager.GetString("ParameterMiddleName", resourceCulture);
             }
@@ -316,7 +315,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to middleNameStartsWith.
         /// </summary>
-        public static string ParameterMiddleNameStartsWith {
+        internal static string ParameterMiddleNameStartsWith {
             get {
                 return ResourceManager.GetString("ParameterMiddleNameStartsWith", resourceCulture);
             }
@@ -325,7 +324,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to modifiedSince.
         /// </summary>
-        public static string ParameterModifiedSince {
+        internal static string ParameterModifiedSince {
             get {
                 return ResourceManager.GetString("ParameterModifiedSince", resourceCulture);
             }
@@ -334,7 +333,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to name.
         /// </summary>
-        public static string ParameterName {
+        internal static string ParameterName {
             get {
                 return ResourceManager.GetString("ParameterName", resourceCulture);
             }
@@ -343,7 +342,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to nameStartsWith.
         /// </summary>
-        public static string ParameterNameStartsWith {
+        internal static string ParameterNameStartsWith {
             get {
                 return ResourceManager.GetString("ParameterNameStartsWith", resourceCulture);
             }
@@ -352,7 +351,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to noVariants.
         /// </summary>
-        public static string ParameterNoVariants {
+        internal static string ParameterNoVariants {
             get {
                 return ResourceManager.GetString("ParameterNoVariants", resourceCulture);
             }
@@ -361,7 +360,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to offset.
         /// </summary>
-        public static string ParameterOffset {
+        internal static string ParameterOffset {
             get {
                 return ResourceManager.GetString("ParameterOffset", resourceCulture);
             }
@@ -370,7 +369,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to orderBy.
         /// </summary>
-        public static string ParameterOrderBy {
+        internal static string ParameterOrderBy {
             get {
                 return ResourceManager.GetString("ParameterOrderBy", resourceCulture);
             }
@@ -379,7 +378,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series.
         /// </summary>
-        public static string ParameterSeries {
+        internal static string ParameterSeries {
             get {
                 return ResourceManager.GetString("ParameterSeries", resourceCulture);
             }
@@ -388,7 +387,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to seriesType.
         /// </summary>
-        public static string ParameterSeriesType {
+        internal static string ParameterSeriesType {
             get {
                 return ResourceManager.GetString("ParameterSeriesType", resourceCulture);
             }
@@ -397,7 +396,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to sharedAppearances.
         /// </summary>
-        public static string ParameterSharedAppearances {
+        internal static string ParameterSharedAppearances {
             get {
                 return ResourceManager.GetString("ParameterSharedAppearances", resourceCulture);
             }
@@ -406,7 +405,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to startYear.
         /// </summary>
-        public static string ParameterStartYear {
+        internal static string ParameterStartYear {
             get {
                 return ResourceManager.GetString("ParameterStartYear", resourceCulture);
             }
@@ -415,7 +414,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories.
         /// </summary>
-        public static string ParameterStories {
+        internal static string ParameterStories {
             get {
                 return ResourceManager.GetString("ParameterStories", resourceCulture);
             }
@@ -424,7 +423,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to suffix.
         /// </summary>
-        public static string ParameterSuffix {
+        internal static string ParameterSuffix {
             get {
                 return ResourceManager.GetString("ParameterSuffix", resourceCulture);
             }
@@ -433,7 +432,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to ts.
         /// </summary>
-        public static string ParameterTimeStamp {
+        internal static string ParameterTimeStamp {
             get {
                 return ResourceManager.GetString("ParameterTimeStamp", resourceCulture);
             }
@@ -442,7 +441,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to yyMMddHHmmss.
         /// </summary>
-        public static string ParameterTimeStampFormat {
+        internal static string ParameterTimeStampFormat {
             get {
                 return ResourceManager.GetString("ParameterTimeStampFormat", resourceCulture);
             }
@@ -451,7 +450,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to title.
         /// </summary>
-        public static string ParameterTitle {
+        internal static string ParameterTitle {
             get {
                 return ResourceManager.GetString("ParameterTitle", resourceCulture);
             }
@@ -460,7 +459,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to titleStartsWith.
         /// </summary>
-        public static string ParameterTitleStartsWith {
+        internal static string ParameterTitleStartsWith {
             get {
                 return ResourceManager.GetString("ParameterTitleStartsWith", resourceCulture);
             }
@@ -469,7 +468,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to upc.
         /// </summary>
-        public static string ParameterUpc {
+        internal static string ParameterUpc {
             get {
                 return ResourceManager.GetString("ParameterUpc", resourceCulture);
             }
@@ -478,7 +477,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to false.
         /// </summary>
-        public static string ParameterValueFalse {
+        internal static string ParameterValueFalse {
             get {
                 return ResourceManager.GetString("ParameterValueFalse", resourceCulture);
             }
@@ -487,7 +486,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to true.
         /// </summary>
-        public static string ParameterValueTrue {
+        internal static string ParameterValueTrue {
             get {
                 return ResourceManager.GetString("ParameterValueTrue", resourceCulture);
             }
@@ -496,7 +495,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        public static string String1 {
+        internal static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
             }
@@ -505,7 +504,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to https://gateway.marvel.com/v1/public/.
         /// </summary>
-        public static string UrlBase {
+        internal static string UrlBase {
             get {
                 return ResourceManager.GetString("UrlBase", resourceCulture);
             }
@@ -514,7 +513,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters.
         /// </summary>
-        public static string UrlSuffixAllCharacters {
+        internal static string UrlSuffixAllCharacters {
             get {
                 return ResourceManager.GetString("UrlSuffixAllCharacters", resourceCulture);
             }
@@ -523,7 +522,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics.
         /// </summary>
-        public static string UrlSuffixAllComics {
+        internal static string UrlSuffixAllComics {
             get {
                 return ResourceManager.GetString("UrlSuffixAllComics", resourceCulture);
             }
@@ -532,7 +531,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators.
         /// </summary>
-        public static string UrlSuffixAllCreators {
+        internal static string UrlSuffixAllCreators {
             get {
                 return ResourceManager.GetString("UrlSuffixAllCreators", resourceCulture);
             }
@@ -541,7 +540,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events.
         /// </summary>
-        public static string UrlSuffixAllEvents {
+        internal static string UrlSuffixAllEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixAllEvents", resourceCulture);
             }
@@ -550,7 +549,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series.
         /// </summary>
-        public static string UrlSuffixAllSeries {
+        internal static string UrlSuffixAllSeries {
             get {
                 return ResourceManager.GetString("UrlSuffixAllSeries", resourceCulture);
             }
@@ -559,7 +558,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series.
         /// </summary>
-        public static string UrlSuffixAllStories {
+        internal static string UrlSuffixAllStories {
             get {
                 return ResourceManager.GetString("UrlSuffixAllStories", resourceCulture);
             }
@@ -568,7 +567,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters/{0}.
         /// </summary>
-        public static string UrlSuffixCharacterById {
+        internal static string UrlSuffixCharacterById {
             get {
                 return ResourceManager.GetString("UrlSuffixCharacterById", resourceCulture);
             }
@@ -577,7 +576,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters/{0}/comics.
         /// </summary>
-        public static string UrlSuffixCharacterComics {
+        internal static string UrlSuffixCharacterComics {
             get {
                 return ResourceManager.GetString("UrlSuffixCharacterComics", resourceCulture);
             }
@@ -586,7 +585,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters/{0}/events.
         /// </summary>
-        public static string UrlSuffixCharacterEvents {
+        internal static string UrlSuffixCharacterEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixCharacterEvents", resourceCulture);
             }
@@ -595,7 +594,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters/{0}/series.
         /// </summary>
-        public static string UrlSuffixCharacterSeries {
+        internal static string UrlSuffixCharacterSeries {
             get {
                 return ResourceManager.GetString("UrlSuffixCharacterSeries", resourceCulture);
             }
@@ -604,7 +603,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to characters/{0}/stories.
         /// </summary>
-        public static string UrlSuffixCharacterStories {
+        internal static string UrlSuffixCharacterStories {
             get {
                 return ResourceManager.GetString("UrlSuffixCharacterStories", resourceCulture);
             }
@@ -613,7 +612,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics/{0}.
         /// </summary>
-        public static string UrlSuffixComicById {
+        internal static string UrlSuffixComicById {
             get {
                 return ResourceManager.GetString("UrlSuffixComicById", resourceCulture);
             }
@@ -622,7 +621,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics/{0}/characters.
         /// </summary>
-        public static string UrlSuffixComicCharacters {
+        internal static string UrlSuffixComicCharacters {
             get {
                 return ResourceManager.GetString("UrlSuffixComicCharacters", resourceCulture);
             }
@@ -631,7 +630,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics/{0}/creators.
         /// </summary>
-        public static string UrlSuffixComicCreators {
+        internal static string UrlSuffixComicCreators {
             get {
                 return ResourceManager.GetString("UrlSuffixComicCreators", resourceCulture);
             }
@@ -640,7 +639,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics/{0}/events.
         /// </summary>
-        public static string UrlSuffixComicEvents {
+        internal static string UrlSuffixComicEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixComicEvents", resourceCulture);
             }
@@ -649,7 +648,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to comics/{0}/stories.
         /// </summary>
-        public static string UrlSuffixComicStories {
+        internal static string UrlSuffixComicStories {
             get {
                 return ResourceManager.GetString("UrlSuffixComicStories", resourceCulture);
             }
@@ -658,7 +657,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators/{0}.
         /// </summary>
-        public static string UrlSuffixCreatorById {
+        internal static string UrlSuffixCreatorById {
             get {
                 return ResourceManager.GetString("UrlSuffixCreatorById", resourceCulture);
             }
@@ -667,7 +666,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators/{0}/comics.
         /// </summary>
-        public static string UrlSuffixCreatorComics {
+        internal static string UrlSuffixCreatorComics {
             get {
                 return ResourceManager.GetString("UrlSuffixCreatorComics", resourceCulture);
             }
@@ -676,7 +675,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators/{0}/events.
         /// </summary>
-        public static string UrlSuffixCreatorEvents {
+        internal static string UrlSuffixCreatorEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixCreatorEvents", resourceCulture);
             }
@@ -685,7 +684,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators/{0}/series.
         /// </summary>
-        public static string UrlSuffixCreatorSeries {
+        internal static string UrlSuffixCreatorSeries {
             get {
                 return ResourceManager.GetString("UrlSuffixCreatorSeries", resourceCulture);
             }
@@ -694,7 +693,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to creators/{0}/stories.
         /// </summary>
-        public static string UrlSuffixCreatorStories {
+        internal static string UrlSuffixCreatorStories {
             get {
                 return ResourceManager.GetString("UrlSuffixCreatorStories", resourceCulture);
             }
@@ -703,7 +702,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}.
         /// </summary>
-        public static string UrlSuffixEventById {
+        internal static string UrlSuffixEventById {
             get {
                 return ResourceManager.GetString("UrlSuffixEventById", resourceCulture);
             }
@@ -712,7 +711,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}/characters.
         /// </summary>
-        public static string UrlSuffixEventCharacters {
+        internal static string UrlSuffixEventCharacters {
             get {
                 return ResourceManager.GetString("UrlSuffixEventCharacters", resourceCulture);
             }
@@ -721,7 +720,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}/comics.
         /// </summary>
-        public static string UrlSuffixEventComics {
+        internal static string UrlSuffixEventComics {
             get {
                 return ResourceManager.GetString("UrlSuffixEventComics", resourceCulture);
             }
@@ -730,7 +729,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}/creators.
         /// </summary>
-        public static string UrlSuffixEventCreators {
+        internal static string UrlSuffixEventCreators {
             get {
                 return ResourceManager.GetString("UrlSuffixEventCreators", resourceCulture);
             }
@@ -739,7 +738,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}/series.
         /// </summary>
-        public static string UrlSuffixEventSeries {
+        internal static string UrlSuffixEventSeries {
             get {
                 return ResourceManager.GetString("UrlSuffixEventSeries", resourceCulture);
             }
@@ -748,7 +747,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to events/{0}/stories.
         /// </summary>
-        public static string UrlSuffixEventStories {
+        internal static string UrlSuffixEventStories {
             get {
                 return ResourceManager.GetString("UrlSuffixEventStories", resourceCulture);
             }
@@ -757,7 +756,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}.
         /// </summary>
-        public static string UrlSuffixSeriesById {
+        internal static string UrlSuffixSeriesById {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesById", resourceCulture);
             }
@@ -766,7 +765,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}/characters.
         /// </summary>
-        public static string UrlSuffixSeriesCharacters {
+        internal static string UrlSuffixSeriesCharacters {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesCharacters", resourceCulture);
             }
@@ -775,7 +774,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}/comics.
         /// </summary>
-        public static string UrlSuffixSeriesComics {
+        internal static string UrlSuffixSeriesComics {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesComics", resourceCulture);
             }
@@ -784,7 +783,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}/creators.
         /// </summary>
-        public static string UrlSuffixSeriesCreators {
+        internal static string UrlSuffixSeriesCreators {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesCreators", resourceCulture);
             }
@@ -793,7 +792,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}/events.
         /// </summary>
-        public static string UrlSuffixSeriesEvents {
+        internal static string UrlSuffixSeriesEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesEvents", resourceCulture);
             }
@@ -802,7 +801,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to series/{0}/stories.
         /// </summary>
-        public static string UrlSuffixSeriesStories {
+        internal static string UrlSuffixSeriesStories {
             get {
                 return ResourceManager.GetString("UrlSuffixSeriesStories", resourceCulture);
             }
@@ -811,7 +810,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}.
         /// </summary>
-        public static string UrlSuffixStoryById {
+        internal static string UrlSuffixStoryById {
             get {
                 return ResourceManager.GetString("UrlSuffixStoryById", resourceCulture);
             }
@@ -820,7 +819,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}/characters.
         /// </summary>
-        public static string UrlSuffixStoryCharacters {
+        internal static string UrlSuffixStoryCharacters {
             get {
                 return ResourceManager.GetString("UrlSuffixStoryCharacters", resourceCulture);
             }
@@ -829,7 +828,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}/comics.
         /// </summary>
-        public static string UrlSuffixStoryComics {
+        internal static string UrlSuffixStoryComics {
             get {
                 return ResourceManager.GetString("UrlSuffixStoryComics", resourceCulture);
             }
@@ -838,7 +837,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}/creators.
         /// </summary>
-        public static string UrlSuffixStoryCreators {
+        internal static string UrlSuffixStoryCreators {
             get {
                 return ResourceManager.GetString("UrlSuffixStoryCreators", resourceCulture);
             }
@@ -847,7 +846,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}/events.
         /// </summary>
-        public static string UrlSuffixStoryEvents {
+        internal static string UrlSuffixStoryEvents {
             get {
                 return ResourceManager.GetString("UrlSuffixStoryEvents", resourceCulture);
             }
@@ -856,7 +855,7 @@ namespace MarvelSharp
         /// <summary>
         ///   Looks up a localized string similar to stories/{0}/series.
         /// </summary>
-        public static string UrlSuffixStorySeries {
+        internal static string UrlSuffixStorySeries {
             get {
                 return ResourceManager.GetString("UrlSuffixStorySeries", resourceCulture);
             }

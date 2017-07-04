@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MarvelSharp.Criteria;
+using MarvelSharp.Model;
 
 namespace MarvelSharp.Tests.ConsoleApp
 {
     public class Program
     {
-        private const int ReturnItems = 25;
-        private const string PreviousPageCode = "<";
-        private const string NextPageCode = ">";
-        private const int PreviousPageValue = -1;
-        private const int NextPageValue = -2;
-        private static CharacterService _characterService;
-        private static ComicService _comicService;
-        private static EventService _eventService;
-        private static SeriesService _seriesService;
-        private static StoryService _storyService;
-        private static CreatorService _creatorService;
+        internal const int ReturnItems = 25;
+        internal const string PreviousPageCode = "<";
+        internal const string NextPageCode = ">";
+        internal const int PreviousPageValue = -1;
+        internal const int NextPageValue = -2;
+        internal static ApiService ApiService;
 
         private static readonly Dictionary<int, string> ItemTypesPlural = new Dictionary<int, string>
         {
@@ -31,52 +28,52 @@ namespace MarvelSharp.Tests.ConsoleApp
 
         private static readonly Dictionary<string, Func<RequestDetails,List<ItemBase>>> MethodDictionary  = new Dictionary<string, Func<RequestDetails, List<ItemBase>>>
         {
-            { "10", rd => GetList<Character, CharacterCriteria>(_characterService.GetAllAsync, rd) },
-            { "20", rd => GetList<Comic, ComicCriteria>(_comicService.GetAllAsync, rd) },
-            { "30", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetAllAsync, rd) },
-            { "40", rd => GetList<Event, EventCriteria>(_eventService.GetAllAsync, rd) },
-            { "50", rd => GetList<Series, SeriesCriteria>(_seriesService.GetAllAsync, rd) },
-            { "60", rd => GetList<Story, StoryCriteria>(_storyService.GetAllAsync, rd) },
+            { "10", rd => GetList<Character, CharacterCriteria>(ApiService.GetAllCharactersAsync, rd) },
+            { "20", rd => GetList<Comic, ComicCriteria>(ApiService.GetAllComicsAsync, rd) },
+            { "30", rd => GetList<Creator, CreatorCriteria>(ApiService.GetAllCreatorsAsync, rd) },
+            { "40", rd => GetList<Event, EventCriteria>(ApiService.GetAllEventsAsync, rd) },
+            { "50", rd => GetList<Series, SeriesCriteria>(ApiService.GetAllSeriesAsync, rd) },
+            { "60", rd => GetList<Story, StoryCriteria>(ApiService.GetAllStoriesAsync, rd) },
 
-            { "11", rd => new List<ItemBase> { _characterService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
-            { "22", rd => new List<ItemBase> { _comicService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
-            { "33", rd => new List<ItemBase> { _creatorService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
-            { "44", rd => new List<ItemBase> { _eventService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
-            { "55", rd => new List<ItemBase> { _seriesService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
-            { "66", rd => new List<ItemBase> { _storyService.GetByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "11", rd => new List<ItemBase> { ApiService.GetCharacterByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "22", rd => new List<ItemBase> { ApiService.GetComicByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "33", rd => new List<ItemBase> { ApiService.GetCreatorByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "44", rd => new List<ItemBase> { ApiService.GetEventByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "55", rd => new List<ItemBase> { ApiService.GetSeriesByIdAsync(rd.ItemId).Result.Data.Result } },
+            { "66", rd => new List<ItemBase> { ApiService.GetStoryByIdAsync(rd.ItemId).Result.Data.Result } },
             
-            { "21", rd => GetList<Comic, ComicCriteria>(_comicService.GetByCharacterAsync, rd) },
-            { "41", rd => GetList<Event, EventCriteria>(_eventService.GetByCharacterAsync, rd) },
-            { "51", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByCharacterAsync, rd) },
-            { "61", rd => GetList<Story, StoryCriteria>(_storyService.GetByCharacterAsync, rd) },
+            { "21", rd => GetList<Comic, ComicCriteria>(ApiService.GetCharacterComicsAsync, rd) },
+            { "41", rd => GetList<Event, EventCriteria>(ApiService.GetCharacterEventsAsync, rd) },
+            { "51", rd => GetList<Series, SeriesCriteria>(ApiService.GetCharacterSeriesAsync, rd) },
+            { "61", rd => GetList<Story, StoryCriteria>(ApiService.GetCharacterStoriesAsync, rd) },
 
-            { "12", rd => GetList<Character, CharacterCriteria>(_characterService.GetByComicAsync, rd) },
-            { "32", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByComicAsync, rd) },
-            { "42", rd => GetList<Event, EventCriteria>(_eventService.GetByComicAsync, rd) },
-            { "62", rd => GetList<Story, StoryCriteria>(_storyService.GetByComicAsync, rd) },
+            { "12", rd => GetList<Character, CharacterCriteria>(ApiService.GetComicCharactersAsync, rd) },
+            { "32", rd => GetList<Creator, CreatorCriteria>(ApiService.GetComicCreatorsAsync, rd) },
+            { "42", rd => GetList<Event, EventCriteria>(ApiService.GetComicEventsAsync, rd) },
+            { "62", rd => GetList<Story, StoryCriteria>(ApiService.GetComicStoriesAsync, rd) },
 
-            { "23", rd => GetList<Comic, ComicCriteria>(_comicService.GetByCreatorAsync, rd) },
-            { "43", rd => GetList<Event, EventCriteria>(_eventService.GetByCreatorAsync, rd) },
-            { "53", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByCreatorAsync, rd) },
-            { "63", rd => GetList<Story, StoryCriteria>(_storyService.GetByCreatorAsync, rd) },
+            { "23", rd => GetList<Comic, ComicCriteria>(ApiService.GetCreatorComicsAsync, rd) },
+            { "43", rd => GetList<Event, EventCriteria>(ApiService.GetCreatorEventsAsync, rd) },
+            { "53", rd => GetList<Series, SeriesCriteria>(ApiService.GetCreatorSeriesAsync, rd) },
+            { "63", rd => GetList<Story, StoryCriteria>(ApiService.GetCreatorStoriesAsync, rd) },
 
-            { "14", rd => GetList<Character, CharacterCriteria>(_characterService.GetByEventAsync, rd) },
-            { "24", rd => GetList<Comic, ComicCriteria>(_comicService.GetByEventAsync, rd) },
-            { "34", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByEventAsync, rd) },
-            { "54", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByEventAsync, rd) },
-            { "64", rd => GetList<Story, StoryCriteria>(_storyService.GetByEventAsync, rd) },
+            { "14", rd => GetList<Character, CharacterCriteria>(ApiService.GetEventCharactersAsync, rd) },
+            { "24", rd => GetList<Comic, ComicCriteria>(ApiService.GetEventComicsAsync, rd) },
+            { "34", rd => GetList<Creator, CreatorCriteria>(ApiService.GetEventCreatorsAsync, rd) },
+            { "54", rd => GetList<Series, SeriesCriteria>(ApiService.GetEventSeriesAsync, rd) },
+            { "64", rd => GetList<Story, StoryCriteria>(ApiService.GetEventStoriesAsync, rd) },
 
-            { "15", rd => GetList<Character, CharacterCriteria>(_characterService.GetBySeriesAsync, rd) },
-            { "25", rd => GetList<Comic, ComicCriteria>(_comicService.GetBySeriesAsync, rd) },
-            { "35", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetBySeriesAsync, rd) },
-            { "45", rd => GetList<Event, EventCriteria>(_eventService.GetBySeriesAsync, rd) },
-            { "65", rd => GetList<Story, StoryCriteria>(_storyService.GetBySeriesAsync, rd) },
+            { "15", rd => GetList<Character, CharacterCriteria>(ApiService.GetSeriesCharactersAsync, rd) },
+            { "25", rd => GetList<Comic, ComicCriteria>(ApiService.GetSeriesComicsAsync, rd) },
+            { "35", rd => GetList<Creator, CreatorCriteria>(ApiService.GetSeriesCreatorsAsync, rd) },
+            { "45", rd => GetList<Event, EventCriteria>(ApiService.GetSeriesEventsAsync, rd) },
+            { "65", rd => GetList<Story, StoryCriteria>(ApiService.GetSeriesStoriesAsync, rd) },
 
-            { "16", rd => GetList<Character, CharacterCriteria>(_characterService.GetByStoryAsync, rd) },
-            { "26", rd => GetList<Comic, ComicCriteria>(_comicService.GetByStoryAsync, rd) },
-            { "36", rd => GetList<Creator, CreatorCriteria>(_creatorService.GetByStoryAsync, rd) },
-            { "46", rd => GetList<Event, EventCriteria>(_eventService.GetByStoryAsync, rd) },
-            { "56", rd => GetList<Series, SeriesCriteria>(_seriesService.GetByStoryAsync, rd) }
+            { "16", rd => GetList<Character, CharacterCriteria>(ApiService.GetStoryCharactersAsync, rd) },
+            { "26", rd => GetList<Comic, ComicCriteria>(ApiService.GetStoryComicsAsync, rd) },
+            { "36", rd => GetList<Creator, CreatorCriteria>(ApiService.GetStoryCreatorsAsync, rd) },
+            { "46", rd => GetList<Event, EventCriteria>(ApiService.GetStoryEventsAsync, rd) },
+            { "56", rd => GetList<Series, SeriesCriteria>(ApiService.GetStorySeriesAsync, rd) }
         };
 
         public static void Main(string[] args)
@@ -97,27 +94,28 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine();
             }
 
-            _characterService = new CharacterService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            _comicService = new ComicService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            _eventService = new EventService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            _seriesService = new SeriesService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            _storyService = new StoryService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-            _creatorService = new CreatorService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
-
+            ApiService = new ApiService(Properties.Settings.Default.PublicApiKey, Properties.Settings.Default.PrivateApiKey);
+            
             MainMenu();
         }
 
-        private static void MainMenu()
+        internal static void MainMenu()
         {
             PrintHeader("Main Menu");
 
             DisplayMainMenuOptions();
 
-            var input = ParseMainMenuInput();
-
-            if (input == null || !ItemTypesPlural.Keys.Contains(input.Item1))
+            var input = InputHelper.ParseMainMenuInput();
+            
+            if (input == null)
                 return;
 
+            if (input.Item1 == 9)
+                ParameterTests.DisplayOptions();
+
+            if (!ItemTypesPlural.Keys.Contains(input.Item1))
+                return;
+            
             DisplayRequestedList(new RequestDetails(input.Item1, input.Item2, input.Item3, 1, null));
         }
 
@@ -128,6 +126,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine($"{kvp.Key}\tFetch {kvp.Value}");
             }
 
+            Console.WriteLine($"9\tExamples with Criteria");
             Console.WriteLine();
             Console.WriteLine("Type an option number, optionally followed by a character (to return only results starting with that character)");
             Console.WriteLine("and a date (format YYYY-MM-DD, to return only results modified since that date).");
@@ -176,61 +175,6 @@ namespace MarvelSharp.Tests.ConsoleApp
             return MethodDictionary[combinedTypes](rd);
         }
 
-        private static Tuple<int,string,DateTime?> ParseMainMenuInput()
-        {
-            var input = Console.ReadLine()?.Split(' ');
-
-            if (input == null)
-                return null;
-
-            var option = int.Parse(input[0]);
-
-            string startsWith = null;
-            DateTime modifiedSince = DateTime.MinValue;
-
-            for (var i = 1; i < 3; i++)
-            {
-                if (input.Length > i)
-                {
-                    if (modifiedSince == DateTime.MinValue && DateTime.TryParse(input[i], out modifiedSince))
-                    {
-                        continue;
-                    }
-
-                    if (startsWith == null)
-                    {
-                        startsWith = input[i];
-                    }
-                }
-            }
-
-            return new Tuple<int, string, DateTime?>(option, startsWith, modifiedSince == DateTime.MinValue ? (DateTime?)null : modifiedSince);
-        }
-
-        private static int? ParseInput()
-        {
-            Console.WriteLine(0 + "\t" + "Back to Main Menu");
-            Console.WriteLine();
-
-            var input = Console.ReadLine();
-
-            switch (input)
-            {
-                case "0":
-                    MainMenu();
-                    return null;
-                case NextPageCode:
-                    return NextPageValue;
-                case PreviousPageCode:
-                    return PreviousPageValue;
-            }
-
-            int inputInt;
-            return int.TryParse(input, out inputInt)
-                ? inputInt
-                : (int?)null;
-        }
-
         private static void DisplayItemOptions(ItemBase item, RequestDetails rd)
         {
             foreach (var kvp in ItemTypesPlural)
@@ -251,7 +195,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine($"{PreviousPageCode}\tPrevious page");
             }
 
-            var input = ParseInput();
+            var input = InputHelper.ParseInput();
 
             switch (input)
             {
@@ -286,7 +230,7 @@ namespace MarvelSharp.Tests.ConsoleApp
 
             Console.WriteLine($"{NextPageCode}\tNext Page");
 
-            var input = ParseInput();
+            var input = InputHelper.ParseInput();
 
             switch (input)
             {

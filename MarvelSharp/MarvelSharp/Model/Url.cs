@@ -1,6 +1,4 @@
-﻿
-// ReSharper disable once CheckNamespace
-namespace MarvelSharp
+﻿namespace MarvelSharp.Model
 {
     public class Url
     {

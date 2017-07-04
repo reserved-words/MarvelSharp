@@ -1,7 +1,6 @@
 ﻿using System;
 
-// ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelSharp.Model
 {
     public struct DateRange
     {

@@ -1,7 +1,9 @@
 ﻿using Moq;
-using MarvelSharp.Interfaces;
 using NUnit.Framework;
 using System.Collections.Generic;
+using MarvelSharp.Internal.Interfaces;
+using MarvelSharp.Internal.Services;
+using MarvelSharp.Model;
 using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Tests.Unit.Services

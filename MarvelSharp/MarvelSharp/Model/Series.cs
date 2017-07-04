@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
-// ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelSharp.Model
 {
     public class Series : ItemBase
     {

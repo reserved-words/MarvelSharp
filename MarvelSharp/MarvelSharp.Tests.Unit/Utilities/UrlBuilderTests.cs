@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MarvelSharp.Interfaces;
+using MarvelSharp.Internal.Interfaces;
+using MarvelSharp.Internal.Utilities;
 using MarvelSharp.Tests.Unit.Helpers;
-using MarvelSharp.Utilities;
 using Moq;
 using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;

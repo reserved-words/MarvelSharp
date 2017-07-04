@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MarvelSharp.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\CreatorOrder.cs" />
-    <Compile Include="Enums\SeriesType.cs" />
-    <Compile Include="Enums\SeriesOrder.cs" />
-    <Compile Include="Enums\StoryOrder.cs" />
-    <Compile Include="Interfaces\IDateProvider.cs" />
-    <Compile Include="Interfaces\ICriteria.cs" />
-    <Compile Include="Enums\ComicOrder.cs" />
-    <Compile Include="Enums\DateDescriptor.cs" />
-    <Compile Include="Enums\EventOrder.cs" />
-    <Compile Include="Enums\Format.cs" />
-    <Compile Include="Enums\FormatType.cs" />
-    <Compile Include="Enums\CharacterOrder.cs" />
-    <Compile Include="Attributes\StringValueAttribute.cs" />
-    <Compile Include="Extensions\DictionaryExtensionMethods.cs" />
-    <Compile Include="Extensions\EnumExtensionMethods.cs" />
-    <Compile Include="Interfaces\IHttpService.cs" />
-    <Compile Include="Interfaces\IHasher.cs" />
-    <Compile Include="Interfaces\IParser.cs" />
-    <Compile Include="Interfaces\IUrlBuilder.cs" />
+    <Compile Include="Enum\CreatorOrder.cs" />
+    <Compile Include="Enum\SeriesType.cs" />
+    <Compile Include="Enum\SeriesOrder.cs" />
+    <Compile Include="Enum\StoryOrder.cs" />
+    <Compile Include="Internal\Interfaces\IDateProvider.cs" />
+    <Compile Include="Internal\Interfaces\ICriteria.cs" />
+    <Compile Include="Enum\ComicOrder.cs" />
+    <Compile Include="Enum\DateDescriptor.cs" />
+    <Compile Include="Enum\EventOrder.cs" />
+    <Compile Include="Enum\Format.cs" />
+    <Compile Include="Enum\FormatType.cs" />
+    <Compile Include="Enum\CharacterOrder.cs" />
+    <Compile Include="Internal\Attributes\StringValueAttribute.cs" />
+    <Compile Include="Internal\Extensions\DictionaryExtensionMethods.cs" />
+    <Compile Include="Internal\Extensions\EnumExtensionMethods.cs" />
+    <Compile Include="Internal\Interfaces\IHttpService.cs" />
+    <Compile Include="Internal\Interfaces\IHasher.cs" />
+    <Compile Include="Internal\Interfaces\IParser.cs" />
+    <Compile Include="Internal\Interfaces\IUrlBuilder.cs" />
     <Compile Include="MarvelApiResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,23 +72,23 @@
     </Compile>
     <Compile Include="Model\ItemBase.cs" />
     <Compile Include="ServiceLocator.cs" />
-    <Compile Include="Parameters\StoryCriteria.cs" />
-    <Compile Include="Parsers\CreatorParser.cs" />
-    <Compile Include="Parsers\SeriesParser.cs" />
-    <Compile Include="Parsers\CharacterParser.cs" />
-    <Compile Include="Parsers\EventParser.cs" />
-    <Compile Include="Parsers\ComicParser.cs" />
-    <Compile Include="Parsers\BaseParser.cs" />
+    <Compile Include="Criteria\StoryCriteria.cs" />
+    <Compile Include="Internal\Parsers\CreatorParser.cs" />
+    <Compile Include="Internal\Parsers\SeriesParser.cs" />
+    <Compile Include="Internal\Parsers\CharacterParser.cs" />
+    <Compile Include="Internal\Parsers\EventParser.cs" />
+    <Compile Include="Internal\Parsers\ComicParser.cs" />
+    <Compile Include="Internal\Parsers\BaseParser.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\TextObject.cs" />
     <Compile Include="Model\DateItem.cs" />
     <Compile Include="Model\ItemSummary.cs" />
     <Compile Include="Model\ItemCollection.cs" />
     <Compile Include="Model\PriceItem.cs" />
-    <Compile Include="Parameters\SeriesCriteria.cs" />
-    <Compile Include="Parameters\EventCriteria.cs" />
-    <Compile Include="Parameters\ComicCriteria.cs" />
-    <Compile Include="Parameters\CharacterCriteria.cs" />
+    <Compile Include="Criteria\SeriesCriteria.cs" />
+    <Compile Include="Criteria\EventCriteria.cs" />
+    <Compile Include="Criteria\ComicCriteria.cs" />
+    <Compile Include="Criteria\CharacterCriteria.cs" />
     <Compile Include="Model\Comic.cs" />
     <Compile Include="Model\Creator.cs" />
     <Compile Include="Model\Data.cs" />
@@ -98,31 +99,32 @@
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\Url.cs" />
     <Compile Include="Model\DateRange.cs" />
-    <Compile Include="Parameters\BaseCriteria.cs" />
-    <Compile Include="Parsers\StoryParser.cs" />
+    <Compile Include="Criteria\BaseCriteria.cs" />
+    <Compile Include="Internal\Parsers\StoryParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CharacterService.cs" />
-    <Compile Include="Utilities\DateProvider.cs" />
-    <Compile Include="Utilities\HttpService.cs" />
-    <Compile Include="Services\BaseService.cs" />
-    <Compile Include="Services\ComicService.cs" />
-    <Compile Include="Services\CreatorService.cs" />
-    <Compile Include="Services\EventService.cs" />
-    <Compile Include="Utilities\MD5Hasher.cs" />
-    <Compile Include="Services\SeriesService.cs" />
-    <Compile Include="Services\StoryService.cs" />
-    <Compile Include="Utilities\UrlBuilder.cs" />
+    <Compile Include="ApiService.cs" />
+    <Compile Include="Internal\Services\CharacterService.cs" />
+    <Compile Include="Internal\Utilities\DateProvider.cs" />
+    <Compile Include="Internal\Utilities\HttpService.cs" />
+    <Compile Include="Internal\Services\BaseService.cs" />
+    <Compile Include="Internal\Services\ComicService.cs" />
+    <Compile Include="Internal\Services\CreatorService.cs" />
+    <Compile Include="Internal\Services\EventService.cs" />
+    <Compile Include="Internal\Utilities\MD5Hasher.cs" />
+    <Compile Include="Internal\Services\SeriesService.cs" />
+    <Compile Include="Internal\Services\StoryService.cs" />
+    <Compile Include="Internal\Utilities\UrlBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parameters\CreatorCriteria.cs" />
+    <Compile Include="Criteria\CreatorCriteria.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MarvelApiResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MarvelApiResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
