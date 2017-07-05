@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using MarvelSharp.Criteria;
+using MarvelSharp.Internal.Extensions;
 using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;
-using MarvelSharp.Internal.Extensions;
 
 namespace MarvelSharp.Tests.Unit.Criteria
 {
@@ -27,7 +27,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
                 Stories = new List<int> { 0 },
                 Contains = new List<Format> { Format.Comic, Format.Digest },
                 SeriesType = SeriesType.OneShot,
-                OrderBy = SeriesOrder.StartYearDescending
+                OrderBy = new List<SeriesOrder>()
             };
 
             // Act
@@ -60,7 +60,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Events), result[ParameterEvents]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Contains.Select(c => c.GetStringValue())), result[ParameterContains]);
             Assert.AreEqual(sut.SeriesType.GetStringValue(), result[ParameterSeriesType]);
-            Assert.AreEqual(sut.OrderBy.GetStringValue(), result[ParameterOrderBy]);
+            Assert.AreEqual(string.Join(ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[ParameterOrderBy]);
         }
     }
 }

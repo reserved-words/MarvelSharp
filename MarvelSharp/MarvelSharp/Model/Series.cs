@@ -74,6 +74,10 @@ namespace MarvelSharp.Model
         /// </summary>
         public ItemSummary Previous { get; set; }
 
+        /// <summary>
+        /// Returns a string identifying the Series object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => Title;
     }
 }

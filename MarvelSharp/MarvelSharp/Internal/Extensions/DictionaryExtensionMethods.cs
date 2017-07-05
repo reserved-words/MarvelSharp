@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MarvelSharp.Model;
@@ -37,12 +38,14 @@ namespace MarvelSharp.Internal.Extensions
             dictionary.Add(key, string.Join(ParameterListSeparator, value));
         }
 
-        public static void AddParameter(this Dictionary<string, string> dictionary, string key, ICollection<Format> value)
+        public static void AddParameter(this Dictionary<string, string> dictionary, string key, ICollection value)
         {
-            if (!value.Any())
-                return;
-
-            dictionary.Add(key, string.Join(ParameterListSeparator, value.Select(e => e.GetStringValue())));
+            var list = new List<string>();
+            foreach (var item in value)
+            {
+                list.Add(((Enum)item).GetStringValue());
+            }
+            dictionary.Add(key, string.Join(ParameterListSeparator, list));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, string value)

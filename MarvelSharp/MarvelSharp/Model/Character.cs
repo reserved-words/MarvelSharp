@@ -44,6 +44,10 @@ namespace MarvelSharp.Model
         /// </summary>
         public ItemCollection Events { get; set; }
 
+        /// <summary>
+        /// Returns a string identifying the Character object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => Name;
     }
 }

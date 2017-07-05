@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using MarvelSharp.Internal.Extensions;
 using MarvelSharp.Internal.Interfaces;
 using MarvelSharp.Model;
 
 namespace MarvelSharp.Criteria
 {
+    /// <summary>
+    /// A base class for criteria to be used to filter resources
+    /// </summary>
     public abstract class BaseCriteria : ICriteria
     {
 
@@ -14,6 +19,10 @@ namespace MarvelSharp.Criteria
         /// </summary>
         public DateTime? ModifiedSince { get; set; }
 
+        /// <summary>
+        /// Converts the criteria data to a key-value dictionary
+        /// </summary>
+        /// <returns>A dictionary of key value pairs</returns>
         public Dictionary<string, string> ToDictionary()
         {
             var dictionary = new Dictionary<string, string>();
@@ -51,9 +60,9 @@ namespace MarvelSharp.Criteria
                 {
                     dictionary.AddParameter(propertyName, (ICollection<int>)propertyValue);
                 }
-                else if (typeof(ICollection<Format>).IsAssignableFrom(propertyType))
+                else if (typeof(ICollection).IsAssignableFrom(propertyType) && propertyType.IsGenericType && propertyType.GenericTypeArguments.Single().IsEnum)
                 {
-                    dictionary.AddParameter(propertyName, (ICollection<Format>)propertyValue);
+                    dictionary.AddParameter(propertyName, (ICollection)propertyValue);
                 }
                 else if (propertyType == typeof(DateRange?))
                 {

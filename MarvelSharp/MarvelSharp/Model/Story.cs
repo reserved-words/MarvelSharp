@@ -48,6 +48,10 @@ namespace MarvelSharp.Model
         /// </summary>
         public ItemSummary OriginalIssue { get; set; }
 
+        /// <summary>
+        /// Returns a string identifying the Story object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => Title;
     }
 }

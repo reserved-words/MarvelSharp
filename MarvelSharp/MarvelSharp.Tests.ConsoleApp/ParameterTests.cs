@@ -84,7 +84,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 new CharacterCriteria
                 {
                     NameStartsWith = "Da",
-                    OrderBy = CharacterOrder.ModifiedAscending
+                    OrderBy = new List<CharacterOrder> { CharacterOrder.ModifiedAscending }
                 }).Result;
             DisplayMetaData(response);
             foreach (var item in response.Data.Result)
@@ -103,7 +103,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 10,
                 new ComicCriteria
                 {
-                    OrderBy = ComicOrder.TitleDescending,
+                    OrderBy = new List<ComicOrder> { ComicOrder.TitleDescending },
                     HasDigitalIssue = true
                 }).Result;
             DisplayMetaData(response);
@@ -125,7 +125,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 new EventCriteria
                 {
                     Creators = new List<int> { CreatorIdBrianMichaelBendis, CreatorIdPaulNeary },
-                    OrderBy = EventOrder.StartDateDescending
+                    OrderBy = new List<EventOrder> { EventOrder.StartDateDescending }
                 }).Result;
             DisplayMetaData(response);
             foreach (var item in response.Data.Result)
@@ -146,7 +146,7 @@ namespace MarvelSharp.Tests.ConsoleApp
                 new ComicCriteria
                 {
                     DateDescriptor = DateDescriptor.LastWeek,
-                    OrderBy = ComicOrder.TitleAscending
+                    OrderBy = new List<ComicOrder> { ComicOrder.TitleAscending }
                 }).Result;
             DisplayMetaData(response);
             foreach (var item in response.Data.Result)

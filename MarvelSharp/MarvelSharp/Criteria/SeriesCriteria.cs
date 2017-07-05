@@ -7,6 +7,9 @@ namespace MarvelSharp.Criteria
     /// </summary>
     public class SeriesCriteria : BaseCriteria
     {
+        /// <summary>
+        /// Initializes an instance of the SeriesCriteria class
+        /// </summary>
         public SeriesCriteria()
         {
             Comics = new List<int>();
@@ -15,6 +18,7 @@ namespace MarvelSharp.Criteria
             Stories = new List<int>();
             Creators = new List<int>();
             Contains = new List<Format>();
+            OrderBy = new List<SeriesOrder>();
         }
 
 
@@ -69,8 +73,8 @@ namespace MarvelSharp.Criteria
         public List<Format> Contains { get; set; }
 
         /// <summary>
-        /// Order the result set by the selected fields.
+        /// Order the result set by the selected fields. Multiple values are given priority in the order in which they are passed.
         /// </summary>
-        public SeriesOrder? OrderBy { get; set; }
+        public List<SeriesOrder> OrderBy { get; set; }
     }
 }

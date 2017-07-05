@@ -54,6 +54,10 @@ namespace MarvelSharp.Model
         /// </summary>
         public List<Url> Urls { get; set; }
 
+        /// <summary>
+        /// Returns a string identifying the Creator object
+        /// </summary>
+        /// <returns></returns>
         public override string ToString() => FullName;
     }
 }

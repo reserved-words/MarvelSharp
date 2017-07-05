@@ -27,7 +27,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
                 Stories = new List<int>(),
                 Events = new List<int> { 0 },
                 Creators = new List<int> { 11, 15 },
-                OrderBy = ComicOrder.FocDateDescending,
+                OrderBy = new List<ComicOrder> { ComicOrder.FocDateDescending },
                 NoVariants = false,
                 DateDescriptor = DateDescriptor.LastWeek,
                 DateRange = new DateRange
@@ -91,7 +91,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
             Assert.AreEqual(ParameterValueFalse, result[ParameterNoVariants]);
             Assert.AreEqual(sut.DateDescriptor.GetStringValue(), result[ParameterDateDescriptor]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.DateRange.Value.StartDate, sut.DateRange.Value.EndDate), result[ParameterDateRange]);
-            Assert.AreEqual(sut.OrderBy.GetStringValue(), result[ParameterOrderBy]);
+            Assert.AreEqual(string.Join(ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[ParameterOrderBy]);
             Assert.AreEqual(sut.StartYear.ToString(), result[ParameterStartYear]);
             Assert.AreEqual(sut.IssueNumber.ToString(), result[ParameterIssueNumber]);
             Assert.AreEqual(sut.DiamondCode, result[ParameterDiamondCode]);

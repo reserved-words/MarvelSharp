@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using MarvelSharp.Criteria;
-using NUnit.Framework;
 using MarvelSharp.Internal.Extensions;
+using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Tests.Unit.Criteria
@@ -24,7 +24,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
                 Series = new List<int> { 12 },
                 Events = new List<int>(),
                 Stories = new List<int> { 0 },
-                OrderBy = CharacterOrder.NameAscending
+                OrderBy = new List<CharacterOrder> { CharacterOrder.NameAscending, CharacterOrder.ModifiedDescending }
             };
 
             // Act
@@ -49,7 +49,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Comics), result[ParameterComics]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Series), result[ParameterSeries]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Stories), result[ParameterStories]);
-            Assert.AreEqual(sut.OrderBy.GetStringValue(), result[ParameterOrderBy]);
+            Assert.AreEqual(string.Join(ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[ParameterOrderBy]);
         }
     }
 }

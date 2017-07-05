@@ -7,12 +7,16 @@ namespace MarvelSharp.Criteria
     /// </summary>
     public class CreatorCriteria : BaseCriteria
     {
+        /// <summary>
+        /// Initializes an instance of the CreatorCriteria class
+        /// </summary>
         public CreatorCriteria()
         {
             Comics = new List<int>();
             Series = new List<int>();
             Events = new List<int>();
             Stories = new List<int>();
+            OrderBy = new List<CreatorOrder>();
         }
 
         /// <summary>
@@ -76,8 +80,8 @@ namespace MarvelSharp.Criteria
         public List<int> Stories { get; set; }
 
         /// <summary>
-        /// Order the result set by the selected fields.
+        /// Order the result set by the selected fields. Multiple values are given priority in the order in which they are passed.
         /// </summary>
-        public CreatorOrder OrderBy { get; set; }
+        public List<CreatorOrder> OrderBy { get; set; }
     }
 }
