@@ -8,7 +8,11 @@ namespace MarvelSharp.Internal.Extensions
     {
         public static string GetStringValue(this Enum value)
         {
-            return value.GetAttribute<StringValueAttribute>()?.Value ?? value.ToString();
+            var resourceName = value.GetAttribute<StringValueAttribute>()?.ResourceName;
+
+            return string.IsNullOrEmpty(resourceName)
+                ? value.ToString()
+                : MarvelApiResources.ResourceManager.GetString(resourceName);
         }
 
         private static T GetAttribute<T>(this Enum value) where T : Attribute

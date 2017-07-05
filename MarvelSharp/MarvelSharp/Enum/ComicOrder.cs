@@ -1,29 +1,63 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Comic sort options
+    /// </summary>
     public enum ComicOrder
     {
-        [StringValue("focDate")]
+        /// <summary>
+        /// Sort in ascending Final Order Cut-off Date order
+        /// </summary>
+        [StringValue(nameof(OrderByFocDateAsc))]
         FocDateAscending,
-        [StringValue("onsaleDate")]
+        /// <summary>
+        /// Sort in ascending On Sale Date order
+        /// </summary>
+        [StringValue(nameof(OrderByOnSaleDateAsc))]
         OnSaleDateAscending,
-        [StringValue("title")]
+        /// <summary>
+        /// Sort in ascending Title order
+        /// </summary>
+        [StringValue(nameof(OrderByTitleAsc))]
         TitleAscending,
-        [StringValue("issueNumber")]
+        /// <summary>
+        /// Sort in ascending Issue Number order
+        /// </summary>
+        [StringValue(nameof(OrderByIssueNoAsc))]
         IssueNumberAscending,
-        [StringValue("modified")]
+        /// <summary>
+        /// Sort in ascending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedAsc))]
         ModifiedAscending,
-        [StringValue("-focDate")]
+        /// <summary>
+        /// Sort in descending Final Order Cut-off Date order
+        /// </summary>
+        [StringValue(nameof(OrderByFocDateDesc))]
         FocDateDescending,
-        [StringValue("-onsaleDate")]
+        /// <summary>
+        /// Sort in descending On Sale Date order
+        /// </summary>
+        [StringValue(nameof(OrderByOnSaleDateDesc))]
         OnSaleDateDescending,
-        [StringValue("-title")]
+        /// <summary>
+        /// Sort in descending Title order
+        /// </summary>
+        [StringValue(nameof(OrderByTitleDesc))]
         TitleDescending,
-        [StringValue("-issueNumber")]
+        /// <summary>
+        /// Sort in descending Issue Number order
+        /// </summary>
+        [StringValue(nameof(OrderByIssueNoDesc))]
         IssueNumberDescending,
-        [StringValue("-modified")]
+        /// <summary>
+        /// Sort in descending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }

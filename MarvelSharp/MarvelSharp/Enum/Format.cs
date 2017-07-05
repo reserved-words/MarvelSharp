@@ -1,25 +1,53 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Comic format options
+    /// </summary>
     public enum Format
     {
-        [StringValue("comic")]
+        /// <summary>
+        /// Comic format
+        /// </summary>
+        [StringValue(nameof(FormatComic))]
         Comic,
-        [StringValue("magazine")]
+        /// <summary>
+        /// Magazine format
+        /// </summary>
+        [StringValue(nameof(FormatMagazine))]
         Magazine,
-        [StringValue("trade paperback")]
+        /// <summary>
+        /// Trade paperback format
+        /// </summary>
+        [StringValue(nameof(FormatTradePaperback))]
         TradePaperback,
-        [StringValue("hardcover")]
+        /// <summary>
+        /// Hardcover format
+        /// </summary>
+        [StringValue(nameof(FormatHardcover))]
         Hardcover,
-        [StringValue("digest")]
+        /// <summary>
+        /// Digest format
+        /// </summary>
+        [StringValue(nameof(FormatDigest))]
         Digest,
-        [StringValue("graphic novel")]
+        /// <summary>
+        /// Graphic novel format
+        /// </summary>
+        [StringValue(nameof(FormatGraphicNovel))]
         GraphicNovel,
-        [StringValue("digital comic")]
+        /// <summary>
+        /// Digital comic format
+        /// </summary>
+        [StringValue(nameof(FormatDigitalComic))]
         DigitalComic,
-        [StringValue("infinite comic")]
+        /// <summary>
+        /// Infinite comic format
+        /// </summary>
+        [StringValue(nameof(FormatInfiniteComic))]
         InfiniteComic
     }
 }

@@ -4,11 +4,11 @@ namespace MarvelSharp.Internal.Attributes
 {
     internal class StringValueAttribute : Attribute
     {
-        public StringValueAttribute(string value)
+        public StringValueAttribute(string resourceName)
         {
-            Value = value;
+            ResourceName = resourceName;
         }
-
-        public string Value { get; set; }
+        
+        public string ResourceName { get; set; }
     }
 }

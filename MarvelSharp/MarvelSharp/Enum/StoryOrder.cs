@@ -1,17 +1,33 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Story sort options
+    /// </summary>
     public enum StoryOrder
     {
-        [StringValue("id")]
+        /// <summary>
+        /// Sort in ascending ID order
+        /// </summary>
+        [StringValue(nameof(OrderByIdAsc))]
         IdAscending,
-        [StringValue("modified")]
+        /// <summary>
+        /// Sort in ascending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedAsc))]
         ModifiedAscending,
-        [StringValue("-id")]
+        /// <summary>
+        /// Sort in descending ID order
+        /// </summary>
+        [StringValue(nameof(OrderByIdDesc))]
         IdDescending,
-        [StringValue("-modified")]
+        /// <summary>
+        /// Sort in descending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }

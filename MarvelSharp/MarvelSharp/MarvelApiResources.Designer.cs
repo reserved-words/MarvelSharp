@@ -61,11 +61,371 @@ namespace MarvelSharp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to lastWeek.
+        /// </summary>
+        internal static string DateDescriptorLastWeek {
+            get {
+                return ResourceManager.GetString("DateDescriptorLastWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nextWeek.
+        /// </summary>
+        internal static string DateDescriptorNextWeek {
+            get {
+                return ResourceManager.GetString("DateDescriptorNextWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to thisMonth.
+        /// </summary>
+        internal static string DateDescriptorThisMonth {
+            get {
+                return ResourceManager.GetString("DateDescriptorThisMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to thisWeek.
+        /// </summary>
+        internal static string DateDescriptorThisWeek {
+            get {
+                return ResourceManager.GetString("DateDescriptorThisWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to comic.
+        /// </summary>
+        internal static string FormatComic {
+            get {
+                return ResourceManager.GetString("FormatComic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to digest.
+        /// </summary>
+        internal static string FormatDigest {
+            get {
+                return ResourceManager.GetString("FormatDigest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to digital comic.
+        /// </summary>
+        internal static string FormatDigitalComic {
+            get {
+                return ResourceManager.GetString("FormatDigitalComic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to graphic novel.
+        /// </summary>
+        internal static string FormatGraphicNovel {
+            get {
+                return ResourceManager.GetString("FormatGraphicNovel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hardcover.
+        /// </summary>
+        internal static string FormatHardcover {
+            get {
+                return ResourceManager.GetString("FormatHardcover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to infinite comic.
+        /// </summary>
+        internal static string FormatInfiniteComic {
+            get {
+                return ResourceManager.GetString("FormatInfiniteComic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to magazine.
+        /// </summary>
+        internal static string FormatMagazine {
+            get {
+                return ResourceManager.GetString("FormatMagazine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to trade paperback.
+        /// </summary>
+        internal static string FormatTradePaperback {
+            get {
+                return ResourceManager.GetString("FormatTradePaperback", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to collection.
+        /// </summary>
+        internal static string FormatTypeCollection {
+            get {
+                return ResourceManager.GetString("FormatTypeCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to comic.
+        /// </summary>
+        internal static string FormatTypeComic {
+            get {
+                return ResourceManager.GetString("FormatTypeComic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 200.
         /// </summary>
         internal static string HttpSuccessCode {
             get {
                 return ResourceManager.GetString("HttpSuccessCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to modified.
+        /// </summary>
+        internal static string OrderByDateModifiedAsc {
+            get {
+                return ResourceManager.GetString("OrderByDateModifiedAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -modified.
+        /// </summary>
+        internal static string OrderByDateModifiedDesc {
+            get {
+                return ResourceManager.GetString("OrderByDateModifiedDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to firstName.
+        /// </summary>
+        internal static string OrderByFirstNameAsc {
+            get {
+                return ResourceManager.GetString("OrderByFirstNameAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -firstName.
+        /// </summary>
+        internal static string OrderByFirstNameDesc {
+            get {
+                return ResourceManager.GetString("OrderByFirstNameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to focDate.
+        /// </summary>
+        internal static string OrderByFocDateAsc {
+            get {
+                return ResourceManager.GetString("OrderByFocDateAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -focDate.
+        /// </summary>
+        internal static string OrderByFocDateDesc {
+            get {
+                return ResourceManager.GetString("OrderByFocDateDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to id.
+        /// </summary>
+        internal static string OrderByIdAsc {
+            get {
+                return ResourceManager.GetString("OrderByIdAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -id.
+        /// </summary>
+        internal static string OrderByIdDesc {
+            get {
+                return ResourceManager.GetString("OrderByIdDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to issueNumber.
+        /// </summary>
+        internal static string OrderByIssueNoAsc {
+            get {
+                return ResourceManager.GetString("OrderByIssueNoAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -issueNumber.
+        /// </summary>
+        internal static string OrderByIssueNoDesc {
+            get {
+                return ResourceManager.GetString("OrderByIssueNoDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lastName.
+        /// </summary>
+        internal static string OrderByLastNameAsc {
+            get {
+                return ResourceManager.GetString("OrderByLastNameAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -lastName.
+        /// </summary>
+        internal static string OrderByLastNameDesc {
+            get {
+                return ResourceManager.GetString("OrderByLastNameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to middleName.
+        /// </summary>
+        internal static string OrderByMiddleNameAsc {
+            get {
+                return ResourceManager.GetString("OrderByMiddleNameAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -middleName.
+        /// </summary>
+        internal static string OrderByMiddleNameDesc {
+            get {
+                return ResourceManager.GetString("OrderByMiddleNameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to name.
+        /// </summary>
+        internal static string OrderByNameAsc {
+            get {
+                return ResourceManager.GetString("OrderByNameAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -name.
+        /// </summary>
+        internal static string OrderByNameDesc {
+            get {
+                return ResourceManager.GetString("OrderByNameDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to onsaleDate.
+        /// </summary>
+        internal static string OrderByOnSaleDateAsc {
+            get {
+                return ResourceManager.GetString("OrderByOnSaleDateAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -onsaleDate.
+        /// </summary>
+        internal static string OrderByOnSaleDateDesc {
+            get {
+                return ResourceManager.GetString("OrderByOnSaleDateDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to startDate.
+        /// </summary>
+        internal static string OrderByStartDateAsc {
+            get {
+                return ResourceManager.GetString("OrderByStartDateAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -startDate.
+        /// </summary>
+        internal static string OrderByStartDateDesc {
+            get {
+                return ResourceManager.GetString("OrderByStartDateDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to startYear.
+        /// </summary>
+        internal static string OrderByStartYearAsc {
+            get {
+                return ResourceManager.GetString("OrderByStartYearAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -startYear.
+        /// </summary>
+        internal static string OrderByStartYearDesc {
+            get {
+                return ResourceManager.GetString("OrderByStartYearDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to suffix.
+        /// </summary>
+        internal static string OrderBySuffixAsc {
+            get {
+                return ResourceManager.GetString("OrderBySuffixAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -suffix.
+        /// </summary>
+        internal static string OrderBySuffixDesc {
+            get {
+                return ResourceManager.GetString("OrderBySuffixDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to title.
+        /// </summary>
+        internal static string OrderByTitleAsc {
+            get {
+                return ResourceManager.GetString("OrderByTitleAsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -title.
+        /// </summary>
+        internal static string OrderByTitleDesc {
+            get {
+                return ResourceManager.GetString("OrderByTitleDesc", resourceCulture);
             }
         }
         
@@ -489,6 +849,42 @@ namespace MarvelSharp {
         internal static string ParameterValueTrue {
             get {
                 return ResourceManager.GetString("ParameterValueTrue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to collection.
+        /// </summary>
+        internal static string SeriesTypeCollection {
+            get {
+                return ResourceManager.GetString("SeriesTypeCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to limited.
+        /// </summary>
+        internal static string SeriesTypeLimited {
+            get {
+                return ResourceManager.GetString("SeriesTypeLimited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to one shot.
+        /// </summary>
+        internal static string SeriesTypeOneShot {
+            get {
+                return ResourceManager.GetString("SeriesTypeOneShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ongoing.
+        /// </summary>
+        internal static string SeriesTypeOngoing {
+            get {
+                return ResourceManager.GetString("SeriesTypeOngoing", resourceCulture);
             }
         }
         

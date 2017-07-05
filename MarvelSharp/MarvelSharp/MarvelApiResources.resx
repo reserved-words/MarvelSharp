@@ -384,4 +384,136 @@
   <data name="ParameterSeriesType" xml:space="preserve">
     <value>seriesType</value>
   </data>
+  <data name="OrderByDateModifiedAsc" xml:space="preserve">
+    <value>modified</value>
+  </data>
+  <data name="OrderByDateModifiedDesc" xml:space="preserve">
+    <value>-modified</value>
+  </data>
+  <data name="OrderByFirstNameAsc" xml:space="preserve">
+    <value>firstName</value>
+  </data>
+  <data name="OrderByFirstNameDesc" xml:space="preserve">
+    <value>-firstName</value>
+  </data>
+  <data name="OrderByFocDateAsc" xml:space="preserve">
+    <value>focDate</value>
+  </data>
+  <data name="OrderByFocDateDesc" xml:space="preserve">
+    <value>-focDate</value>
+  </data>
+  <data name="OrderByIdAsc" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="OrderByIdDesc" xml:space="preserve">
+    <value>-id</value>
+  </data>
+  <data name="OrderByIssueNoAsc" xml:space="preserve">
+    <value>issueNumber</value>
+  </data>
+  <data name="OrderByIssueNoDesc" xml:space="preserve">
+    <value>-issueNumber</value>
+  </data>
+  <data name="OrderByLastNameAsc" xml:space="preserve">
+    <value>lastName</value>
+  </data>
+  <data name="OrderByLastNameDesc" xml:space="preserve">
+    <value>-lastName</value>
+  </data>
+  <data name="OrderByMiddleNameAsc" xml:space="preserve">
+    <value>middleName</value>
+  </data>
+  <data name="OrderByMiddleNameDesc" xml:space="preserve">
+    <value>-middleName</value>
+  </data>
+  <data name="OrderByNameAsc" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="OrderByNameDesc" xml:space="preserve">
+    <value>-name</value>
+  </data>
+  <data name="OrderByOnSaleDateAsc" xml:space="preserve">
+    <value>onsaleDate</value>
+  </data>
+  <data name="OrderByOnSaleDateDesc" xml:space="preserve">
+    <value>-onsaleDate</value>
+  </data>
+  <data name="OrderByStartDateAsc" xml:space="preserve">
+    <value>startDate</value>
+  </data>
+  <data name="OrderByStartDateDesc" xml:space="preserve">
+    <value>-startDate</value>
+  </data>
+  <data name="OrderByStartYearAsc" xml:space="preserve">
+    <value>startYear</value>
+  </data>
+  <data name="OrderByStartYearDesc" xml:space="preserve">
+    <value>-startYear</value>
+  </data>
+  <data name="OrderBySuffixAsc" xml:space="preserve">
+    <value>suffix</value>
+  </data>
+  <data name="OrderBySuffixDesc" xml:space="preserve">
+    <value>-suffix</value>
+  </data>
+  <data name="OrderByTitleAsc" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="OrderByTitleDesc" xml:space="preserve">
+    <value>-title</value>
+  </data>
+  <data name="DateDescriptorLastWeek" xml:space="preserve">
+    <value>lastWeek</value>
+  </data>
+  <data name="DateDescriptorNextWeek" xml:space="preserve">
+    <value>nextWeek</value>
+  </data>
+  <data name="DateDescriptorThisMonth" xml:space="preserve">
+    <value>thisMonth</value>
+  </data>
+  <data name="DateDescriptorThisWeek" xml:space="preserve">
+    <value>thisWeek</value>
+  </data>
+  <data name="FormatComic" xml:space="preserve">
+    <value>comic</value>
+  </data>
+  <data name="FormatDigest" xml:space="preserve">
+    <value>digest</value>
+  </data>
+  <data name="FormatDigitalComic" xml:space="preserve">
+    <value>digital comic</value>
+  </data>
+  <data name="FormatGraphicNovel" xml:space="preserve">
+    <value>graphic novel</value>
+  </data>
+  <data name="FormatHardcover" xml:space="preserve">
+    <value>hardcover</value>
+  </data>
+  <data name="FormatInfiniteComic" xml:space="preserve">
+    <value>infinite comic</value>
+  </data>
+  <data name="FormatMagazine" xml:space="preserve">
+    <value>magazine</value>
+  </data>
+  <data name="FormatTradePaperback" xml:space="preserve">
+    <value>trade paperback</value>
+  </data>
+  <data name="FormatTypeCollection" xml:space="preserve">
+    <value>collection</value>
+  </data>
+  <data name="FormatTypeComic" xml:space="preserve">
+    <value>comic</value>
+  </data>
+  <data name="SeriesTypeCollection" xml:space="preserve">
+    <value>collection</value>
+  </data>
+  <data name="SeriesTypeLimited" xml:space="preserve">
+    <value>limited</value>
+  </data>
+  <data name="SeriesTypeOneShot" xml:space="preserve">
+    <value>one shot</value>
+  </data>
+  <data name="SeriesTypeOngoing" xml:space="preserve">
+    <value>ongoing</value>
+  </data>
 </root>

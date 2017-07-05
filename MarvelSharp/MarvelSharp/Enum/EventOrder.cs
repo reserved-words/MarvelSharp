@@ -1,21 +1,43 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Event sort options
+    /// </summary>
     public enum EventOrder
     {
-        [StringValue("name")]
+        /// <summary>
+        /// Sort in ascending Name order
+        /// </summary>
+        [StringValue(nameof(OrderByNameAsc))]
         NameAscending,
-        [StringValue("startDate")]
+        /// <summary>
+        /// Sort in ascending order of the date of publication of the first issue in the event
+        /// </summary>
+        [StringValue(nameof(OrderByStartDateAsc))]
         StartDateAscending,
-        [StringValue("modified")]
+        /// <summary>
+        /// Sort in ascending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedAsc))]
         ModifiedAscending,
-        [StringValue("-name")]
+        /// <summary>
+        /// Sort in descending Name order
+        /// </summary>
+        [StringValue(nameof(OrderByNameDesc))]
         NameDescending,
-        [StringValue("-startDate")]
+        /// <summary>
+        /// Sort in descending order of the date of publication of the first issue in the event
+        /// </summary>
+        [StringValue(nameof(OrderByStartDateDesc))]
         StartDateDescending,
-        [StringValue("-modified")]
+        /// <summary>
+        /// Sort in descending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }

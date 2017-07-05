@@ -16,7 +16,8 @@ namespace MarvelSharp.Tests.ConsoleApp
         {
             { 1, "Get all characters starting with 'Da', ordered by Date Modified" },
             { 2, "Get all comics featuring Iron Man, which have a digital issue, ordered by Title descending" },
-            { 3, "Get all events featuring Iron Man, ordered by descending Start Date, with work by Brian Michael Bendis or Paul Neary" }
+            { 3, "Get all events featuring Iron Man, ordered by descending Start Date, with work by Brian Michael Bendis or Paul Neary" },
+            { 4, "Get all last week's comics, ordered by ascending Title" }
         };
 
         public static void DisplayOptions()
@@ -51,6 +52,9 @@ namespace MarvelSharp.Tests.ConsoleApp
                     break;
                 case 3:
                     GetCharacterEventsTest();
+                    break;
+                case 4:
+                    GetLastWeeksComicsTest();
                     break;
                 default:
                     return;
@@ -127,8 +131,35 @@ namespace MarvelSharp.Tests.ConsoleApp
             foreach (var item in response.Data.Result)
             {
                 Console.WriteLine($"TITLE: {item.Title}");
+                Console.WriteLine($"START DATE: {item.Start}");
                 Console.WriteLine($"CHARACTERS: {string.Join(", ", item.Characters.Items.Select(i => i.Name))}");
                 Console.WriteLine($"CREATORS: {string.Join(", ", item.Creators.Items.Select(i => i.Name))}");
+                Console.WriteLine();
+            }
+        }
+
+        private static void GetLastWeeksComicsTest()
+        {
+            var response = Program.ApiService.GetAllComicsAsync(
+                25,
+                0,
+                new ComicCriteria
+                {
+                    DateDescriptor = DateDescriptor.LastWeek,
+                    OrderBy = ComicOrder.TitleAscending
+                }).Result;
+            DisplayMetaData(response);
+            foreach (var item in response.Data.Result)
+            {
+                Console.WriteLine($"TITLE: {item.Title}");
+                foreach (var date in item.Dates)
+                {
+                    Console.WriteLine($"{date.Type}: {date.Date}");
+                }
+                foreach (var price in item.Prices)
+                {
+                    Console.WriteLine($"{price.Type}: {price.Price}");
+                }
                 Console.WriteLine();
             }
         }

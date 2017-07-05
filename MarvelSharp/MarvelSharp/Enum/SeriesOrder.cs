@@ -1,21 +1,43 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Series sort options
+    /// </summary>
     public enum SeriesOrder
     {
-        [StringValue("title")]
+        /// <summary>
+        /// Sort in ascending Title order
+        /// </summary>
+        [StringValue(nameof(OrderByTitleAsc))]
         TitleAscending,
-        [StringValue("modified")]
+        /// <summary>
+        /// Sort in ascending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedAsc))]
         ModifiedAscending,
-        [StringValue("startYear")]
+        /// <summary>
+        /// Sort in ascending order of the year the series was first published
+        /// </summary>
+        [StringValue(nameof(OrderByStartYearAsc))]
         StartYearAscending,
-        [StringValue("-title")]
+        /// <summary>
+        /// Sort in descending Title order
+        /// </summary>
+        [StringValue(nameof(OrderByTitleDesc))]
         TitleDescending,
-        [StringValue("-modified")]
+        /// <summary>
+        /// Sort in descending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedDesc))]
         ModifiedDescending,
-        [StringValue("-startYear")]
+        /// <summary>
+        /// Sort in descending order of the year the series was first published
+        /// </summary>
+        [StringValue(nameof(OrderByStartYearDesc))]
         StartYearDescending
     }
 }

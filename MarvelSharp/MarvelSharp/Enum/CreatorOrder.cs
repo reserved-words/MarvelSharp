@@ -1,29 +1,63 @@
 ﻿using MarvelSharp.Internal.Attributes;
+using static MarvelSharp.MarvelApiResources;
 
 // ReSharper disable once CheckNamespace
 namespace MarvelSharp
 {
+    /// <summary>
+    /// Creator sort options
+    /// </summary>
     public enum CreatorOrder
     {
-        [StringValue("lastName")]
+        /// <summary>
+        /// Sort in ascending Last Name order
+        /// </summary>
+        [StringValue(nameof(OrderByLastNameAsc))]
         LastNameAscending,
-        [StringValue("firstName")]
+        /// <summary>
+        /// Sort in ascending First Name order
+        /// </summary>
+        [StringValue(nameof(OrderByFirstNameAsc))]
         FirstNameAscending,
-        [StringValue("middleName")]
+        /// <summary>
+        /// Sort in ascending Middle Name order
+        /// </summary>
+        [StringValue(nameof(OrderByMiddleNameAsc))]
         MiddleNameAscending,
-        [StringValue("suffix")]
+        /// <summary>
+        /// Sort in ascending Suffix order (e.g. Jr., Sr.)
+        /// </summary>
+        [StringValue(nameof(OrderBySuffixAsc))]
         SuffixAscending,
-        [StringValue("modified")]
+        /// <summary>
+        /// Sort in ascending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedAsc))]
         ModifiedAscending,
-        [StringValue("-lastName")]
+        /// <summary>
+        /// Sort in descending Last Name order
+        /// </summary>
+        [StringValue(nameof(OrderByLastNameDesc))]
         LastNameDescending,
-        [StringValue("-firstName")]
+        /// <summary>
+        /// Sort in descending First Name order
+        /// </summary>
+        [StringValue(nameof(OrderByFirstNameDesc))]
         FirstNameDescending,
-        [StringValue("-middleName")]
+        /// <summary>
+        /// Sort in descending Middle Name order
+        /// </summary>
+        [StringValue(nameof(OrderByMiddleNameDesc))]
         MiddleNameDescending,
-        [StringValue("-suffix")]
+        /// <summary>
+        /// Sort in descending Suffix order (e.g. Jr., Sr.)
+        /// </summary>
+        [StringValue(nameof(OrderBySuffixDesc))]
         SuffixDescending,
-        [StringValue("-modified")]
+        /// <summary>
+        /// Sort in descending order of the date the resource was last modified
+        /// </summary>
+        [StringValue(nameof(OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }
