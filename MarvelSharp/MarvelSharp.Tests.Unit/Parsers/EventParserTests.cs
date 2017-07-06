@@ -109,5 +109,59 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("http://gateway.marvel.com/v1/public/events/233", result.Previous.ResourceUri);
             Assert.AreEqual("Atlantis Attacks", result.Previous.Name);
         }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessTrue_OnSuccess()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("event-success"));
+
+            var sut = new EventParser();
+
+            // Act
+            Response<Event> result = sut.GetResponse<Event>(json);
+
+            // Assert
+            Assert.AreEqual(true, result.Success);
+            Assert.AreEqual("200", result.Code);
+            Assert.AreEqual("Success.", result.Status);
+            Assert.IsNotNull(result.Data);
+        }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessFalse_OnError()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("api-error"));
+
+            var sut = new EventParser();
+
+            // Act
+            Response<Event> result = sut.GetResponse<Event>(json);
+
+            // Assert
+            Assert.AreEqual(false, result.Success);
+            Assert.AreEqual("409", result.Code);
+            Assert.AreEqual("Limit greater than 100.", result.Status);
+            Assert.IsNull(result.Data);
+        }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessFalse_OnAuthError()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("auth-error"));
+
+            var sut = new EventParser();
+
+            // Act
+            Response<Event> result = sut.GetResponse<Event>(json);
+
+            // Assert
+            Assert.AreEqual(false, result.Success);
+            Assert.AreEqual("InvalidCredentials", result.Code);
+            Assert.AreEqual("The passed API key is invalid.", result.Status);
+            Assert.IsNull(result.Data);
+        }
     }
 }

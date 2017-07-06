@@ -1,6 +1,10 @@
 ﻿
 namespace MarvelSharp.Model
 {
+    /// <summary>
+    /// A class representing the full response from the Marvel Comics API
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Response<T>
     {
         /// <summary>
@@ -9,9 +13,9 @@ namespace MarvelSharp.Model
         public bool Success { get; set; }
 
         /// <summary>
-        /// The HTTP status code of the returned result.
+        /// The status code of the returned result.
         /// </summary>
-        public int? Code { get; set; }
+        public string Code { get; set; }
 
         /// <summary>
         /// A string description of the call status.

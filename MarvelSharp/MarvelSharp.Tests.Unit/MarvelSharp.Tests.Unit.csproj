@@ -81,6 +81,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="TestJson\auth-error.json" />
+    <None Include="TestJson\comic-success.json" />
+    <None Include="TestJson\event-success.json" />
+    <None Include="TestJson\story-success.json" />
+    <None Include="TestJson\series-success.json" />
+    <None Include="TestJson\creator-success.json" />
+    <None Include="TestJson\character-success.json" />
+    <None Include="TestJson\api-error.json" />
     <None Include="TestJson\creator2.json" />
     <None Include="TestJson\creator.json" />
     <None Include="TestJson\story.json" />

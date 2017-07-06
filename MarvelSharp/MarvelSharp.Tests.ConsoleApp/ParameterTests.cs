@@ -60,6 +60,9 @@ namespace MarvelSharp.Tests.ConsoleApp
                     return;
             }
 
+            Console.WriteLine();
+            DisplayOptions();
+
             Console.ReadKey();
         }
 

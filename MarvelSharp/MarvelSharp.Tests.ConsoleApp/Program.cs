@@ -110,6 +110,9 @@ namespace MarvelSharp.Tests.ConsoleApp
             if (input == null)
                 return;
 
+            if (input.Item1 == 8)
+                ErrorTests.DisplayOptions();
+
             if (input.Item1 == 9)
                 ParameterTests.DisplayOptions();
 
@@ -126,6 +129,8 @@ namespace MarvelSharp.Tests.ConsoleApp
                 Console.WriteLine($"{kvp.Key}\tFetch {kvp.Value}");
             }
 
+            Console.WriteLine();
+            Console.WriteLine($"8\tExamples with Errors");
             Console.WriteLine($"9\tExamples with Criteria");
             Console.WriteLine();
             Console.WriteLine("Type an option number, optionally followed by a character (to return only results starting with that character)");

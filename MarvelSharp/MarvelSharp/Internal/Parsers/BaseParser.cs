@@ -18,7 +18,7 @@ namespace MarvelSharp.Internal.Parsers
                 {
                     Success = false,
                     Code = parsed.code,
-                    Status = parsed.status
+                    Status = parsed.status ?? parsed.message
                 };
             }
 

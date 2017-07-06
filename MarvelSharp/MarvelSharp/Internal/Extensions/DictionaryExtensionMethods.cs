@@ -40,6 +40,9 @@ namespace MarvelSharp.Internal.Extensions
 
         public static void AddParameter(this Dictionary<string, string> dictionary, string key, ICollection value)
         {
+            if (value.Count == 0)
+                return;
+
             var list = new List<string>();
             foreach (var item in value)
             {

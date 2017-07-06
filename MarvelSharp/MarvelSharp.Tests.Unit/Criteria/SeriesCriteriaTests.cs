@@ -34,7 +34,7 @@ namespace MarvelSharp.Tests.Unit.Criteria
             var result = sut.ToDictionary();
 
             // Assert
-            Assert.AreEqual(12, result.Count);
+            Assert.AreEqual(11, result.Count);
 
             Assert.Contains(ParameterTitle, result.Keys);
             Assert.Contains(ParameterTitleStartsWith, result.Keys);
@@ -47,7 +47,8 @@ namespace MarvelSharp.Tests.Unit.Criteria
             Assert.Contains(ParameterStories, result.Keys);
             Assert.Contains(ParameterContains, result.Keys);
             Assert.Contains(ParameterSeriesType, result.Keys);
-            Assert.Contains(ParameterOrderBy, result.Keys);
+
+            Assert.IsFalse(result.Keys.Contains(ParameterOrderBy));
 
             Assert.AreEqual(sut.Title, result[ParameterTitle]);
             Assert.AreEqual(sut.TitleStartsWith, result[ParameterTitleStartsWith]);
@@ -60,7 +61,6 @@ namespace MarvelSharp.Tests.Unit.Criteria
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Events), result[ParameterEvents]);
             Assert.AreEqual(string.Join(ParameterListSeparator, sut.Contains.Select(c => c.GetStringValue())), result[ParameterContains]);
             Assert.AreEqual(sut.SeriesType.GetStringValue(), result[ParameterSeriesType]);
-            Assert.AreEqual(string.Join(ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[ParameterOrderBy]);
         }
     }
 }

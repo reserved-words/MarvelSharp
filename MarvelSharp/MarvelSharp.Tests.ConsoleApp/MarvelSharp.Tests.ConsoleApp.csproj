@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DisplayHelper.cs" />
     <Compile Include="InputHelper.cs" />
+    <Compile Include="ErrorTests.cs" />
     <Compile Include="ParameterTests.cs" />
     <Compile Include="RequestDetails.cs" />
     <Compile Include="Program.cs" />

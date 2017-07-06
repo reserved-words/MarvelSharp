@@ -85,5 +85,59 @@ namespace MarvelSharp.Tests.Unit.Parsers
             Assert.AreEqual("comiclink", result.Urls.Last().Type);
             Assert.AreEqual("http://marvel.com/comics/characters/1011334/3-d_man?utm_campaign=apiRef&utm_source=20f18f98d97b8d7b9733fa6bdcfaea77", result.Urls.Last().Value);
         }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessTrue_OnSuccess()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("character-success"));
+
+            var sut = new CharacterParser();
+
+            // Act
+            Response<Character> result = sut.GetResponse<Character>(json);
+
+            // Assert
+            Assert.AreEqual(true, result.Success);
+            Assert.AreEqual("200", result.Code);
+            Assert.AreEqual("Success.", result.Status);
+            Assert.IsNotNull(result.Data);
+        }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessFalse_OnApiError()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("api-error"));
+
+            var sut = new CharacterParser();
+
+            // Act
+            Response<Character> result = sut.GetResponse<Character>(json);
+
+            // Assert
+            Assert.AreEqual(false, result.Success);
+            Assert.AreEqual("409", result.Code);
+            Assert.AreEqual("Limit greater than 100.", result.Status);
+            Assert.IsNull(result.Data);
+        }
+
+        [Test]
+        public void GetResponse_ReturnsSuccessFalse_OnAuthError()
+        {
+            // Arrange
+            dynamic json = JObject.Parse(TestJson.Get("auth-error"));
+
+            var sut = new CharacterParser();
+
+            // Act
+            Response<Character> result = sut.GetResponse<Character>(json);
+
+            // Assert
+            Assert.AreEqual(false, result.Success);
+            Assert.AreEqual("InvalidCredentials", result.Code);
+            Assert.AreEqual("The passed API key is invalid.", result.Status);
+            Assert.IsNull(result.Data);
+        }
     }
 }

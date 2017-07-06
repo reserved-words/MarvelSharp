@@ -60,7 +60,9 @@ namespace MarvelSharp.Criteria
                 {
                     dictionary.AddParameter(propertyName, (ICollection<int>)propertyValue);
                 }
-                else if (typeof(ICollection).IsAssignableFrom(propertyType) && propertyType.IsGenericType && propertyType.GenericTypeArguments.Single().IsEnum)
+                else if (typeof(ICollection).IsAssignableFrom(propertyType)
+                    && propertyType.IsGenericType 
+                    && propertyType.GenericTypeArguments.Single().IsEnum)
                 {
                     dictionary.AddParameter(propertyName, (ICollection)propertyValue);
                 }
