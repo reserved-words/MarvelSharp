@@ -9,6 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Tests.ConsoleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Tests.Unit", "MarvelSharp.Tests.Unit\MarvelSharp.Tests.Unit.csproj", "{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22-7F91-4921-842D-DAF70DEA7F4A}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\CreateNuGetPackage.ps1 = NuGet\CreateNuGetPackage.ps1
+		CreateNuspecFile.ps1 = CreateNuspecFile.ps1
+		NuGet\NuGet.exe = NuGet\NuGet.exe
+		NuGet\NuGetBuild.bat = NuGet\NuGetBuild.bat
+		NuGet\UpdateNuspecFile.ps1 = NuGet\UpdateNuspecFile.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

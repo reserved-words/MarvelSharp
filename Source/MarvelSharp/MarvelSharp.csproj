@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="MarvelSharp.csproj.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

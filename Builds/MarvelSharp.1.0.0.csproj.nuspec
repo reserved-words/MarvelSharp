@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>MarvelSharp</id>
+    <version>1.0.0</version>
+    <authors>Rhian Adams</authors>
+    <owners>Rhian Adams</owners>
+    <projectUrl>https://github.com/reserved-words/MarvelSharp/wiki</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# library for the Marvel Comics API</description>
+    <releaseNotes>Testing</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Marvel Comics API</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
