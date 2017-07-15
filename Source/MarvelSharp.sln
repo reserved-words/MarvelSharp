@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp", "MarvelSharp\MarvelSharp.csproj", "{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Tests.ConsoleApp", "MarvelSharp.Tests.ConsoleApp\MarvelSharp.Tests.ConsoleApp.csproj", "{45203176-F03D-4935-9322-7A6805D49979}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Tests.Unit", "MarvelSharp.Tests.Unit\MarvelSharp.Tests.Unit.csproj", "{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22-7F91-4921-842D-DAF70DEA7F4A}"
@@ -28,10 +26,6 @@ Global
 		{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45203176-F03D-4935-9322-7A6805D49979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45203176-F03D-4935-9322-7A6805D49979}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45203176-F03D-4935-9322-7A6805D49979}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45203176-F03D-4935-9322-7A6805D49979}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
