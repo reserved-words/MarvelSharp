@@ -1,4 +1,4 @@
-param ([string]$releaseNotes) # Should be getting the version number from the assembly
+param ([string]$releaseNotes)
 
 # Declare variables
 
