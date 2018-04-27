@@ -2,7 +2,7 @@
 
 namespace MarvelSharp.Internal.Interfaces
 {
-    internal interface IHttpService
+	public interface IHttpService
     {
         Task<string> GetAsync(string url);
     }

@@ -8,7 +8,7 @@ using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Internal.Parsers
 {
-    internal abstract class BaseParser<T> : IParser<T>
+	public abstract class BaseParser<T> : IParser<T>
     {
         public Response<T1> GetResponse<T1>(dynamic parsed)
         {

@@ -3,7 +3,7 @@ using MarvelSharp.Model;
 
 namespace MarvelSharp.Internal.Parsers
 {
-    internal class CreatorParser : BaseParser<Creator>
+	public class CreatorParser : BaseParser<Creator>
     {
         public override Creator Parse(dynamic result)
         {

@@ -2,7 +2,7 @@
 
 namespace MarvelSharp.Internal.Attributes
 {
-    internal class StringValueAttribute : Attribute
+    public class StringValueAttribute : Attribute
     {
         public StringValueAttribute(string resourceName)
         {

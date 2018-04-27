@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace MarvelSharp.Tests.Unit.Helpers
 {
@@ -7,7 +6,7 @@ namespace MarvelSharp.Tests.Unit.Helpers
     {
         public static string Get(string filename)
         {
-            return File.ReadAllText(string.Format(@"{0}\..\..\TestJson\{1}.json", AppDomain.CurrentDomain.BaseDirectory, filename));
+            return File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "TestJson", $"{filename}.json"));
         }
     }
 }

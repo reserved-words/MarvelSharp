@@ -7,7 +7,7 @@ using MarvelSharp.Model;
 
 namespace MarvelSharp.Internal.Services
 {
-    internal class BaseService<T>
+	public class BaseService<T>
     {
         private readonly string _apiPublicKey;
         private readonly string _apiPrivateKey;
@@ -15,7 +15,7 @@ namespace MarvelSharp.Internal.Services
         private readonly IUrlBuilder _urlBuilder;
         private readonly IParser<T> _parser;
 
-        internal BaseService(IHttpService apiService, IParser<T> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
+        public BaseService(IHttpService apiService, IParser<T> parser, IUrlBuilder urlBuilder, string apiPublicKey, string apiPrivateKey)
         {
             _apiPublicKey = apiPublicKey;
             _apiPrivateKey = apiPrivateKey;

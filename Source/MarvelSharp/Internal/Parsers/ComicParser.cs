@@ -3,7 +3,7 @@ using MarvelSharp.Model;
 
 namespace MarvelSharp.Internal.Parsers
 {
-    internal class ComicParser : BaseParser<Comic>
+	public class ComicParser : BaseParser<Comic>
     {
         public override Comic Parse(dynamic result)
         {

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using MarvelSharp.Criteria;
+using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Criteria;
 using MarvelSharp.Internal.Extensions;
-using NUnit.Framework;
 using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Tests.Unit.Criteria

@@ -6,7 +6,7 @@ using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Internal.Utilities
 {
-    internal class UrlBuilder : IUrlBuilder
+    public class UrlBuilder : IUrlBuilder
     {
         private readonly IHasher _hasher;
         private readonly IDateProvider _dateProvider;

@@ -4,7 +4,7 @@ using MarvelSharp.Internal.Interfaces;
 
 namespace MarvelSharp.Internal.Utilities
 {
-    internal class HttpService : IHttpService
+    public class HttpService : IHttpService
     {
         public async Task<string> GetAsync(string url)
         {

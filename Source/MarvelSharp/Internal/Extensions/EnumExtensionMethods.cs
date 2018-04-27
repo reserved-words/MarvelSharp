@@ -4,7 +4,7 @@ using MarvelSharp.Internal.Attributes;
 
 namespace MarvelSharp.Internal.Extensions
 {
-    internal static class EnumExtensionMethods
+    public static class EnumExtensionMethods
     {
         public static string GetStringValue(this Enum value)
         {

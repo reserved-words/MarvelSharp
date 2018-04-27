@@ -4,7 +4,7 @@ using MarvelSharp.Internal.Interfaces;
 
 namespace MarvelSharp.Internal.Utilities
 {
-    internal class MD5Hasher : IHasher
+    public class MD5Hasher : IHasher
     {
         public string Hash(string input)
         {

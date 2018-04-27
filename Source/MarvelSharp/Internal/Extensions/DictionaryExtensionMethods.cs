@@ -7,7 +7,7 @@ using static MarvelSharp.MarvelApiResources;
 
 namespace MarvelSharp.Internal.Extensions
 {
-    internal static class DictionaryExtensionMethods
+    public static class DictionaryExtensionMethods
     {
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, bool? value)
         {

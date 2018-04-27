@@ -2,7 +2,7 @@
 
 namespace MarvelSharp.Internal.Interfaces
 {
-    internal interface IDateProvider
+	public interface IDateProvider
     {
         DateTime GetCurrentTime();
     }

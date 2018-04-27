@@ -1,7 +1,7 @@
 ﻿
 namespace MarvelSharp.Internal.Interfaces
 {
-    internal interface IHasher
+	public interface IHasher
     {
         string Hash(string input);
     }

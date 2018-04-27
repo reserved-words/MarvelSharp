@@ -3,7 +3,7 @@ using MarvelSharp.Model;
 
 namespace MarvelSharp.Internal.Parsers
 {
-    internal class EventParser : BaseParser<Event>
+	public class EventParser : BaseParser<Event>
     {
         public override Event Parse(dynamic result)
         {

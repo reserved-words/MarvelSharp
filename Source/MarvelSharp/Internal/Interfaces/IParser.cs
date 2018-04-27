@@ -3,7 +3,7 @@ using MarvelSharp.Model;
 
 namespace MarvelSharp.Internal.Interfaces
 {
-    internal interface IParser<T>
+	public interface IParser<T>
     {
         List<T> ParseList(dynamic results);
         T ParseSingle(dynamic results);
