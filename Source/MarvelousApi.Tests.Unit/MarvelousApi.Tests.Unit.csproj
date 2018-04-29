@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MarvelSharp\MarvelSharp.csproj" />
+    <ProjectReference Include="..\MarvelousApi\MarvelousApi.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="TestJson\api-error.json">

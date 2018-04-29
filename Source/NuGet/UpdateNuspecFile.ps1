@@ -2,11 +2,11 @@ param ([string]$releaseNotes)
 
 # Declare variables
 
-$nuspecPath = 'MarvelSharp\MarvelSharp.csproj.nuspec'
+$nuspecPath = 'MarvelousApi\MarvelousApi.csproj.nuspec'
 
 # Get project version number
 
-$projectVersionFull = [System.Reflection.Assembly]::LoadFrom((Resolve-Path "MarvelSharp\bin\Release\MarvelSharp.dll")).GetName().Version
+$projectVersionFull = [System.Reflection.Assembly]::LoadFrom((Resolve-Path "MarvelousApi\bin\Release\MarvelousApi.dll")).GetName().Version
 $projectVersion = $projectVersionFull.Major.ToString() + '.' + $projectVersionFull.Minor.ToString() + '.' + $projectVersionFull.Build.ToString()
 
 # Update nuspec file
@@ -25,4 +25,4 @@ $xml.Save((Resolve-Path $nuspecPath))
 # Copy to the Builds directory
 
 Copy-Item $nuspecPath ..\Builds
-Rename-Item ..\Builds\MarvelSharp.csproj.nuspec ('MarvelSharp.' + $projectVersion + '.csproj.nuspec')
+Rename-Item ..\Builds\MarvelousApi.csproj.nuspec ('MarvelousApi.' + $projectVersion + '.csproj.nuspec')

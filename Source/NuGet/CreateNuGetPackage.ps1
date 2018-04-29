@@ -1,3 +1,3 @@
 # Create NuGet package
 
-NuGet\NuGet.exe pack MarvelSharp\MarvelSharp.csproj -OutputDirectory ..\Builds
+NuGet\NuGet.exe pack MarvelousApi\MarvelousApi.csproj -OutputDirectory ..\Builds

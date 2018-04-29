@@ -1,17 +1,17 @@
 # Declare variables
 
-$nuspecPath = 'MarvelSharp\MarvelSharp.csproj.nuspec'
+$nuspecPath = 'MarvelousApi\MarvelousApi.csproj.nuspec'
 
-$Id = 'MarvelSharp'
+$Id = 'MarvelousApi'
 $Authors = 'Rhian Adams'
 $Owners = 'Rhian Adams'
 $Description = 'A C# library for the Marvel Comics API'
-$ProjectUrl = 'https://github.com/reserved-words/MarvelSharp/wiki'
+$ProjectUrl = 'https://github.com/reserved-words/MarvelousApi/wiki'
 $Tags = 'Marvel Comics API'
 
 # Create nuspec file
 
-NuGet\NuGet.exe spec MarvelSharp\MarvelSharp.csproj
+NuGet\NuGet.exe spec MarvelousApi\MarvelousApi.csproj
 
 # Populate nuspec file with project details and remove unnecessary nodes
 

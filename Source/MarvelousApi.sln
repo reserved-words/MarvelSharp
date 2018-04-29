@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22-7F91-4921-842D-DAF70DEA7F4A}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet\CreateNuGetPackage.ps1 = NuGet\CreateNuGetPackage.ps1
+		CreateNuspecFile.ps1 = CreateNuspecFile.ps1
+		NuGet\NuGet.exe = NuGet\NuGet.exe
+		NuGet\NuGetBuild.bat = NuGet\NuGetBuild.bat
+		NuGet\UpdateNuspecFile.ps1 = NuGet\UpdateNuspecFile.ps1
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelousApi", "MarvelousApi\MarvelousApi.csproj", "{66B6F41F-7452-4493-9778-4D0F2CF7AB08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelousApi.Tests.Unit", "MarvelousApi.Tests.Unit\MarvelousApi.Tests.Unit.csproj", "{AD8FEC36-3282-4EDB-AEA1-875F6DC33EC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66B6F41F-7452-4493-9778-4D0F2CF7AB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B6F41F-7452-4493-9778-4D0F2CF7AB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B6F41F-7452-4493-9778-4D0F2CF7AB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B6F41F-7452-4493-9778-4D0F2CF7AB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD8FEC36-3282-4EDB-AEA1-875F6DC33EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD8FEC36-3282-4EDB-AEA1-875F6DC33EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD8FEC36-3282-4EDB-AEA1-875F6DC33EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD8FEC36-3282-4EDB-AEA1-875F6DC33EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A41394C-058A-4E08-B329-56250D97C6ED}
+	EndGlobalSection
+EndGlobal

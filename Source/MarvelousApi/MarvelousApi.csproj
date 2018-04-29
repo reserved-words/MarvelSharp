@@ -4,13 +4,18 @@
     <Configurations>Debug;Release</Configurations>
     <IsPackable>true</IsPackable>
     <Version>1.1.0</Version>
-    <Authors>Rhian Adams, ajtatum</Authors>
-    <Company>MarvelSharp</Company>
+    <Authors>ajtatum, reserved-words</Authors>
+    <Company>MarvelousApi</Company>
     <Description>A C# library for the Marvel Comics API</Description>
-    <PackageProjectUrl>https://github.com/reserved-words/MarvelSharp/wiki</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/ajtatum/MarvelousApi/wiki</PackageProjectUrl>
     <PackageTags>Marvel Comics API</PackageTags>
-    <RepositoryUrl>https://github.com/reserved-words/MarvelSharp/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ajtatum/MarvelousApi/</RepositoryUrl>
     <PackageOutputPath>..\Builds\</PackageOutputPath>
+    <PackageId>MarvelousApi</PackageId>
+    <Product>MarvelousApi</Product>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyName>MarvelousApi</AssemblyName>
+    <RootNamespace>MarvelousApi</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>bin\Debug\</OutputPath>
