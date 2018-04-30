@@ -1,4 +1,4 @@
-﻿namespace MarvelSharp.Model
+﻿namespace MarvelousApi.Model
 {
     public class TextObject
     {

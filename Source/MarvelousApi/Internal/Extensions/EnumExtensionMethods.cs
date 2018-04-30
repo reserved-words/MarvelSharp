@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-using MarvelSharp.Internal.Attributes;
+using MarvelousApi.Internal.Attributes;
 
-namespace MarvelSharp.Internal.Extensions
+namespace MarvelousApi.Internal.Extensions
 {
     public static class EnumExtensionMethods
     {
-        public static string GetStringValue(this Enum value)
+        public static string GetStringValue(this System.Enum value)
         {
             var resourceName = value.GetAttribute<StringValueAttribute>()?.ResourceName;
 
@@ -15,7 +15,7 @@ namespace MarvelSharp.Internal.Extensions
                 : MarvelApiResources.ResourceManager.GetString(resourceName);
         }
 
-        private static T GetAttribute<T>(this Enum value) where T : Attribute
+        private static T GetAttribute<T>(this System.Enum value) where T : Attribute
         {
             var memInfo = value.GetType().GetMember(value.ToString());
 

@@ -1,7 +1,7 @@
 ﻿using System;
-using MarvelSharp.Internal.Interfaces;
+using MarvelousApi.Internal.Interfaces;
 
-namespace MarvelSharp.Internal.Utilities
+namespace MarvelousApi.Internal.Utilities
 {
     public class DateProvider : IDateProvider
     {

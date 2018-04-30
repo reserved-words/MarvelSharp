@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using MarvelousApi.Enum;
 
-namespace MarvelSharp.Criteria
+namespace MarvelousApi.Criteria
 {
     /// <summary>
     /// A class representing criteria by which to filter events.

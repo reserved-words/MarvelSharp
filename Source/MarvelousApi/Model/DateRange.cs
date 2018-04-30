@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MarvelSharp.Model
+namespace MarvelousApi.Model
 {
     public struct DateRange
     {

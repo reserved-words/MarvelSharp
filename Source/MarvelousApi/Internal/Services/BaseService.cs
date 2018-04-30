@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MarvelSharp.Criteria;
-using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Model;
+using MarvelousApi.Criteria;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Model;
+using Newtonsoft.Json.Linq;
 
-namespace MarvelSharp.Internal.Services
+namespace MarvelousApi.Internal.Services
 {
 	public class BaseService<T>
     {

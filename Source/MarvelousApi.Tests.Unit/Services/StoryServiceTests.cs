@@ -1,12 +1,11 @@
-﻿using Moq;
+﻿using System.Collections.Generic;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Internal.Services;
+using MarvelousApi.Model;
+using Moq;
 using NUnit.Framework;
-using System.Collections.Generic;
-using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Internal.Services;
-using MarvelSharp.Model;
-using static MarvelSharp.MarvelApiResources;
 
-namespace MarvelSharp.Tests.Unit.Services
+namespace MarvelousApi.Tests.Unit.Services
 {
     [TestFixture]
     public class StoryServiceTests
@@ -46,7 +45,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetAllAsync(null).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, UrlSuffixAllStories, null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, MarvelApiResources.UrlSuffixAllStories, null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }
@@ -61,7 +60,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetByIdAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixStoryById, 0), 1, 0, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixStoryById, 0), 1, 0, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<Story>(It.IsAny<object>()), Times.Once);
         }
@@ -76,7 +75,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetByCharacterAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixCharacterStories, 0), null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixCharacterStories, 0), null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }
@@ -91,7 +90,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetByComicAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixComicStories, 0), null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixComicStories, 0), null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }
@@ -106,7 +105,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetByCreatorAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixCreatorStories, 0), null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixCreatorStories, 0), null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }
@@ -121,7 +120,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetBySeriesAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixSeriesStories, 0), null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixSeriesStories, 0), null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }
@@ -136,7 +135,7 @@ namespace MarvelSharp.Tests.Unit.Services
             var result = sut.GetByEventAsync(0).Result;
 
             // Assert
-            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(UrlSuffixEventStories, 0), null, null, null), Times.Once);
+            _mockUrlBuilder.Verify(u => u.BuildUrl(MockApiPublicKey, MockApiPrivateKey, string.Format(MarvelApiResources.UrlSuffixEventStories, 0), null, null, null), Times.Once);
             _mockHttpService.Verify(s => s.GetAsync(MockUrl), Times.Once);
             _mockParser.Verify(p => p.GetResponse<List<Story>>(It.IsAny<object>()), Times.Once);
         }

@@ -1,8 +1,7 @@
-﻿using MarvelSharp.Internal.Attributes;
-using static MarvelSharp.MarvelApiResources;
+﻿using MarvelousApi.Internal.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelousApi.Enum
 {
     /// <summary>
     /// Comic format type options
@@ -12,12 +11,12 @@ namespace MarvelSharp
         /// <summary>
         /// Comic format type
         /// </summary>
-        [StringValue(nameof(FormatTypeComic))]
+        [StringValue(nameof(MarvelApiResources.FormatTypeComic))]
         Comic,
         /// <summary>
         /// Collection format type
         /// </summary>
-        [StringValue(nameof(FormatTypeCollection))]
+        [StringValue(nameof(MarvelApiResources.FormatTypeCollection))]
         Collection
     }
 }

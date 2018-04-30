@@ -1,5 +1,5 @@
 ﻿
-namespace MarvelSharp.Internal.Interfaces
+namespace MarvelousApi.Internal.Interfaces
 {
 	public interface IHasher
     {

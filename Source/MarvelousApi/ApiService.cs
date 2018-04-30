@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MarvelSharp.Criteria;
-using MarvelSharp.Internal.Services;
-using MarvelSharp.Model;
+using MarvelousApi.Criteria;
+using MarvelousApi.Internal.Services;
+using MarvelousApi.Model;
 
-namespace MarvelSharp
+namespace MarvelousApi
 {
     public class ApiService
     {

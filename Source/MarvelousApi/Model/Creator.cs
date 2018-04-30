@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MarvelSharp.Model
+namespace MarvelousApi.Model
 {
     public class Creator : ItemBase
     {

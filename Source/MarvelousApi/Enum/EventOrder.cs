@@ -1,8 +1,7 @@
-﻿using MarvelSharp.Internal.Attributes;
-using static MarvelSharp.MarvelApiResources;
+﻿using MarvelousApi.Internal.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelousApi.Enum
 {
     /// <summary>
     /// Event sort options
@@ -12,32 +11,32 @@ namespace MarvelSharp
         /// <summary>
         /// Sort in ascending Name order
         /// </summary>
-        [StringValue(nameof(OrderByNameAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByNameAsc))]
         NameAscending,
         /// <summary>
         /// Sort in ascending order of the date of publication of the first issue in the event
         /// </summary>
-        [StringValue(nameof(OrderByStartDateAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByStartDateAsc))]
         StartDateAscending,
         /// <summary>
         /// Sort in ascending order of the date the resource was last modified
         /// </summary>
-        [StringValue(nameof(OrderByDateModifiedAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByDateModifiedAsc))]
         ModifiedAscending,
         /// <summary>
         /// Sort in descending Name order
         /// </summary>
-        [StringValue(nameof(OrderByNameDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByNameDesc))]
         NameDescending,
         /// <summary>
         /// Sort in descending order of the date of publication of the first issue in the event
         /// </summary>
-        [StringValue(nameof(OrderByStartDateDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByStartDateDesc))]
         StartDateDescending,
         /// <summary>
         /// Sort in descending order of the date the resource was last modified
         /// </summary>
-        [StringValue(nameof(OrderByDateModifiedDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }

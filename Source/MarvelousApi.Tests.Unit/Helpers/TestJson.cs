@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace MarvelSharp.Tests.Unit.Helpers
+namespace MarvelousApi.Tests.Unit.Helpers
 {
     public static class TestJson
     {

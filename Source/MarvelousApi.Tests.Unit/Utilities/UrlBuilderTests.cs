@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Internal.Utilities;
-using MarvelSharp.Tests.Unit.Helpers;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Internal.Utilities;
+using MarvelousApi.Tests.Unit.Helpers;
 using Moq;
 using NUnit.Framework;
-using static MarvelSharp.MarvelApiResources;
 
-namespace MarvelSharp.Tests.Unit.Utilities
+namespace MarvelousApi.Tests.Unit.Utilities
 {
     public class UrlBuilderTests
     {
@@ -33,10 +32,10 @@ namespace MarvelSharp.Tests.Unit.Utilities
             var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix);
 
             // Assert
-            Assert.That(result.StartsWith($"{UrlBase}{TestUrlSuffix}?"));
-            Assert.That(result.ContainsKeyValuePair(ParameterApiKey, PublicApiKey));
-            Assert.That(result.ContainsKeyValuePair(ParameterTimeStamp, CurrentTimeString));
-            Assert.That(result.ContainsKeyValuePair(ParameterHash, TestHashedValue));
+            Assert.That(result.StartsWith($"{MarvelApiResources.UrlBase}{TestUrlSuffix}?"));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterApiKey, PublicApiKey));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterTimeStamp, CurrentTimeString));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterHash, TestHashedValue));
         }
 
         [Test]
@@ -62,12 +61,12 @@ namespace MarvelSharp.Tests.Unit.Utilities
             var result = sut.BuildUrl(PublicApiKey, PrivateApiKey, TestUrlSuffix, 10, 20, mockParameters.Object);
 
             // Assert
-            Assert.That(result.StartsWith($"{UrlBase}{TestUrlSuffix}?"));
-            Assert.That(result.ContainsKeyValuePair(ParameterApiKey, PublicApiKey));
-            Assert.That(result.ContainsKeyValuePair(ParameterTimeStamp, CurrentTimeString));
-            Assert.That(result.ContainsKeyValuePair(ParameterHash, TestHashedValue));
-            Assert.That(result.ContainsKeyValuePair(ParameterLimit, "10"));
-            Assert.That(result.ContainsKeyValuePair(ParameterOffset, "20"));
+            Assert.That(result.StartsWith($"{MarvelApiResources.UrlBase}{TestUrlSuffix}?"));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterApiKey, PublicApiKey));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterTimeStamp, CurrentTimeString));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterHash, TestHashedValue));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterLimit, "10"));
+            Assert.That(result.ContainsKeyValuePair(MarvelApiResources.ParameterOffset, "20"));
 
             foreach (var entry in mockDictionary)
             {

@@ -1,8 +1,7 @@
-﻿using MarvelSharp.Internal.Attributes;
-using static MarvelSharp.MarvelApiResources;
+﻿using MarvelousApi.Internal.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelousApi.Enum
 {
     /// <summary>
     /// Series type options
@@ -12,22 +11,22 @@ namespace MarvelSharp
         /// <summary>
         /// Collection series
         /// </summary>
-        [StringValue(nameof(SeriesTypeCollection))]
+        [StringValue(nameof(MarvelApiResources.SeriesTypeCollection))]
         Collection,
         /// <summary>
         /// One shot series
         /// </summary>
-        [StringValue(nameof(SeriesTypeOneShot))]
+        [StringValue(nameof(MarvelApiResources.SeriesTypeOneShot))]
         OneShot,
         /// <summary>
         /// Limited series
         /// </summary>
-        [StringValue(nameof(SeriesTypeLimited))]
+        [StringValue(nameof(MarvelApiResources.SeriesTypeLimited))]
         Limited,
         /// <summary>
         /// Ongoing series
         /// </summary>
-        [StringValue(nameof(SeriesTypeOngoing))]
+        [StringValue(nameof(MarvelApiResources.SeriesTypeOngoing))]
         Ongoing
     }
 }

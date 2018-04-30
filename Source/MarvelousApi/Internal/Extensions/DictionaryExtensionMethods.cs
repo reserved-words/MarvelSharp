@@ -2,10 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Model;
-using static MarvelSharp.MarvelApiResources;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Internal.Extensions
+namespace MarvelousApi.Internal.Extensions
 {
     public static class DictionaryExtensionMethods
     {
@@ -14,10 +13,10 @@ namespace MarvelSharp.Internal.Extensions
             if (!value.HasValue)
                 return;
 
-            dictionary.Add(key, value.Value ? ParameterValueTrue : ParameterValueFalse);
+            dictionary.Add(key, value.Value ? MarvelApiResources.ParameterValueTrue : MarvelApiResources.ParameterValueFalse);
         }
 
-        public static void AddParameter(this Dictionary<string,string> dictionary, string key, Enum value)
+        public static void AddParameter(this Dictionary<string,string> dictionary, string key, System.Enum value)
         {
             dictionary.Add(key, value.GetStringValue());
         }
@@ -27,7 +26,7 @@ namespace MarvelSharp.Internal.Extensions
             if (!value.HasValue)
                 return;
 
-            dictionary.Add(key, value.Value.ToString(ParameterDateTimeFormat));
+            dictionary.Add(key, value.Value.ToString(MarvelApiResources.ParameterDateTimeFormat));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, ICollection<int> value)
@@ -35,7 +34,7 @@ namespace MarvelSharp.Internal.Extensions
             if (!value.Any())
                 return;
 
-            dictionary.Add(key, string.Join(ParameterListSeparator, value));
+            dictionary.Add(key, string.Join(MarvelApiResources.ParameterListSeparator, value));
         }
 
         public static void AddParameter(this Dictionary<string, string> dictionary, string key, ICollection value)
@@ -46,9 +45,9 @@ namespace MarvelSharp.Internal.Extensions
             var list = new List<string>();
             foreach (var item in value)
             {
-                list.Add(((Enum)item).GetStringValue());
+                list.Add(((System.Enum)item).GetStringValue());
             }
-            dictionary.Add(key, string.Join(ParameterListSeparator, list));
+            dictionary.Add(key, string.Join(MarvelApiResources.ParameterListSeparator, list));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, string value)
@@ -64,7 +63,7 @@ namespace MarvelSharp.Internal.Extensions
             if (!value.HasValue)
                 return;
 
-            dictionary.Add(key, string.Join(ParameterListSeparator, value.Value.StartDate, value.Value.EndDate));
+            dictionary.Add(key, string.Join(MarvelApiResources.ParameterListSeparator, value.Value.StartDate, value.Value.EndDate));
         }
 
         public static void AddParameter(this Dictionary<string,string> dictionary, string key, object value)

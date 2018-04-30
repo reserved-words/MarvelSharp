@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MarvelSharp.Internal.Attributes
+namespace MarvelousApi.Internal.Attributes
 {
     public class StringValueAttribute : Attribute
     {

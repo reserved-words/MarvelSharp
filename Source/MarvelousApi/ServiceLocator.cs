@@ -1,10 +1,10 @@
-﻿using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Internal.Parsers;
-using MarvelSharp.Internal.Services;
-using MarvelSharp.Internal.Utilities;
-using MarvelSharp.Model;
+﻿using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Internal.Parsers;
+using MarvelousApi.Internal.Services;
+using MarvelousApi.Internal.Utilities;
+using MarvelousApi.Model;
 
-namespace MarvelSharp
+namespace MarvelousApi
 {
     public static class ServiceLocator
     {

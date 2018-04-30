@@ -1,7 +1,7 @@
 ﻿
-using MarvelSharp.Model;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Internal.Parsers
+namespace MarvelousApi.Internal.Parsers
 {
 	public class StoryParser : BaseParser<Story>
     {

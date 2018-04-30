@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using MarvelSharp.Internal.Interfaces;
+using MarvelousApi.Internal.Interfaces;
 
-namespace MarvelSharp.Internal.Utilities
+namespace MarvelousApi.Internal.Utilities
 {
     public class MD5Hasher : IHasher
     {

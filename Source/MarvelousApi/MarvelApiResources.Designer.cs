@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MarvelSharp {
+namespace MarvelousApi {
     using System;
     
     
@@ -29,7 +29,7 @@ namespace MarvelSharp {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public MarvelApiResources() {
+        internal MarvelApiResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MarvelSharp {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MarvelSharp.MarvelApiResources", typeof(MarvelApiResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MarvelousApi.MarvelApiResources", typeof(MarvelApiResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

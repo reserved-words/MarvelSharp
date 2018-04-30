@@ -1,12 +1,12 @@
-﻿using MarvelSharp.Tests.Unit.Helpers;
+﻿using System;
+using System.Linq;
+using MarvelousApi.Internal.Parsers;
+using MarvelousApi.Model;
+using MarvelousApi.Tests.Unit.Helpers;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
-using System;
-using System.Linq;
-using MarvelSharp.Internal.Parsers;
-using MarvelSharp.Model;
 
-namespace MarvelSharp.Tests.Unit.Parsers
+namespace MarvelousApi.Tests.Unit.Parsers
 {
     [TestFixture]
     public class ComicParserTests

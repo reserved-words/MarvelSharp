@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MarvelSharp.Internal.Interfaces
+namespace MarvelousApi.Internal.Interfaces
 {
 	public interface ICriteria
     {

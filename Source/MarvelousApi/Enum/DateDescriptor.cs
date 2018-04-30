@@ -1,8 +1,7 @@
-﻿using MarvelSharp.Internal.Attributes;
-using static MarvelSharp.MarvelApiResources;
+﻿using MarvelousApi.Internal.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelousApi.Enum
 {
     /// <summary>
     /// Date descriptor options
@@ -12,22 +11,22 @@ namespace MarvelSharp
         /// <summary>
         /// Return comics published last week
         /// </summary>
-        [StringValue(nameof(DateDescriptorLastWeek))]
+        [StringValue(nameof(MarvelApiResources.DateDescriptorLastWeek))]
         LastWeek,
         /// <summary>
         /// Return comics published this week
         /// </summary>
-        [StringValue(nameof(DateDescriptorThisWeek))]
+        [StringValue(nameof(MarvelApiResources.DateDescriptorThisWeek))]
         ThisWeek,
         /// <summary>
         /// Return comics to be published last week
         /// </summary>
-        [StringValue(nameof(DateDescriptorNextWeek))]
+        [StringValue(nameof(MarvelApiResources.DateDescriptorNextWeek))]
         NextWeek,
         /// <summary>
         /// Return comics published this month
         /// </summary>
-        [StringValue(nameof(DateDescriptorThisMonth))]
+        [StringValue(nameof(MarvelApiResources.DateDescriptorThisMonth))]
         ThisMonth
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using MarvelSharp.Criteria;
-using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Model;
-using static MarvelSharp.MarvelApiResources;
+using MarvelousApi.Criteria;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Internal.Services
+namespace MarvelousApi.Internal.Services
 {
 	public class CharacterService : BaseService<Character>
     {
@@ -23,32 +22,32 @@ namespace MarvelSharp.Internal.Services
         /// <returns></returns>
         public async Task<Response<List<Character>>> GetAllAsync(int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(UrlSuffixAllCharacters, limit, offset, criteria);
+            return await GetList(MarvelApiResources.UrlSuffixAllCharacters, limit, offset, criteria);
         }
 
         public async Task<Response<Character>> GetByIdAsync(int characterId)
         {
-            return await GetSingle(string.Format(UrlSuffixCharacterById, characterId));
+            return await GetSingle(string.Format(MarvelApiResources.UrlSuffixCharacterById, characterId));
         }
 
         public async Task<Response<List<Character>>> GetByComicAsync(int comicId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixComicCharacters, comicId), limit, offset, criteria);
+            return await GetList(string.Format(MarvelApiResources.UrlSuffixComicCharacters, comicId), limit, offset, criteria);
         }
 
         public async Task<Response<List<Character>>> GetByEventAsync(int eventId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixEventCharacters, eventId), limit, offset, criteria);
+            return await GetList(string.Format(MarvelApiResources.UrlSuffixEventCharacters, eventId), limit, offset, criteria);
         }
 
         public async Task<Response<List<Character>>> GetBySeriesAsync(int seriesId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixSeriesCharacters, seriesId), limit, offset, criteria);
+            return await GetList(string.Format(MarvelApiResources.UrlSuffixSeriesCharacters, seriesId), limit, offset, criteria);
         }
 
         public async Task<Response<List<Character>>> GetByStoryAsync(int storyId, int? limit = null, int? offset = null, CharacterCriteria criteria = null)
         {
-            return await GetList(string.Format(UrlSuffixStoryCharacters, storyId), limit, offset, criteria);
+            return await GetList(string.Format(MarvelApiResources.UrlSuffixStoryCharacters, storyId), limit, offset, criteria);
         }
     }
 }

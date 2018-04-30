@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Internal.Extensions;
-using MarvelSharp.Internal.Interfaces;
-using MarvelSharp.Model;
+using MarvelousApi.Internal.Extensions;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Criteria
+namespace MarvelousApi.Criteria
 {
     /// <summary>
     /// A base class for criteria to be used to filter resources
@@ -46,7 +46,7 @@ namespace MarvelSharp.Criteria
                 }
                 else if (propertyType.IsEnum || (Nullable.GetUnderlyingType(propertyType)?.IsEnum ?? false))
                 {
-                    dictionary.AddParameter(propertyName, (Enum)propertyValue);
+                    dictionary.AddParameter(propertyName, (System.Enum)propertyValue);
                 }
                 else if (typeof(bool?).IsAssignableFrom(propertyType))
                 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MarvelSharp.Model;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Internal.Interfaces
+namespace MarvelousApi.Internal.Interfaces
 {
 	public interface IParser<T>
     {

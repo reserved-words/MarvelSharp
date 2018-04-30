@@ -1,18 +1,17 @@
-﻿using MarvelSharp.Internal.Interfaces;
-using Newtonsoft.Json.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Model;
-using static MarvelSharp.MarvelApiResources;
+using MarvelousApi.Internal.Interfaces;
+using MarvelousApi.Model;
+using Newtonsoft.Json.Linq;
 
-namespace MarvelSharp.Internal.Parsers
+namespace MarvelousApi.Internal.Parsers
 {
 	public abstract class BaseParser<T> : IParser<T>
     {
         public Response<T1> GetResponse<T1>(dynamic parsed)
         {
-            if (parsed.code != HttpSuccessCode)
+            if (parsed.code != MarvelApiResources.HttpSuccessCode)
             {
                 return new Response<T1>
                 {

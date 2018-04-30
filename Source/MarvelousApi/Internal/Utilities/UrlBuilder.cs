@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using MarvelSharp.Internal.Interfaces;
-using static MarvelSharp.MarvelApiResources;
+using MarvelousApi.Internal.Interfaces;
 
-namespace MarvelSharp.Internal.Utilities
+namespace MarvelousApi.Internal.Utilities
 {
     public class UrlBuilder : IUrlBuilder
     {
@@ -19,24 +18,24 @@ namespace MarvelSharp.Internal.Utilities
 
         public string BuildUrl(string apiPublicKey, string apiPrivateKey, string urlSuffix, int? limit = null, int? offset = null, ICriteria criteria = null)
         {
-            var url = $"{UrlBase}{urlSuffix}";
+            var url = $"{MarvelApiResources.UrlBase}{urlSuffix}";
 
             var dictionary = criteria?.ToDictionary() ?? new Dictionary<string, string>();
 
-            var timestamp = _dateProvider.GetCurrentTime().ToString(ParameterTimeStampFormat);
+            var timestamp = _dateProvider.GetCurrentTime().ToString(MarvelApiResources.ParameterTimeStampFormat);
 
-            dictionary.Add(ParameterApiKey, apiPublicKey);
-            dictionary.Add(ParameterTimeStamp, timestamp);
-            dictionary.Add(ParameterHash, _hasher.Hash(timestamp + apiPrivateKey + apiPublicKey));
+            dictionary.Add(MarvelApiResources.ParameterApiKey, apiPublicKey);
+            dictionary.Add(MarvelApiResources.ParameterTimeStamp, timestamp);
+            dictionary.Add(MarvelApiResources.ParameterHash, _hasher.Hash(timestamp + apiPrivateKey + apiPublicKey));
 
             if (limit.HasValue)
             {
-                dictionary.Add(ParameterLimit, limit.Value.ToString());
+                dictionary.Add(MarvelApiResources.ParameterLimit, limit.Value.ToString());
             }
 
             if (offset.HasValue)
             {
-                dictionary.Add(ParameterOffset, offset.Value.ToString());
+                dictionary.Add(MarvelApiResources.ParameterOffset, offset.Value.ToString());
             }
 
             return url + "?" + string.Join("&", dictionary.Select(p => $"{p.Key}={HttpUtility.UrlPathEncode(p.Value)}"));

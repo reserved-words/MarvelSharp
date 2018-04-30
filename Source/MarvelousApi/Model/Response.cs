@@ -1,5 +1,5 @@
 ﻿
-namespace MarvelSharp.Model
+namespace MarvelousApi.Model
 {
     /// <summary>
     /// A class representing the full response from the Marvel Comics API

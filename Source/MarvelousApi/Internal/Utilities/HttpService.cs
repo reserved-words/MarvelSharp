@@ -1,8 +1,8 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
-using MarvelSharp.Internal.Interfaces;
+using MarvelousApi.Internal.Interfaces;
 
-namespace MarvelSharp.Internal.Utilities
+namespace MarvelousApi.Internal.Utilities
 {
     public class HttpService : IHttpService
     {

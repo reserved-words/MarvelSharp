@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace MarvelSharp.Internal.Interfaces
+namespace MarvelousApi.Internal.Interfaces
 {
 	public interface IHttpService
     {

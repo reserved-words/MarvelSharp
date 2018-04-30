@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using MarvelSharp.Model;
+using MarvelousApi.Enum;
+using MarvelousApi.Model;
 
-namespace MarvelSharp.Criteria
+namespace MarvelousApi.Criteria
 {
 
     /// <summary>

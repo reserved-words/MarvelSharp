@@ -1,8 +1,7 @@
-﻿using MarvelSharp.Internal.Attributes;
-using static MarvelSharp.MarvelApiResources;
+﻿using MarvelousApi.Internal.Attributes;
 
 // ReSharper disable once CheckNamespace
-namespace MarvelSharp
+namespace MarvelousApi.Enum
 {
     /// <summary>
     /// Comic sort options
@@ -12,52 +11,52 @@ namespace MarvelSharp
         /// <summary>
         /// Sort in ascending Final Order Cut-off Date order
         /// </summary>
-        [StringValue(nameof(OrderByFocDateAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByFocDateAsc))]
         FocDateAscending,
         /// <summary>
         /// Sort in ascending On Sale Date order
         /// </summary>
-        [StringValue(nameof(OrderByOnSaleDateAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByOnSaleDateAsc))]
         OnSaleDateAscending,
         /// <summary>
         /// Sort in ascending Title order
         /// </summary>
-        [StringValue(nameof(OrderByTitleAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByTitleAsc))]
         TitleAscending,
         /// <summary>
         /// Sort in ascending Issue Number order
         /// </summary>
-        [StringValue(nameof(OrderByIssueNoAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByIssueNoAsc))]
         IssueNumberAscending,
         /// <summary>
         /// Sort in ascending order of the date the resource was last modified
         /// </summary>
-        [StringValue(nameof(OrderByDateModifiedAsc))]
+        [StringValue(nameof(MarvelApiResources.OrderByDateModifiedAsc))]
         ModifiedAscending,
         /// <summary>
         /// Sort in descending Final Order Cut-off Date order
         /// </summary>
-        [StringValue(nameof(OrderByFocDateDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByFocDateDesc))]
         FocDateDescending,
         /// <summary>
         /// Sort in descending On Sale Date order
         /// </summary>
-        [StringValue(nameof(OrderByOnSaleDateDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByOnSaleDateDesc))]
         OnSaleDateDescending,
         /// <summary>
         /// Sort in descending Title order
         /// </summary>
-        [StringValue(nameof(OrderByTitleDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByTitleDesc))]
         TitleDescending,
         /// <summary>
         /// Sort in descending Issue Number order
         /// </summary>
-        [StringValue(nameof(OrderByIssueNoDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByIssueNoDesc))]
         IssueNumberDescending,
         /// <summary>
         /// Sort in descending order of the date the resource was last modified
         /// </summary>
-        [StringValue(nameof(OrderByDateModifiedDesc))]
+        [StringValue(nameof(MarvelApiResources.OrderByDateModifiedDesc))]
         ModifiedDescending
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using MarvelSharp.Criteria;
-using MarvelSharp.Internal.Extensions;
+using MarvelousApi.Criteria;
+using MarvelousApi.Enum;
+using MarvelousApi.Internal.Extensions;
 using NUnit.Framework;
-using static MarvelSharp.MarvelApiResources;
 
-namespace MarvelSharp.Tests.Unit.Criteria
+namespace MarvelousApi.Tests.Unit.Criteria
 {
     [TestFixture]
     public class CreatorCriteriaTests
@@ -38,35 +38,35 @@ namespace MarvelSharp.Tests.Unit.Criteria
             // Assert
             Assert.AreEqual(13, result.Count);
 
-            Assert.Contains(ParameterFirstName, result.Keys);
-            Assert.Contains(ParameterMiddleName, result.Keys);
-            Assert.Contains(ParameterLastName, result.Keys);
-            Assert.Contains(ParameterSuffix, result.Keys);
-            Assert.Contains(ParameterNameStartsWith, result.Keys);
-            Assert.Contains(ParameterFirstNameStartsWith, result.Keys);
-            Assert.Contains(ParameterMiddleNameStartsWith, result.Keys);
-            Assert.Contains(ParameterLastNameStartsWith, result.Keys);
-            Assert.Contains(ParameterModifiedSince, result.Keys);
-            Assert.Contains(ParameterSeries, result.Keys);
-            Assert.Contains(ParameterEvents, result.Keys);
-            Assert.Contains(ParameterStories, result.Keys);
-            Assert.Contains(ParameterOrderBy, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterFirstName, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterMiddleName, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterLastName, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterSuffix, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterNameStartsWith, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterFirstNameStartsWith, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterMiddleNameStartsWith, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterLastNameStartsWith, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterModifiedSince, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterSeries, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterEvents, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterStories, result.Keys);
+            Assert.Contains(MarvelApiResources.ParameterOrderBy, result.Keys);
 
-            Assert.IsFalse(result.Keys.Contains(ParameterComics));
+            Assert.IsFalse(result.Keys.Contains(MarvelApiResources.ParameterComics));
 
-            Assert.AreEqual(sut.FirstName, result[ParameterFirstName]);
-            Assert.AreEqual(sut.MiddleName, result[ParameterMiddleName]);
-            Assert.AreEqual(sut.LastName, result[ParameterLastName]);
-            Assert.AreEqual(sut.Suffix, result[ParameterSuffix]);
-            Assert.AreEqual(sut.FirstNameStartsWith, result[ParameterFirstNameStartsWith]);
-            Assert.AreEqual(sut.MiddleNameStartsWith, result[ParameterMiddleNameStartsWith]);
-            Assert.AreEqual(sut.LastNameStartsWith, result[ParameterLastNameStartsWith]);
-            Assert.AreEqual(sut.NameStartsWith, result[ParameterNameStartsWith]);
-            Assert.AreEqual(sut.ModifiedSince.Value.ToString(ParameterDateTimeFormat), result[ParameterModifiedSince]);
-            Assert.AreEqual(string.Join(ParameterListSeparator, sut.Series), result[ParameterSeries]);
-            Assert.AreEqual(string.Join(ParameterListSeparator, sut.Events), result[ParameterEvents]);
-            Assert.AreEqual(string.Join(ParameterListSeparator, sut.Stories), result[ParameterStories]);
-            Assert.AreEqual(string.Join(ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[ParameterOrderBy]);
+            Assert.AreEqual(sut.FirstName, result[MarvelApiResources.ParameterFirstName]);
+            Assert.AreEqual(sut.MiddleName, result[MarvelApiResources.ParameterMiddleName]);
+            Assert.AreEqual(sut.LastName, result[MarvelApiResources.ParameterLastName]);
+            Assert.AreEqual(sut.Suffix, result[MarvelApiResources.ParameterSuffix]);
+            Assert.AreEqual(sut.FirstNameStartsWith, result[MarvelApiResources.ParameterFirstNameStartsWith]);
+            Assert.AreEqual(sut.MiddleNameStartsWith, result[MarvelApiResources.ParameterMiddleNameStartsWith]);
+            Assert.AreEqual(sut.LastNameStartsWith, result[MarvelApiResources.ParameterLastNameStartsWith]);
+            Assert.AreEqual(sut.NameStartsWith, result[MarvelApiResources.ParameterNameStartsWith]);
+            Assert.AreEqual(sut.ModifiedSince.Value.ToString(MarvelApiResources.ParameterDateTimeFormat), result[MarvelApiResources.ParameterModifiedSince]);
+            Assert.AreEqual(string.Join(MarvelApiResources.ParameterListSeparator, sut.Series), result[MarvelApiResources.ParameterSeries]);
+            Assert.AreEqual(string.Join(MarvelApiResources.ParameterListSeparator, sut.Events), result[MarvelApiResources.ParameterEvents]);
+            Assert.AreEqual(string.Join(MarvelApiResources.ParameterListSeparator, sut.Stories), result[MarvelApiResources.ParameterStories]);
+            Assert.AreEqual(string.Join(MarvelApiResources.ParameterListSeparator, sut.OrderBy.Select(o => o.GetStringValue())), result[MarvelApiResources.ParameterOrderBy]);
         }
     }
 }
