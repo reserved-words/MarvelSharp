@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp", "MarvelSharp\MarvelSharp.csproj", "{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}"
 EndProject
@@ -33,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C308A2F6-CC74-4CED-961D-4D6848EAE0FB}
 	EndGlobalSection
 EndGlobal

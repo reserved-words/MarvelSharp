@@ -3,8 +3,8 @@
 $nuspecPath = 'MarvelSharp\MarvelSharp.csproj.nuspec'
 
 $Id = 'MarvelSharp'
-$Authors = 'Rhian Adams'
-$Owners = 'Rhian Adams'
+$Authors = 'Reserved Words'
+$Owners = 'Reserved Words'
 $Description = 'A C# library for the Marvel Comics API'
 $ProjectUrl = 'https://github.com/reserved-words/MarvelSharp/wiki'
 $Tags = 'Marvel Comics API'
