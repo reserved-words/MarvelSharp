@@ -16,8 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22
 		NuGet\UpdateNuspecFile.ps1 = NuGet\UpdateNuspecFile.ps1
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelSharp.Core", "MarvelSharp.Core\MarvelSharp.Core.csproj", "{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,10 +30,6 @@ Global
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
