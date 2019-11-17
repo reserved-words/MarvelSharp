@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22
 		NuGet\UpdateNuspecFile.ps1 = NuGet\UpdateNuspecFile.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Core", "MarvelSharp.Core\MarvelSharp.Core.csproj", "{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarvelSharp.Core", "MarvelSharp.Core\MarvelSharp.Core.csproj", "{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
