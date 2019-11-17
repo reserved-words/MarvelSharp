@@ -4,7 +4,7 @@ using MarvelSharp.Criteria;
 using MarvelSharp.Internal.Services;
 using MarvelSharp.Model;
 
-namespace MarvelSharp.Core
+namespace MarvelSharp
 {
     public class ApiService
     {

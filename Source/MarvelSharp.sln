@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp", "MarvelSharp\MarvelSharp.csproj", "{8CB85DCA-8DDE-4A4A-88A5-B51C1D0B8050}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{DBD2EF22
 		NuGet\NuGetBuild.bat = NuGet\NuGetBuild.bat
 		NuGet\UpdateNuspecFile.ps1 = NuGet\UpdateNuspecFile.ps1
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarvelSharp.Core", "MarvelSharp.Core\MarvelSharp.Core.csproj", "{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,8 +32,15 @@ Global
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8062C3C8-02B6-4061-B8E2-6ED985E2FFA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED04B9F-42D3-41A6-A5B8-9A151ADD08B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C308A2F6-CC74-4CED-961D-4D6848EAE0FB}
 	EndGlobalSection
 EndGlobal
