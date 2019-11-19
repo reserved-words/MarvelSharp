@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>MarvelSharp.Core</id>
+    <version>1.0.0</version>
+    <authors>reserved-words</authors>
+    <owners>
+    </owners>
+    <projectUrl>https://github.com/reserved-words/MarvelSharp/wiki</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>Marvel Comics API</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
