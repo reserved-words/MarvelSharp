@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
 	<PackageId>MarvelSharp.Core</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>reserved-words</Authors>
     <Description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</Description>
     <IsPackable>true</IsPackable>
