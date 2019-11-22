@@ -5,9 +5,6 @@
 		<version>1.0.0</version>
 		<description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</description>
 		<authors>reserved-words</authors>
-
-	    <!-- Optional elements -->
-		<owners></owners>
 		<projectUrl>https://github.com/reserved-words/MarvelSharp/wiki</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<releaseNotes>Initial release</releaseNotes>
@@ -16,7 +13,4 @@
 		<dependencies>
 		</dependencies>
     </metadata>
-    <files>
-      <file src="*\MarvelSharp.Core.dll" target="lib" />
-    </files>
 </package>
