@@ -17,6 +17,6 @@
 		</dependencies>
     </metadata>
     <files>
-      <file src="*/MarvelSharp.Core.dll" target="lib" />
+      <file src="*\MarvelSharp.Core.dll" target="lib" />
     </files>
 </package>
