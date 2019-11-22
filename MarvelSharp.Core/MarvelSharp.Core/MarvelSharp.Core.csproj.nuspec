@@ -1,18 +1,22 @@
-﻿<?xml version="1.0"?>
-<package>
-  <metadata>
-    <id>MarvelSharp.Core</id>
-    <version>1.0.0</version>
-    <authors>reserved-words</authors>
-    <owners>
-    </owners>
-    <projectUrl>https://github.com/reserved-words/MarvelSharp/wiki</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</description>
-    <releaseNotes>Initial release</releaseNotes>
-    <copyright>Copyright 2019</copyright>
-    <tags>Marvel Comics API</tags>
-    <dependencies>
-    </dependencies>
-  </metadata>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+	    <id>MarvelSharp.Core</id>
+		<version>1.0.0</version>
+		<description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</description>
+		<authors>reserved-words</authors>
+
+	    <!-- Optional elements -->
+		<owners></owners>
+		<projectUrl>https://github.com/reserved-words/MarvelSharp/wiki</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<releaseNotes>Initial release</releaseNotes>
+		<copyright>Copyright 2019</copyright>
+		<tags>Marvel Comics API</tags>
+		<dependencies>
+		</dependencies>
+    </metadata>
+    <files>
+      <file src="bin\Release\*.dll" target="lib" />
+    </files>
 </package>
