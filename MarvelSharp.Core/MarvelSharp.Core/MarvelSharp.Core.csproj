@@ -1,7 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+	<PackageId>MarvelSharp.Core</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>reserved-words</Authors>
+    <Description>A .NET Core library allowing developers to easily and asynchronously fetch data from the Marvel Comics API</Description>
+    <IsPackable>true</IsPackable>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -12,7 +12,6 @@
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Marvel Comics API</tags>
-    <dependencies>
-    </dependencies>
+    <dependencies></dependencies>
   </metadata>
 </package>
